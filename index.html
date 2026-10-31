@@ -256,6 +256,16 @@
   .mrow b { text-align: right; }
   .mkey { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12px; color: #9d9a91; margin-top: 6px; }
   .speed { margin-top: 28px; background: var(--bg); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; }
+  .phd { margin-top: 28px; background: var(--bg); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; }
+  .phd .wrapd { display: grid; grid-template-columns: minmax(180px, 240px) 1fr; gap: 20px; align-items: center; }
+  @media (max-width: 560px) { .phd .wrapd { grid-template-columns: 1fr; } .phd svg { max-width: 230px; margin: 0 auto; } }
+  .phd svg { width: 100%; height: auto; display: block; }
+  .phd svg text { fill: var(--ink); }
+  .phd ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 13.5px; }
+  .phd li { display: grid; grid-template-columns: 12px 1fr auto; gap: 8px; align-items: center; }
+  .phd li i { width: 12px; height: 12px; border-radius: 3px; }
+  .phd li.meat { font-weight: 700; color: var(--red); }
+  .phd li span.v { color: var(--muted); font-variant-numeric: tabular-nums; }
   .race { margin-top: 14px; background: var(--bg2); border-left: 4px solid var(--red); border-radius: 0 12px 12px 0; padding: 14px 16px; font-size: 14.5px; }
   .speed .pts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 14px; }
   .speed .pts > div { font-size: 14.5px; }
@@ -504,6 +514,18 @@
       <p class="small" style="margin:14px 0 0"><span class="ja">日本の平均は、農林水産省「食料需給表」令和6年度（概算）の1人1年あたり供給純食料（牛肉5.9 kg、豚肉13.2 kg、鶏肉14.9 kg）を1日に換算したものです。店や家庭での廃棄を含む「供給量」なので、実際に食べる量とは同じではありません。EAT–Lancet の値は中心の目安で、幅があります（赤身肉0〜30 g、鶏肉0〜60 g）。魚・卵・乳製品はこの図に含めていません。なお Clark らは、化石燃料などの排出をすぐにゼロにできるなら、食の変化がより控えめでも2℃目標は達成できるとしています。</span><span class="en">Japan’s average converts MAFF’s FY2024 (provisional) per-person net food supply — beef 5.9 kg, pork 13.2 kg, chicken 14.9 kg a year — to a daily figure. It is supply, including waste in shops and homes, not what people actually eat. EAT–Lancet values are central targets with ranges (red meat 0–30 g, poultry 0–60 g). Fish, eggs and dairy are not shown. Clark et al. also find 2 °C reachable with less ambitious food changes — but only if fossil-fuel and other emissions are eliminated soon.</span></p>
     </div>
 
+    <div class="phd reveal" id="phd">
+      <h3><span class="ja">地球にも体にもよい食事の形</span><span class="en">A diet good for the planet and for you</span></h3>
+      <p class="small" style="margin:0 0 12px"><span class="ja">EAT–Lancet 委員会の「プラネタリー・ヘルス・ダイエット」（2019年、1日2,500 kcal）。</span><span class="en">The EAT–Lancet “planetary health diet” (2019, 2,500 kcal a day).</span></p>
+      <div class="tabs" id="phdTabs"></div>
+      <div class="wrapd">
+        <svg id="phdPie" viewBox="0 0 200 200" role="img"></svg>
+        <ul id="phdList"></ul>
+      </div>
+      <p style="margin:14px 0 0" id="phdMsg"></p>
+      <p class="small" style="margin:10px 0 0"><span class="ja">Willett ら（2019）の参照食の表から、食品群ごとにまとめました。油脂は植物油・パーム油・ラード、肉は牛・羊・豚と鶏の合計です。2025年の改訂版も、果物と野菜500 g、豆類75 g、赤身肉は週1回までと、ほぼ同じ形です（全粒穀物やナッツの量は変わり、カロリー表はまだ確認できていないため、ここでは2019年版を使っています）。</span><span class="en">Grouped from the reference diet table in Willett et al. (2019). Fats = vegetable oils, palm oil and lard; meat = beef, lamb, pork and poultry. The 2025 update keeps much the same shape — 500 g of fruit and vegetables, 75 g of legumes, red meat at most once a week — though grain and nut amounts changed; we use 2019 because we couldn’t check a 2025 calorie table.</span></p>
+    </div>
+
     <div class="speed reveal" id="speed">
       <h3><span class="ja">食べ方を変えることは、時間を稼ぐことでもある</span><span class="en">Changing what we eat also buys time</span></h3>
       <p style="margin:0"><span class="ja">私たちは、<b>ティッピング・ポイント（一度越えると元に戻れない境目）との時間の競争</b>の中にいます。</span><span class="en">We are in <b>a race against tipping points</b> — thresholds that, once crossed, can’t be uncrossed.</span></p>
@@ -740,6 +762,7 @@
       <li><a href="https://doi.org/10.1371/journal.pgph.0001305">Mulchandani, R. et al. (2023). Global trends in antimicrobial use in food-producing animals: 2020 to 2030. PLOS Global Public Health 3: e0001305</a> <span class="use"><span class="ja">2020年 99,502 t、2030年までに8.0%増</span><span class="en">99,502 t in 2020, +8.0% by 2030</span></span></li>
       <li><a href="https://eatforum.org/update/eat-lancet-commission-warns-food-systems-breach-planetary-limits/">EAT (2025). EAT–Lancet Commission 2025</a> <span class="use"><span class="ja">食べ方の転換で年約1,500万人の早すぎる死を防げる</span><span class="en">~15 m premature deaths a year preventable</span></span></li>
       <li><a href="https://www.su.se/english/news/articles/2025-10-03-global-food-transition-needed-to-reduce-pressure-on-the-planet-and-to-save-millions-of-lives-">Stockholm University (2025). Global food transition needed…</a>; <a href="https://www.stockholmresilience.org/research/research-stories/2025-10-03-eat-lancet-2025-global-food-transformation-needed-to-ease-pressure-on-the-planet-and-save-millions-of-lives.html">Stockholm Resilience Centre (2025)</a> <span class="use"><span class="ja">EAT–Lancet 2025：越えた7つの限界のうち5つで食料システムが主因（気候では2番目）、「安全で公正な範囲」は世界人口の約1%、赤身肉 約15 g/日（0〜30）・鶏肉 30 g（0〜60）、食料の排出を半分以上減らせる</span><span class="en">EAT–Lancet 2025: food drives 5 of 7 crossed boundaries (2nd for climate); ~1% in the safe and just space; red meat ~15 g/day (0–30), poultry 30 g (0–60); food emissions can be more than halved</span></span></li>
+      <li><a href="https://doi.org/10.1016/S0140-6736(18)31788-4">Willett, W. et al. (2019). Food in the Anthropocene: the EAT–Lancet Commission on healthy diets from sustainable food systems. The Lancet 393: 447–492</a> <span class="use"><span class="ja">プラネタリー・ヘルス・ダイエットの参照食（1日2,500 kcal）：全粒穀物232 g、野菜300 g、果物200 g、豆類75 g、ナッツ50 g、乳製品250 g、赤身肉14 g、鶏肉29 g、魚28 g、卵13 gなど</span><span class="en">Reference diet (2,500 kcal/day): whole grains 232 g, vegetables 300 g, fruit 200 g, legumes 75 g, nuts 50 g, dairy 250 g, red meat 14 g, poultry 29 g, fish 28 g, eggs 13 g…</span></span></li>
       <li><a href="https://doi.org/10.1126/science.aba7357">Clark, M.A. et al. (2020). Global food system emissions could preclude achieving the 1.5° and 2°C climate change targets. Science 370: 705–708</a> <span class="use"><span class="ja">化石燃料の排出をすぐ止めても、食料システムの傾向が続けば1.5℃は達成できず、2℃も危うい</span><span class="en">Even with fossil fuels halted, food-system trends rule out 1.5 °C and threaten 2 °C</span></span></li>
       <li><a href="https://doi.org/10.1038/s41586-018-0594-0">Springmann, M. et al. (2018). Options for keeping the food system within environmental limits. Nature 562: 519–525</a>; <a href="https://www.eurekalert.org/news-releases/917471">press release</a> <span class="use"><span class="ja">2010〜2050年に環境負荷50〜90%増、植物中心の食事への転換なしに気候変動は十分に抑えられない、転換で温室効果ガス半分以上減</span><span class="en">50–90% rise 2010–2050; climate can’t be sufficiently mitigated without more plant-based diets; diet shift cuts GHG by more than half</span></span></li>
       <li><a href="https://www.unep.org/resources/report/global-methane-assessment-benefits-and-costs-mitigating-methane-emissions">UNEP &amp; CCAC (2021). Global Methane Assessment</a> <span class="use"><span class="ja">人間由来のメタンの約32%が家畜、45%削減で2040年代までに約0.3℃を回避</span><span class="en">Livestock ~32% of human methane; a 45% cut avoids ~0.3 °C by the 2040s</span></span></li>
@@ -1027,6 +1050,44 @@ function renderMeter() {
   $('pMeals').innerHTML = preset ? PRESETS[preset].m[lang].map(([t, d]) => `<div><b>${t}</b>${d}</div>`).join('') : '';
 }
 
+// ---- planetary health diet (Willett et al. 2019, Table 1; 2,500 kcal)
+const PHD = [
+  { ja: '全粒穀物', en: 'Whole grains', g: 232, kcal: 811, c: '#d8b65a' },
+  { ja: 'いも類', en: 'Tubers', g: 50, kcal: 39, c: '#b48a4e' },
+  { ja: '野菜', en: 'Vegetables', g: 300, kcal: 78, c: '#4f9a74' },
+  { ja: '果物', en: 'Fruit', g: 200, kcal: 126, c: '#97c25f' },
+  { ja: '豆類（大豆を含む）', en: 'Legumes (incl. soy)', g: 75, kcal: 284, c: '#2f6b4f' },
+  { ja: 'ナッツ', en: 'Nuts', g: 50, kcal: 291, c: '#8a6a3f' },
+  { ja: '油脂', en: 'Fats and oils', g: 51.8, kcal: 450, c: '#e6d49a' },
+  { ja: '砂糖', en: 'Added sugar', g: 31, kcal: 120, c: '#cfc6b4' },
+  { ja: '乳製品', en: 'Dairy', g: 250, kcal: 153, c: '#9fb7c9' },
+  { ja: '卵', en: 'Eggs', g: 13, kcal: 19, c: '#d9a36a' },
+  { ja: '魚', en: 'Fish', g: 28, kcal: 40, c: '#5b86a6' },
+  { ja: '肉（牛・豚・鶏）', en: 'Meat (beef, pork, poultry)', g: 43, kcal: 92, c: '#b8402f', meat: true },
+];
+let phdBy = 'kcal';
+function renderPhd() {
+  const ja = lang === 'ja';
+  $('phdTabs').innerHTML = [['kcal', ja ? 'カロリー' : 'Calories'], ['g', ja ? '重さ' : 'Weight']]
+    .map(([k, t]) => `<button aria-pressed="${k === phdBy}" data-phd="${k}">${t}</button>`).join('');
+  const tot = PHD.reduce((a, x) => a + x[phdBy], 0);
+  let a0 = -Math.PI / 2, paths = '';
+  PHD.forEach(x => {
+    const a1 = a0 + x[phdBy] / tot * 2 * Math.PI, R = 92, r = 56;
+    const p = (rad, ang) => `${(100 + rad * Math.cos(ang)).toFixed(2)},${(100 + rad * Math.sin(ang)).toFixed(2)}`;
+    const big = a1 - a0 > Math.PI ? 1 : 0;
+    paths += `<path d="M${p(R, a0)}A${R},${R} 0 ${big} 1 ${p(R, a1)}L${p(r, a1)}A${r},${r} 0 ${big} 0 ${p(r, a0)}Z" fill="${x.c}" stroke="var(--bg)" stroke-width="${x.meat ? 0 : 1}"/>`;
+    a0 = a1;
+  });
+  const meat = PHD.find(x => x.meat), mp = meat[phdBy] / tot * 100;
+  $('phdPie').innerHTML = paths + `<text x="100" y="96" text-anchor="middle" font-size="12">${ja ? '肉' : 'Meat'}</text><text x="100" y="118" text-anchor="middle" font-size="22" font-weight="900" style="fill:var(--red)">${fmt(mp, 1)}%</text>`;
+  $('phdPie').setAttribute('aria-label', PHD.map(x => `${x[lang]} ${fmt(x[phdBy] / tot * 100, 1)}%`).join(', '));
+  $('phdList').innerHTML = PHD.map(x => `<li${x.meat ? ' class="meat"' : ''}><i style="background:${x.c}"></i><span>${x[lang]}</span><span class="v">${phdBy === 'g' ? fmt(x.g, x.g % 1 ? 1 : 0) + ' g' : fmt(x.kcal) + ' kcal'} · ${fmt(x[phdBy] / tot * 100, 1)}%</span></li>`).join('');
+  $('phdMsg').innerHTML = ja
+    ? `肉は1日<b>約43 g</b>（${phdBy === 'g' ? '重さ' : 'カロリー'}の<b>${fmt(mp, 1)}%</b>）。ゼロではありませんが、主役は穀物・豆・野菜・果物・ナッツです。日本の平均（1日約93 g）は、その約2倍です。`
+    : `Meat is <b>about 43 g</b> a day (<b>${fmt(mp, 1)}%</b> of ${phdBy === 'g' ? 'weight' : 'calories'}). Not zero — but grains, legumes, vegetables, fruit and nuts are the stars. Japan’s average (~93 g a day) is about twice that.`;
+}
+
 // ---- language
 function setLang(l) {
   lang = l;
@@ -1035,7 +1096,7 @@ function setLang(l) {
   try { localStorage.setItem('83b-lang', l); } catch (e) {}
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
   document.title = l === 'ja' ? '830億の理由 — 動物・地球・人のために' : '83 Billion Reasons — for animals, the planet and people';
-  renderWaffle(); renderLife(); renderCmp(); renderSliders(); calc(); renderFoods(); setShare();
+  renderWaffle(); renderLife(); renderCmp(); renderPhd(); renderSliders(); calc(); renderFoods(); setShare();
 }
 function setShare() {
   const text = lang === 'ja' ? '毎年、830億の動物が食べるために殺されている。まず、肉を半分に。' : '83 billion land animals are killed for food every year. Start by eating half as much meat.';
@@ -1046,6 +1107,7 @@ document.addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b) return;
   if (b.dataset.lang) setLang(b.dataset.lang);
   else if (b.dataset.m) { metric = b.dataset.m; renderCmp(); }
+  else if (b.dataset.phd) { phdBy = b.dataset.phd; renderPhd(); }
   else if (b.dataset.pf) {
     const k = b.dataset.pf; counts[k] = Math.max(0, Math.min(9, (counts[k] || 0) + +b.dataset.d));
     if (preset) preset = '';
