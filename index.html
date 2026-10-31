@@ -255,6 +255,16 @@
   .mrow .bar i.r { background: var(--red); } .mrow .bar i.p { background: var(--amber); }
   .mrow b { text-align: right; }
   .mkey { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12px; color: #9d9a91; margin-top: 6px; }
+  .speed { margin-top: 28px; background: var(--bg); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; }
+  .speed .pts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 14px; }
+  .speed .pts > div { font-size: 14.5px; }
+  .speed .pts b.h { display: block; font-size: 17px; margin-bottom: 4px; }
+  .speed .pts .n { display: block; font-size: 26px; font-weight: 900; line-height: 1.2; color: var(--green); }
+  .decay { width: 100%; max-width: 420px; height: auto; display: block; margin: 8px 0 2px; }
+  .decay text { font-size: 11px; fill: var(--muted); }
+  .cmpbars { margin-top: 8px; }
+  .cmpbars .mrow { grid-template-columns: 9.5em 1fr 3.4em; margin: 5px 0; }
+  .cmpbars .bar { background: var(--bg3); height: 14px; }
   .mkey i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; }
 
   /* faq */
@@ -491,6 +501,46 @@
       <p style="margin:16px 0 0"><span class="ja"><b>半分にすると、肉の量は目安とほぼ同じ</b>に。<b>7割減で、赤身肉も目安の中心（15 g）に</b>届きます。両立しないのは「肉」ではなく、<b class="hi">「今の量」</b>です。</span><span class="en"><b>Halving brings total meat close to the guide</b>; <b>70% less brings red meat to its centre (15 g)</b> too. What can’t coexist with the planet isn’t meat — it’s <b class="hi">today’s amount</b>.</span></p>
       <p class="small" style="margin:14px 0 0"><span class="ja">日本の平均は、農林水産省「食料需給表」令和6年度（概算）の1人1年あたり供給純食料（牛肉5.9 kg、豚肉13.2 kg、鶏肉14.9 kg）を1日に換算したものです。店や家庭での廃棄を含む「供給量」なので、実際に食べる量とは同じではありません。EAT–Lancet の値は中心の目安で、幅があります（赤身肉0〜30 g、鶏肉0〜60 g）。魚・卵・乳製品はこの図に含めていません。なお Clark らは、化石燃料などの排出をすぐにゼロにできるなら、食の変化がより控えめでも2℃目標は達成できるとしています。</span><span class="en">Japan’s average converts MAFF’s FY2024 (provisional) per-person net food supply — beef 5.9 kg, pork 13.2 kg, chicken 14.9 kg a year — to a daily figure. It is supply, including waste in shops and homes, not what people actually eat. EAT–Lancet values are central targets with ranges (red meat 0–30 g, poultry 0–60 g). Fish, eggs and dairy are not shown. Clark et al. also find 2 °C reachable with less ambitious food changes — but only if fossil-fuel and other emissions are eliminated soon.</span></p>
     </div>
+
+    <div class="speed reveal" id="speed">
+      <h3><span class="ja">食べ方を変えることは、時間を稼ぐことでもある</span><span class="en">Changing what we eat also buys time</span></h3>
+      <p style="margin:0"><span class="ja">再エネや電気自動車への切り替えには、何十年もかかります。食べ方は、今日の夕食から変えられます。そして、その効果は2つの点で特別です。</span><span class="en">Switching to clean power and electric cars takes decades. What we eat can change at tonight’s dinner — and its effect is special in two ways.</span></p>
+      <div class="pts">
+        <div>
+          <b class="h"><span class="ja">① メタンは、減らせばすぐ効く</span><span class="en">① Cut methane, and it works fast</span></b>
+          <svg class="decay" viewBox="0 0 342 146" role="img" aria-label="1回の排出が大気に残る割合。メタンは20年で約18%、50年でほぼゼロ。CO₂は50年後も約半分 / Share of one emission left in the air: methane ~18% after 20 years and almost none after 50; CO₂ about half after 50 years">
+            <g transform="translate(36,8)">
+              <line x1="0" y1="120" x2="300" y2="120" stroke="var(--faint)"/>
+              <line x1="0" y1="0" x2="0" y2="120" stroke="var(--faint)"/>
+              <polyline fill="none" stroke="var(--ink)" stroke-width="2.5" points="0,0.0 12,14.3 24,23.9 36,30.5 48,35.2 60,38.7 72,41.4 84,43.6 96,45.4 108,47.0 120,48.5 132,49.7 144,50.9 156,52.0 168,53.1 180,54.1 192,55.0 204,55.9 216,56.7 228,57.5 240,58.3 252,59.0 264,59.7 276,60.4 288,61.0 300,61.6"/>
+              <polyline fill="none" stroke="var(--amber)" stroke-width="2.5" points="0,0.0 12,18.7 24,34.5 36,47.8 48,59.1 60,68.6 72,76.6 84,83.4 96,89.1 108,93.9 120,98.0 132,101.4 144,104.3 156,106.7 168,108.8 180,110.6 192,112.0 204,113.3 216,114.3 228,115.2 240,116.0 252,116.6 264,117.1 276,117.6 288,117.9 300,118.3"/>
+              <text x="-4" y="4" text-anchor="end">100%</text><text x="-4" y="122" text-anchor="end">0</text>
+              <text x="0" y="132">0</text><text x="120" y="132" text-anchor="middle">20</text><text x="300" y="132" text-anchor="end">50<tspan class="ja">年</tspan><tspan class="en"> yr</tspan></text>
+              <text x="296" y="54" text-anchor="end" style="fill:var(--ink);font-weight:700">CO₂ <tspan class="ja">約半分が残る</tspan><tspan class="en">~half remains</tspan></text>
+              <text x="150" y="98" style="fill:var(--amber);font-weight:700"><tspan class="ja">メタン ほぼ消える</tspan><tspan class="en">Methane: nearly gone</tspan></text>
+            </g>
+          </svg>
+          <span class="ja">CO₂は何百年も大気に残るので、減らしても「温暖化が進むのを止める」だけです。メタンは約12年で分解されるので、減らせば数十年のうちに<b>温暖化そのものが下がります</b>。20年で見ると、メタンは同じ重さのCO₂の約80倍も地球を温めます。人間が出すメタンの約32%は家畜のげっぷとふん尿です。国連環境計画は、人間由来のメタンを今後10年ほどで45%減らせば、<b>2040年代までに約0.3℃の温暖化を避けられる</b>としています（家畜以外の対策も含む）。</span><span class="en">CO₂ lingers for centuries, so cutting it only stops warming from growing. Methane breaks down in about 12 years, so cutting it <b>lowers warming itself</b> within decades. Over 20 years, methane warms about 80 times more than the same mass of CO₂. About 32% of human-caused methane comes from livestock burps and manure. UNEP finds that cutting human methane 45% this decade would <b>avoid nearly 0.3 °C of warming by the 2040s</b> (including non-livestock measures).</span>
+        </div>
+        <div>
+          <b class="h"><span class="ja">② 空いた土地が、CO₂を吸い戻す</span><span class="en">② Freed land pulls CO₂ back out</span></b>
+          <span class="n num"><span class="ja">3,300〜5,500億 t</span><span class="en">332–547 bn t</span></span>
+          <span class="ja">世界が2050年までに植物中心の食事へ移り、牧草地や飼料畑に森や草原が戻った場合に吸収できるCO₂（Hayek ら 2021）。<b>1.5℃に抑えるために残された排出枠の、約1〜1.6倍</b>にあたります。排出を減らすだけでなく、すでに出したCO₂を取り戻せる対策は、ほかにほとんどありません。（完全に植物性へ移るシナリオでの値で、半分にすればこの一部になります。）</span><span class="en">CO₂ that could be absorbed if the world shifted to plant-based diets by 2050 and forest and grassland returned to pasture and feed land (Hayek et al. 2021) — <b>about 1–1.6 times the remaining carbon budget for 1.5 °C</b>. Few other measures both cut emissions and take back CO₂ already emitted. (That is a fully plant-based scenario; halving would deliver part of it.)</span>
+        </div>
+      </div>
+
+      <h3 style="margin-top:26px"><span class="ja">一人の行動として、どれくらい大きい？</span><span class="en">How big is it, as one person’s action?</span></h3>
+      <p class="small" style="margin:0"><span class="ja">先進国での1人1年あたりの削減量（t CO₂e）。Wynes &amp; Nicholas 2017。</span><span class="en">Savings per person per year in rich countries (t CO₂e). Wynes &amp; Nicholas 2017.</span></p>
+      <div class="cmpbars" role="img" aria-label="車を持たない 2.4、大西洋往復の飛行機を1回やめる 1.6、植物性の食事 0.8、リサイクル 約0.2、電球の交換 約0.1 / Car-free 2.4, one fewer transatlantic round trip 1.6, plant-based diet 0.8, recycling ~0.2, lightbulbs ~0.1">
+        <div class="mrow"><span><span class="ja">車を持たない</span><span class="en">Live car-free</span></span><span class="bar"><i style="width:100%;background:var(--muted)"></i></span><b class="num">2.4</b></div>
+        <div class="mrow"><span><span class="ja">長距離の飛行機を1往復やめる</span><span class="en">One fewer long-haul round trip</span></span><span class="bar"><i style="width:66.7%;background:var(--muted)"></i></span><b class="num">1.6</b></div>
+        <div class="mrow"><span><b><span class="ja">植物性の食事</span><span class="en">Plant-based diet</span></b></span><span class="bar"><i style="width:33.3%;background:var(--green)"></i></span><b class="num" style="color:var(--green)">0.8</b></div>
+        <div class="mrow"><span><span class="ja">リサイクルを徹底</span><span class="en">Recycle thoroughly</span></span><span class="bar"><i style="width:8.3%;background:var(--faint)"></i></span><b class="num">~0.2</b></div>
+        <div class="mrow"><span><span class="ja">電球を替える</span><span class="en">Change lightbulbs</span></span><span class="bar"><i style="width:4.2%;background:var(--faint)"></i></span><b class="num">~0.1</b></div>
+      </div>
+      <p style="margin:14px 0 0"><span class="ja">正直に言うと、排出量の数字だけなら、車や飛行機をやめる方が大きいこともあります。でも、この比較には<b>①のメタンの速さも、②の土地の回復も入っていません</b>。そして食事は、車がない人も飛行機に乗らない人も、<b>誰もが毎日3回</b>選べる行動です。動物の命と自分の健康にも、同時に効きます。個人が今日からできることの中で、最も大きく、最も広く効く行動の一つです。</span><span class="en">Honestly, on emissions alone, giving up a car or flights can be bigger. But this comparison <b>leaves out ①’s speed and ②’s land recovery</b>. And eating is something <b>everyone chooses three times a day</b> — including people with no car who rarely fly. It helps animals and your own health at the same time. Of everything one person can start today, it is among the biggest and most far-reaching.</span></p>
+      <p class="small" style="margin:12px 0 0"><span class="ja">グラフは、1回の排出が大気に残る割合（CO₂：IPCC 第5次報告書のベルン炭素循環モデル、メタン：寿命11.8年、IPCC 第6次報告書）。メタンの「約80倍」は20年での温暖化係数（IPCC 第6次報告書）。リサイクルと電球は「植物性の食事の4分の1、8分の1」という論文の記述から換算しました。</span><span class="en">Chart: share of a single emission left in the air (CO₂: Bern carbon-cycle model as used in IPCC AR5; methane: 11.8-year lifetime, IPCC AR6). “About 80×” is methane’s 20-year warming potential (IPCC AR6). Recycling and lightbulbs are converted from the paper’s “4× and 8× less than a plant-based diet”.</span></p>
+    </div>
   </div>
 </section>
 
@@ -675,6 +725,10 @@
       <li><a href="https://www.su.se/english/news/articles/2025-10-03-global-food-transition-needed-to-reduce-pressure-on-the-planet-and-to-save-millions-of-lives-">Stockholm University (2025). Global food transition needed…</a>; <a href="https://www.stockholmresilience.org/research/research-stories/2025-10-03-eat-lancet-2025-global-food-transformation-needed-to-ease-pressure-on-the-planet-and-save-millions-of-lives.html">Stockholm Resilience Centre (2025)</a> <span class="use"><span class="ja">EAT–Lancet 2025：越えた7つの限界のうち5つで食料システムが主因（気候では2番目）、「安全で公正な範囲」は世界人口の約1%、赤身肉 約15 g/日（0〜30）・鶏肉 30 g（0〜60）、食料の排出を半分以上減らせる</span><span class="en">EAT–Lancet 2025: food drives 5 of 7 crossed boundaries (2nd for climate); ~1% in the safe and just space; red meat ~15 g/day (0–30), poultry 30 g (0–60); food emissions can be more than halved</span></span></li>
       <li><a href="https://doi.org/10.1126/science.aba7357">Clark, M.A. et al. (2020). Global food system emissions could preclude achieving the 1.5° and 2°C climate change targets. Science 370: 705–708</a> <span class="use"><span class="ja">化石燃料の排出をすぐ止めても、食料システムの傾向が続けば1.5℃は達成できず、2℃も危うい</span><span class="en">Even with fossil fuels halted, food-system trends rule out 1.5 °C and threaten 2 °C</span></span></li>
       <li><a href="https://doi.org/10.1038/s41586-018-0594-0">Springmann, M. et al. (2018). Options for keeping the food system within environmental limits. Nature 562: 519–525</a>; <a href="https://www.eurekalert.org/news-releases/917471">press release</a> <span class="use"><span class="ja">2010〜2050年に環境負荷50〜90%増、植物中心の食事への転換なしに気候変動は十分に抑えられない、転換で温室効果ガス半分以上減</span><span class="en">50–90% rise 2010–2050; climate can’t be sufficiently mitigated without more plant-based diets; diet shift cuts GHG by more than half</span></span></li>
+      <li><a href="https://www.unep.org/resources/report/global-methane-assessment-benefits-and-costs-mitigating-methane-emissions">UNEP &amp; CCAC (2021). Global Methane Assessment</a> <span class="use"><span class="ja">人間由来のメタンの約32%が家畜、45%削減で2040年代までに約0.3℃を回避</span><span class="en">Livestock ~32% of human methane; a 45% cut avoids ~0.3 °C by the 2040s</span></span></li>
+      <li><a href="https://doi.org/10.1038/s41893-020-00603-4">Hayek, M.N. et al. (2021). The carbon opportunity cost of animal-sourced food production on land. Nature Sustainability 4</a> <span class="use"><span class="ja">2050年までの植物性への移行で3,320〜5,470億 t CO₂を吸収、1.5℃の残りの排出枠の99〜163%</span><span class="en">332–547 Gt CO₂ sequestered by 2050; 99–163% of the 1.5 °C budget</span></span></li>
+      <li><a href="https://doi.org/10.1088/1748-9326/aa7541">Wynes, S. &amp; Nicholas, K.A. (2017). The climate mitigation gap. Environmental Research Letters 12: 074024</a> <span class="use"><span class="ja">車を持たない2.4、大西洋往復1回1.6、植物性の食事0.8 t CO₂e/年</span><span class="en">Car-free 2.4, one transatlantic round trip 1.6, plant-based diet 0.8 t CO₂e/yr</span></span></li>
+      <li><a href="https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/">IPCC AR6 WG1 第7章</a>; <a href="https://doi.org/10.5194/acp-13-2793-2013">Joos, F. et al. (2013). Atmos. Chem. Phys. 13: 2793–2825</a> <span class="use"><span class="ja">メタンの寿命11.8年、20年の温暖化係数 約80〜83；CO₂の残留曲線</span><span class="en">Methane lifetime 11.8 yr, GWP20 ~80–83; CO₂ impulse response</span></span></li>
       <li><a href="https://alic.go.jp/joho-c/joho05_003980.html">ALIC 畜産の情報（令和6年度 食料需給表 概算）</a> <span class="use"><span class="ja">1人1年あたり供給純食料：牛肉5.9 kg、豚肉13.2 kg、鶏肉14.9 kg（2024年度、農林水産省）</span><span class="en">Japan per-person net supply FY2024: beef 5.9, pork 13.2, chicken 14.9 kg/yr (MAFF)</span></span></li>
       <li><a href="https://doi.org/10.1016/j.jand.2016.09.025">Melina, V. et al. (2016). Position of the Academy of Nutrition and Dietetics: Vegetarian Diets. J Acad Nutr Diet 116: 1970–1980</a> <span class="use"><span class="ja">適切に計画されたヴィーガン食はすべての年代に適する</span><span class="en">Appropriately planned vegan diets suit all life stages</span></span></li>
       <li><a href="https://fooddb.mext.go.jp/">文部科学省 日本食品標準成分表（八訂）増補2023年（食品成分データベース）</a> <span class="use"><span class="ja">「これなら、できそう」の食品のたんぱく質（納豆16.5、木綿豆腐7.0、生揚げ10.7、凍り豆腐 乾50.5、粒状大豆たんぱく46.3、テンペ15.8 g/100 gなど）</span><span class="en">Protein values for all foods in “You can do this” (e.g. natto 16.5, firm tofu 7.0, koya tofu dry 50.5, textured soy protein 46.3 g/100 g)</span></span></li>
