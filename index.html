@@ -271,6 +271,18 @@
   .srcs ol { padding-left: 1.4em; font-size: 13.5px; color: #3c3e39; }
   .srcs li { margin: 8px 0; }
   .srcs li .use { display: block; color: var(--muted); font-size: 12.5px; }
+  /* sister site */
+  .sister { padding: 8px 0 56px; }
+  .sister a.card { display: flex; align-items: center; gap: 18px; padding: 22px 24px; border-radius: 18px; text-decoration: none; color: #ecebe7;
+    background: linear-gradient(135deg, #141614, #2a1614); border: 1px solid #3a2a26; box-shadow: 0 14px 34px -18px rgba(0,0,0,.55); transition: transform .15s; }
+  .sister a.card:hover { transform: translateY(-3px); }
+  .sister .dot { flex: none; width: 46px; height: 46px; border-radius: 50%; background: #e5483b; box-shadow: 0 0 0 6px rgba(229,72,59,.22); }
+  .sister .t { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .sister small { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #b9b7b0; font-weight: 700; }
+  .sister b { font-size: 20px; }
+  .sister .d { font-size: 14px; color: #cfcdc6; line-height: 1.6; }
+  .sister .go { margin-left: auto; flex: none; background: #e5483b; color: #fff; font-weight: 800; font-size: 14px; border-radius: 999px; padding: 10px 18px; white-space: nowrap; }
+  @media (max-width: 600px) { .sister a.card { flex-wrap: wrap; } .sister .go { margin-left: 0; } }
   footer { padding: 40px 0 60px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--faint); }
   .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s, transform .6s; }
   .reveal.in { opacity: 1; transform: none; }
@@ -636,11 +648,26 @@
   </div>
 </section>
 
+<!-- SISTER SITE -->
+<section class="sister">
+  <div class="wrap narrow">
+    <a class="card" href="https://tamorist.github.io/slow-war/" target="_blank" rel="noopener">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="t">
+        <small><span class="ja">姉妹サイト</span><span class="en">Sister site</span></small>
+        <b><span class="ja">静かな戦争</span><span class="en">The Slow War</span></b>
+        <span class="d"><span class="ja">いまのCO₂排出が「確定」させる未来の犠牲者を、戦争と比べて見るサイト。あなたの1日の排出を、国や世界の全員でかけ算することもできます。</span><span class="en">How today’s CO₂ emissions lock in future deaths, compared with history’s wars — and what your own day adds up to if everyone lived it.</span></span>
+      </span>
+      <span class="go"><span class="ja">サイトへ ↗</span><span class="en">Visit ↗</span></span>
+    </a>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <p style="margin:0 0 8px"><span class="ja">プライバシー：閲覧数の計測に <a href="https://www.goatcounter.com/">GoatCounter</a> を使っています。Cookie を使わず、個人を特定しません。計算機や献立で選んだ内容は、どこにも送信されません。</span><span class="en">Privacy: page views are counted with <a href="https://www.goatcounter.com/">GoatCounter</a>, which uses no cookies and does not identify visitors. Nothing you choose in the calculators is sent anywhere.</span></p>
-    <span class="ja">830億の理由 / Tatsuya Mori（@ttmori）· コード <a href="https://github.com/tamorist/83-billion">MIT</a>、コンテンツ <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · このページは医療上の助言ではありません。</span>
-    <span class="en">83 Billion Reasons / Tatsuya Mori (@ttmori) · Code <a href="https://github.com/tamorist/83-billion">MIT</a>, content <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Not medical advice.</span>
+    <span class="ja">830億の理由 / Tatsuya Mori（@ttmori）· コード <a href="https://github.com/tamorist/83-billion">MIT</a>、コンテンツ <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · このページは医療上の助言ではありません。 · 姉妹サイト：<a href="https://tamorist.github.io/slow-war/">静かな戦争 ↗</a></span>
+    <span class="en">83 Billion Reasons / Tatsuya Mori (@ttmori) · Code <a href="https://github.com/tamorist/83-billion">MIT</a>, content <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Not medical advice. · Sister site: <a href="https://tamorist.github.io/slow-war/">The Slow War ↗</a></span>
   </div>
 </footer>
 
