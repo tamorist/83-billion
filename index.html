@@ -38,8 +38,12 @@
   .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
   .narrow { max-width: 700px; }
   a { color: var(--green); }
-  section { padding: 88px 0; }
+  section { padding: 88px 0; scroll-margin-top: 52px; }
   .eyebrow { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; font-weight: 700; }
+  /* chapter labels (1 動物 / 2 地球 / 3 人) */
+  .chapter { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; font-size: 18px; font-weight: 900; color: color-mix(in srgb, var(--c) 78%, #000); letter-spacing: .04em; }
+  .chapter .cn { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--c); color: #fff; font-size: 16px; letter-spacing: 0; }
+  .chapter::after { content: ""; flex: 1; max-width: 120px; height: 2px; background: var(--c); opacity: .35; margin-left: 4px; }
   h2 { font-size: clamp(26px, 4.4vw, 40px); line-height: 1.35; margin: 0 0 18px; font-weight: 900; }
   h3 { font-size: 18px; margin: 0 0 8px; line-height: 1.5; }
   .lead { font-size: clamp(16px, 2.2vw, 18px); color: #3c3e39; margin: 0 0 12px; }
@@ -252,7 +256,7 @@
 <!-- ANIMALS -->
 <section id="animals" style="padding-top:24px">
   <div class="wrap">
-    <p class="eyebrow">1 · <span class="ja">動物</span><span class="en">Animals</span></p>
+    <p class="chapter" style="--c:var(--red)"><span class="cn num">1</span><span class="ja">動物</span><span class="en">Animals</span></p>
     <h2><span class="ja">数ではなく、一つひとつの命として。</span><span class="en">Not a number — each one a life.</span></h2>
     <p class="lead narrow"><span class="ja">鶏も豚も牛も、痛みや恐怖を感じ、仲間を見分け、遊びます。私たちが犬や猫に感じる「かわいそう」と、同じ感覚を持つ動物です。</span><span class="en">Chickens, pigs and cattle feel pain and fear, recognise companions and play. They feel what we know our dogs and cats feel.</span></p>
 
@@ -280,7 +284,7 @@
 <!-- PLANET -->
 <section id="planet" style="background:var(--bg2)">
   <div class="wrap">
-    <p class="eyebrow">2 · <span class="ja">地球</span><span class="en">Planet</span></p>
+    <p class="chapter" style="--c:var(--green)"><span class="cn num">2</span><span class="ja">地球</span><span class="en">Planet</span></p>
     <h2><span class="ja">地球の使い方として、あまりに効率が悪い。</span><span class="en">A strikingly inefficient way to use a planet.</span></h2>
     <p class="lead narrow"><span class="ja">動物に植物を食べさせて、その肉を食べる。この遠回りのせいで、畜産は土地・水・気候に大きな負担をかけています。</span><span class="en">We grow plants, feed them to animals, then eat the animals. That detour is why livestock weighs so heavily on land, water and climate.</span></p>
 
@@ -319,7 +323,7 @@
 <!-- PEOPLE -->
 <section id="people">
   <div class="wrap">
-    <p class="eyebrow">3 · <span class="ja">人</span><span class="en">People</span></p>
+    <p class="chapter" style="--c:var(--amber)"><span class="cn num">3</span><span class="ja">人</span><span class="en">People</span></p>
     <h2><span class="ja">肉をやめることは、自分を守ることでもある。</span><span class="en">Eating less meat also protects you.</span></h2>
     <div class="stats">
       <div class="reveal"><div class="v num" style="color:var(--red)">Group 1</div><div class="k"><span class="ja">加工肉（ハム・ベーコン・ソーセージ）は「ヒトに対して発がん性がある」</span><span class="en">Processed meat (ham, bacon, sausages) is “carcinogenic to humans”</span></div><div class="s"><span class="ja">WHO 国際がん研究機関（2015）。毎日50 gで大腸がんのリスクが約18%上がる（相対リスク）。赤身肉は「おそらく発がん性がある」（2A）</span><span class="en">WHO IARC (2015). Each daily 50 g raises colorectal-cancer risk by ~18% (relative). Red meat: “probably carcinogenic” (2A)</span></div></div>
