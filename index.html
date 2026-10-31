@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="ja" class="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>830億の理由 — 83 Billion Reasons</title>
+<meta name="author" content="Tatsuya Mori (@ttmori)">
+<meta name="description" content="毎年830億の動物が、食べるために殺されている。動物・地球・人の健康から、肉をやめる理由と、無理なく始める方法を一次資料とともに。83 billion land animals are killed for food every year — the evidence, and an easy way to start.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="830億の理由 — 83 Billion Reasons">
+<meta property="og:description" content="毎年830億の動物が、食べるために殺されている。あなたのお皿から、それを変えられる。">
+<meta property="og:site_name" content="83 Billion Reasons">
+<meta property="og:url" content="https://tamorist.github.io/83-billion/">
+<meta property="og:image" content="https://tamorist.github.io/83-billion/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="830億 — 毎年、食べるために殺される陸の動物 / 83 billion land animals killed for food every year">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@ttmori">
+<link rel="canonical" href="https://tamorist.github.io/83-billion/">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%232f6b4f'/%3E%3Cpath d='M16 25c-5-3-8-7-8-11a8 8 0 0 1 16 0c0 4-3 8-8 11z' fill='%23f6f2ea'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f2ea; --bg2: #fffdf8; --bg3: #ece6da; --ink: #1d1f1c; --muted: #6b6a63; --faint: #d9d2c4;
+    --green: #2f6b4f; --green2: #4f9a74; --red: #b8402f; --amber: #c98a1e; --dark: #141614;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.8; font-size: 16px;
+    font-family: Inter, "Noto Sans JP", -apple-system, "Hiragino Sans", sans-serif; -webkit-font-smoothing: antialiased; }
+  html.ja body { font-family: "Noto Sans JP", -apple-system, "Hiragino Sans", sans-serif; }
+  html.ja .en, html.en .ja { display: none !important; }
+  .num { font-family: Inter, -apple-system, sans-serif; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+  .serif { font-family: "Noto Serif JP", Georgia, serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  .narrow { max-width: 700px; }
+  a { color: var(--green); }
+  section { padding: 88px 0; }
+  .eyebrow { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; font-weight: 700; }
+  h2 { font-size: clamp(26px, 4.4vw, 40px); line-height: 1.35; margin: 0 0 18px; font-weight: 900; }
+  h3 { font-size: 18px; margin: 0 0 8px; line-height: 1.5; }
+  .lead { font-size: clamp(16px, 2.2vw, 18px); color: #3c3e39; margin: 0 0 12px; }
+  .small { font-size: 13px; color: var(--muted); }
+  .est { display: inline-block; font-size: 11px; font-weight: 700; color: var(--amber); border: 1px solid currentColor; border-radius: 4px; padding: 0 5px; margin-left: 4px; vertical-align: 2px; letter-spacing: .02em; }
+  sup a { text-decoration: none; font-size: 11px; color: var(--muted); }
+
+  /* top bar */
+  .top { position: sticky; top: 0; z-index: 10; background: rgba(246,242,234,.88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--faint); }
+  .top .wrap { display: flex; align-items: center; gap: 14px; height: 52px; font-size: 13px; }
+  .brand { font-weight: 900; text-decoration: none; color: var(--ink); white-space: nowrap; }
+  .nav { display: flex; gap: 14px; overflow-x: auto; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { color: var(--muted); text-decoration: none; white-space: nowrap; }
+  .nav a:hover { color: var(--ink); }
+  .lang { margin-left: auto; display: flex; border: 1px solid var(--faint); border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+  .lang button { font: inherit; font-size: 12px; background: transparent; color: var(--muted); border: 0; padding: 5px 10px; cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 700; }
+  @media (max-width: 640px) { .nav { display: none; } }
+
+  /* hero */
+  .hero { background: var(--dark); color: #efece4; padding: 96px 0 72px; }
+  .hero .q { font-size: clamp(28px, 5.6vw, 54px); line-height: 1.35; font-weight: 900; margin: 0 0 22px; }
+  .hero .q .hl { color: #8fcfa9; }
+  .hero p { color: #bdbab1; max-width: 640px; font-size: clamp(15px, 2.2vw, 18px); }
+  .counter { margin: 48px 0 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .counter > div { border: 1px solid #2c302b; border-radius: 16px; padding: 22px; background: #1b1e1a; }
+  .counter .k { font-size: 13px; color: #9d9a91; }
+  .counter .v { font-size: clamp(40px, 7vw, 64px); font-weight: 900; line-height: 1.1; color: #fff; margin: 6px 0 2px; }
+  .counter .s { font-size: 12px; color: #807d75; }
+  .hero .src { font-size: 12px; color: #807d75; margin-top: 10px; max-width: none; }
+  .hero .src a { color: #9d9a91; }
+  .scroll-cue { margin-top: 40px; display: inline-flex; gap: 8px; align-items: center; color: #efece4; text-decoration: none; font-weight: 700; border: 1px solid #3a3f39; border-radius: 999px; padding: 10px 18px; }
+  .scroll-cue:hover { background: #22261f; }
+
+  /* three reasons */
+  .reasons { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 32px; }
+  .reasons a { display: block; text-decoration: none; color: var(--ink); background: var(--bg2); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; border-top: 4px solid var(--c); transition: transform .15s; }
+  .reasons a:hover { transform: translateY(-2px); }
+  .reasons .ic { font-size: 28px; }
+  .reasons b { display: block; font-size: 19px; margin: 6px 0; }
+  .reasons p { margin: 0; font-size: 14px; color: var(--muted); }
+
+  /* stat grid */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 28px 0; }
+  .stats > div { background: var(--bg2); border: 1px solid var(--faint); border-radius: 14px; padding: 18px; }
+  .stats .v { font-size: 34px; font-weight: 900; line-height: 1.15; }
+  .stats .k { font-size: 14px; margin-top: 4px; }
+  .stats .s { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  /* lifespans */
+  .life { margin-top: 32px; background: var(--bg2); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; }
+  .lrow { display: grid; grid-template-columns: 120px 1fr; gap: 10px; align-items: center; margin: 14px 0; font-size: 14px; }
+  .lbar { position: relative; height: 22px; background: var(--bg3); border-radius: 6px; overflow: hidden; }
+  .lbar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--red); border-radius: 6px; min-width: 3px; }
+  .lbar em { position: absolute; right: 8px; top: 0; font-style: normal; font-size: 12px; color: var(--muted); line-height: 22px; }
+  .lrow .lab small { display: block; color: var(--muted); font-size: 11.5px; line-height: 1.3; }
+  @media (max-width: 520px) { .lrow { grid-template-columns: 1fr; gap: 4px; } }
+
+  /* compare chart */
+  .cmp { background: var(--bg2); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; margin-top: 28px; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .tabs button { font: inherit; font-size: 13px; background: var(--bg3); color: var(--ink); border: 1px solid var(--faint); border-radius: 999px; padding: 6px 13px; cursor: pointer; }
+  .tabs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 700; }
+  .crow { display: grid; grid-template-columns: 110px 1fr 84px; gap: 10px; align-items: center; padding: 5px 0; font-size: 14px; }
+  .crow .bar { height: 18px; background: var(--bg3); border-radius: 5px; overflow: hidden; }
+  .crow .bar i { display: block; height: 100%; border-radius: 5px; transition: width .4s; }
+  .crow .val { text-align: right; font-size: 13px; }
+  @media (max-width: 520px) { .crow { grid-template-columns: 82px 1fr 70px; gap: 6px; font-size: 13px; } }
+
+  /* share bars */
+  .shares { display: grid; gap: 14px; margin-top: 24px; }
+  .share .t { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; }
+  .share .t b { font-size: 20px; }
+  .sbar { height: 14px; border-radius: 7px; background: var(--bg3); overflow: hidden; margin-top: 4px; }
+  .sbar i { display: block; height: 100%; background: var(--green); }
+
+  .callout { background: var(--bg2); border-left: 4px solid var(--red); border-radius: 0 12px 12px 0; padding: 18px 20px; margin: 28px 0; }
+  .callout.g { border-left-color: var(--green); }
+  .callout .big { font-size: clamp(28px, 5vw, 42px); font-weight: 900; line-height: 1.2; color: var(--red); }
+  .callout.g .big { color: var(--green); }
+
+  .land { margin-top: 24px; }
+  .landbar { display: flex; height: 40px; border-radius: 8px; overflow: hidden; margin: 8px 0 4px; }
+  .landbar span { display: flex; align-items: center; padding-left: 8px; font-size: 12px; color: #fff; white-space: nowrap; overflow: hidden; }
+
+  /* calculator */
+  .calc { background: var(--dark); color: #efece4; }
+  .calc h2, .calc .lead { color: #efece4; }
+  .calc .lead { color: #bdbab1; }
+  .calc-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 28px; }
+  @media (min-width: 860px) { .calc-grid { grid-template-columns: 1fr 1fr; } }
+  .panel { background: #1b1e1a; border: 1px solid #2c302b; border-radius: 16px; padding: 22px; }
+  .srow { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: center; margin: 16px 0; }
+  .srow label { font-size: 15px; }
+  .srow output { font-size: 15px; font-weight: 700; }
+  .srow input { grid-column: 1 / -1; width: 100%; accent-color: #8fcfa9; }
+  .out .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 12px 0; border-bottom: 1px solid #2c302b; }
+  .out .row:last-child { border-bottom: 0; }
+  .out .row .k { font-size: 14px; color: #bdbab1; }
+  .out .row .v { font-size: 26px; font-weight: 900; text-align: right; }
+  .out .row .v small { display: block; font-size: 12px; font-weight: 400; color: #807d75; }
+  .yrs { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 8px; }
+  .yrs button { font: inherit; font-size: 12px; background: transparent; color: #bdbab1; border: 1px solid #3a3f39; border-radius: 999px; padding: 4px 11px; cursor: pointer; }
+  .yrs button[aria-pressed="true"] { background: #efece4; color: var(--dark); font-weight: 700; }
+  .animals { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 10px; font-size: 13px; line-height: 1; max-height: 210px; overflow: hidden; }
+  .calc .small { color: #807d75; }
+  .calc a { color: #8fcfa9; }
+  .big-msg { font-size: clamp(18px, 2.8vw, 22px); line-height: 1.6; margin: 24px 0 0; }
+  .big-msg b { color: #8fcfa9; }
+
+  /* faq */
+  details { background: var(--bg2); border: 1px solid var(--faint); border-radius: 12px; padding: 0 18px; margin: 10px 0; }
+  details summary { cursor: pointer; padding: 16px 0; font-weight: 700; list-style: none; position: relative; padding-right: 28px; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after { content: "+"; position: absolute; right: 0; top: 14px; font-size: 20px; color: var(--muted); }
+  details[open] summary::after { content: "−"; }
+  details .body { padding: 0 0 16px; font-size: 15px; color: #3c3e39; }
+  .protein { width: 100%; border-collapse: collapse; font-size: 14px; margin: 8px 0; }
+  .protein td { padding: 6px 4px; border-bottom: 1px solid var(--faint); }
+  .protein td:last-child { text-align: right; font-weight: 700; }
+
+  /* start */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 28px; }
+  .steps > div { background: var(--bg2); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; }
+  .steps .n { font-size: 13px; font-weight: 900; color: var(--green); letter-spacing: .1em; }
+  .steps p { margin: 6px 0 0; font-size: 14.5px; color: #3c3e39; }
+  .pledge { margin-top: 36px; text-align: center; background: var(--green); color: #fff; border-radius: 20px; padding: 40px 20px; }
+  .pledge h3 { font-size: clamp(22px, 3.6vw, 30px); margin-bottom: 10px; }
+  .pledge p { margin: 0 auto 20px; max-width: 560px; color: #e3f1e9; }
+  .btn { display: inline-block; font: inherit; font-weight: 700; text-decoration: none; border-radius: 999px; padding: 12px 22px; border: 0; cursor: pointer; margin: 4px; }
+  .btn.w { background: #fff; color: var(--green); }
+  .btn.o { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.6); }
+
+  /* honesty & sources */
+  .honest { background: var(--bg3); }
+  .honest ul { padding-left: 1.2em; }
+  .honest li { margin: 6px 0; }
+  .srcs ol { padding-left: 1.4em; font-size: 13.5px; color: #3c3e39; }
+  .srcs li { margin: 8px 0; }
+  .srcs li .use { display: block; color: var(--muted); font-size: 12.5px; }
+  footer { padding: 40px 0 60px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--faint); }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s, transform .6s; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><span class="ja">830億の理由</span><span class="en">83 Billion Reasons</span></a>
+    <nav class="nav">
+      <a href="#animals"><span class="ja">動物</span><span class="en">Animals</span></a>
+      <a href="#planet"><span class="ja">地球</span><span class="en">Planet</span></a>
+      <a href="#people"><span class="ja">人</span><span class="en">People</span></a>
+      <a href="#calc"><span class="ja">あなたのお皿</span><span class="en">Your plate</span></a>
+      <a href="#faq"><span class="ja">疑問</span><span class="en">Questions</span></a>
+      <a href="#start"><span class="ja">始め方</span><span class="en">Start</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="ja">日本語</button><button data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#807d75">83 Billion Reasons</p>
+    <h1 class="q serif">
+      <span class="ja">動物を苦しめたいと思ったことは、<br>たぶん一度もないはずです。<br><span class="hl">それでも、お皿の上では起きています。</span></span>
+      <span class="en">You have probably never wanted to hurt an animal.<br><span class="hl">Yet it happens on our plates.</span></span>
+    </h1>
+    <p>
+      <span class="ja">世界では毎年、約830億の陸の動物が食べるために殺されています。そのほとんどは鶏です。このページは、あなたを責めるためのものではありません。多くの人が大切にしている「動物にやさしく」「地球を守りたい」「健康でいたい」という気持ちと、毎日の食事をそろえるための材料です。数字にはすべて出典をつけ、私たちの概算にはそう書いています。</span>
+      <span class="en">Every year about 83 billion land animals are killed for food — most of them chickens. This page is not here to blame you. It is here to help line up what most of us already value — kindness to animals, a liveable planet, our own health — with what we eat every day. Every number is sourced, and our own estimates are labelled as such.</span>
+    </p>
+    <div class="counter">
+      <div>
+        <div class="k"><span class="ja">このページを開いてから、世界で殺された陸の動物</span><span class="en">Land animals killed for food worldwide since you opened this page</span></div>
+        <div class="v num" id="cWorld">0</div>
+        <div class="s"><span class="ja">1秒に約2,600匹（魚を含まない）</span><span class="en">About 2,600 a second (fish not included)</span></div>
+      </div>
+      <div>
+        <div class="k"><span class="ja">同じ時間に、日本国内で</span><span class="en">In the same time, in Japan</span></div>
+        <div class="v num" id="cJapan">0</div>
+        <div class="s"><span class="ja">1秒に約27羽・頭（国内の処理数。輸入肉・魚を含まない）</span><span class="en">About 27 a second (domestic slaughter only; no imports, no fish)</span></div>
+      </div>
+    </div>
+    <p class="src"><span class="ja">世界：FAO（Our World in Data、2022年 830億）。日本：農林水産省 食鳥流通統計（2024年）・食肉流通統計（牛2023年度、豚2024年度）。1年を秒で割った平均です。</span><span class="en">World: FAO via Our World in Data (83 billion in 2022). Japan: MAFF poultry (2024) and meat (cattle FY2023, pigs FY2024) statistics. Annual totals divided evenly over the year.</span> <a href="#sources">→ <span class="ja">出典</span><span class="en">Sources</span></a></p>
+    <a class="scroll-cue" href="#why"><span class="ja">3つの理由を見る</span><span class="en">See the three reasons</span> ↓</a>
+  </div>
+</header>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <p class="eyebrow"><span class="ja">なぜ、いま</span><span class="en">Why now</span></p>
+    <h2><span class="ja">理由は、ひとつではありません。</span><span class="en">There isn’t just one reason.</span></h2>
+    <p class="lead narrow"><span class="ja">動物のため、地球のため、自分と家族のため。どの入り口からでも、行き着く答えは同じ「植物中心の食事」です。</span><span class="en">For animals, for the planet, for yourself and your family. Whichever door you come in by, the answer is the same: eat mainly plants.</span></p>
+    <div class="reasons">
+      <a href="#animals" style="--c:var(--red)"><span class="ic">🐔</span><b><span class="ja">動物</span><span class="en">Animals</span></b><p><span class="ja">年830億。日本の肉用の鶏は生まれて3か月たたずに。</span><span class="en">83 billion a year. Japan’s meat chickens are killed before they are three months old.</span></p></a>
+      <a href="#planet" style="--c:var(--green)"><span class="ic">🌏</span><b><span class="ja">地球</span><span class="en">Planet</span></b><p><span class="ja">農地の約4分の3を使って、カロリーの18%。熱帯の森林破壊の最大の原因は牛の牧草地。</span><span class="en">About three-quarters of farmland for 18% of our calories. Cattle pasture is the biggest driver of tropical deforestation.</span></p></a>
+      <a href="#people" style="--c:var(--amber)"><span class="ic">🫀</span><b><span class="ja">人</span><span class="en">People</span></b><p><span class="ja">加工肉はがんの原因（WHO）。新しい感染症の4つに3つは動物から。</span><span class="en">Processed meat causes cancer (WHO). Three in four new infectious diseases come from animals.</span></p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ANIMALS -->
+<section id="animals" style="padding-top:24px">
+  <div class="wrap">
+    <p class="eyebrow">1 · <span class="ja">動物</span><span class="en">Animals</span></p>
+    <h2><span class="ja">数ではなく、一つひとつの命として。</span><span class="en">Not a number — each one a life.</span></h2>
+    <p class="lead narrow"><span class="ja">鶏も豚も牛も、痛みや恐怖を感じ、仲間を見分け、遊びます。私たちが犬や猫に感じる「かわいそう」と、同じ感覚を持つ動物です。</span><span class="en">Chickens, pigs and cattle feel pain and fear, recognise companions and play. They feel what we know our dogs and cats feel.</span></p>
+
+    <div class="stats">
+      <div><div class="v num"><span class="ja">830億</span><span class="en">83 bn</span></div><div class="k"><span class="ja">世界で1年に殺される陸の動物</span><span class="en">land animals killed a year worldwide</span></div><div class="s"><span class="ja">2022年。大多数は鶏。卵の生産で殺されるオスのひよこなどは含まない</span><span class="en">2022. Mostly chickens. Excludes e.g. male chicks killed by the egg industry</span></div></div>
+      <div><div class="v num"><span class="ja">1兆匹超</span><span class="en">1 trillion+</span></div><div class="k"><span class="ja">1年にとられる野生の魚（推計）</span><span class="en">wild fish caught a year (estimate)</span></div><div class="s"><span class="ja">推計で1.1〜2.2兆匹。漁獲量（重さ）から数を推計したもの</span><span class="en">Estimated 1.1–2.2 trillion, from catch weight</span></div></div>
+      <div><div class="v num"><span class="ja">約8.3億</span><span class="en">~830 m</span></div><div class="k"><span class="ja">日本で1年に処理される鶏</span><span class="en">chickens slaughtered a year in Japan</span></div><div class="s"><span class="ja">肉用若鶏7.49億羽＋卵を産み終えた鶏など約0.79億羽（2024年）</span><span class="en">749 m meat chickens + ~79 m spent hens and others (2024)</span></div></div>
+      <div><div class="v num"><span class="ja">約1,700万</span><span class="en">~17 m</span></div><div class="k"><span class="ja">日本で1年に処理される豚と牛</span><span class="en">pigs and cattle slaughtered a year in Japan</span></div><div class="s"><span class="ja">豚 約1,615万頭（2024年度）、牛 約109万頭（2023年度）</span><span class="en">Pigs ~16.15 m (FY2024), cattle ~1.09 m (FY2023)</span></div></div>
+    </div>
+
+    <div class="life reveal">
+      <h3><span class="ja">生きられるはずの時間と、実際の時間</span><span class="en">The life they could live — and the life they get</span></h3>
+      <p class="small" style="margin:0"><span class="ja">赤い部分が、肉になるまでのおおよその期間。灰色の帯全体が、本来の寿命のおおよその目安です（幅があります）。</span><span class="en">Red: roughly how long they live before slaughter. The full grey bar: a rough natural lifespan (it varies).</span></p>
+      <div id="lifeRows"></div>
+      <p class="small"><span class="ja">肉用若鶏は「ふ化後3か月未満」の鶏（農林水産省の定義）で、実際には約7週で出荷されるのが一般的です。寿命・出荷時期は種類や飼い方で変わる概数です。</span><span class="en">In Japan’s statistics a “meat chicken” is under three months old (MAFF definition); in practice most are sent to slaughter at about seven weeks. Lifespans and slaughter ages are rough and vary by breed and system.</span><span class="est"><span class="ja">概数</span><span class="en">approx.</span></span></p>
+    </div>
+
+    <div class="callout reveal">
+      <div class="big num"><span class="ja">鶏は、牛の約170倍</span><span class="en">Chicken: ~170× the animals</span></div>
+      <p style="margin:6px 0 0"><span class="ja">同じ1 kgの肉を得るのに必要な動物の数。牛1頭からは約220 kg、鶏1羽からは約1.3 kgの肉しかとれません。牛から鶏に替えると温室効果ガスは減りますが、<b>苦しむ動物の数は大きく増えます</b>。どちらも解決するのは植物性のたんぱく質です。</span><span class="en">The number of animals needed for the same 1 kg of meat. A steer yields about 220 kg, a broiler about 1.3 kg. Switching from beef to chicken cuts emissions, but <b>multiplies the animals who suffer</b>. Plant protein solves both.</span><span class="est"><span class="ja">私たちの概算</span><span class="en">our estimate</span></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- PLANET -->
+<section id="planet" style="background:var(--bg2)">
+  <div class="wrap">
+    <p class="eyebrow">2 · <span class="ja">地球</span><span class="en">Planet</span></p>
+    <h2><span class="ja">地球の使い方として、あまりに効率が悪い。</span><span class="en">A strikingly inefficient way to use a planet.</span></h2>
+    <p class="lead narrow"><span class="ja">動物に植物を食べさせて、その肉を食べる。この遠回りのせいで、畜産は土地・水・気候に大きな負担をかけています。</span><span class="en">We grow plants, feed them to animals, then eat the animals. That detour is why livestock weighs so heavily on land, water and climate.</span></p>
+
+    <div class="shares reveal">
+      <div class="share"><div class="t"><span><span class="ja">家畜（牧草地＋飼料畑）が使う農地</span><span class="en">Farmland used by livestock (pasture + feed crops)</span></span><b class="num">77%</b></div><div class="sbar"><i style="width:77%;background:var(--red)"></i></div></div>
+      <div class="share"><div class="t"><span><span class="ja">……なのに世界のカロリーへの貢献</span><span class="en">…yet their share of the world’s calories</span></span><b class="num">18%</b></div><div class="sbar"><i style="width:18%"></i></div></div>
+      <div class="share"><div class="t"><span><span class="ja">たんぱく質への貢献</span><span class="en">and of its protein</span></span><b class="num">37%</b></div><div class="sbar"><i style="width:37%"></i></div></div>
+      <div class="share"><div class="t"><span><span class="ja">熱帯の森林破壊のうち、牛の牧草地が原因の割合</span><span class="en">Tropical deforestation driven by cattle pasture</span></span><b class="num">41%</b></div><div class="sbar"><i style="width:41%;background:var(--amber)"></i></div></div>
+    </div>
+    <p class="small"><span class="ja">農地・カロリー・たんぱく質：Poore &amp; Nemecek 2018（Our World in Data）。森林破壊：Pendrill ら 2019（2010〜2014年平均）。飼料用の大豆やとうもろこしの畑は「油糧作物」「穀物」に含まれるため、家畜の本当の割合はこれより大きくなります。</span><span class="en">Farmland, calories, protein: Poore &amp; Nemecek 2018 (Our World in Data). Deforestation: Pendrill et al. 2019 (2010–2014 average). Feed soy and maize sit in the “oilseeds” and “cereals” categories, so livestock’s true share is larger.</span></p>
+
+    <div class="cmp reveal">
+      <h3><span class="ja">たんぱく質100 gあたりで比べる</span><span class="en">Compared per 100 g of protein</span></h3>
+      <div class="tabs" id="cmpTabs"></div>
+      <div id="cmpRows"></div>
+      <p class="small" id="cmpNote"></p>
+    </div>
+
+    <div class="callout reveal">
+      <div class="big num"><span class="ja">年 約200万人</span><span class="en">~2 million a year</span></div>
+      <p style="margin:6px 0 0"><span class="ja">動物性食品の温室効果ガスが、毎年「確定」させている将来の死者の数。食べ物の温室効果ガス（年137億 t CO₂e）のうち、少なくとも53%が畜産・漁業、飼料、牧草地のための土地利用から来ています（約73億 t）。これを「1,000トン・ルール」（炭素1,000 t＝CO₂ 3,664 tで将来の死者1人）で換算しました。ありうる幅は約60万〜600万人で、死は今後1〜2世紀にわたって起こります。</span><span class="en">Future deaths locked in each year by the greenhouse gases from animal foods. Of food’s 13.7 bn t CO₂e a year, at least 53% comes from livestock and fisheries, feed crops and land use for livestock (~7.3 bn t). We converted this with the “1,000-ton rule” (1,000 t of carbon = 3,664 t CO₂ per future death). Likely range ~0.6–6 million; the deaths unfold over one to two centuries.</span><span class="est"><span class="ja">私たちの概算</span><span class="en">our estimate</span></span> <a href="https://tamorist.github.io/slow-war/"><span class="ja">→ 静かな戦争（計算方法）</span><span class="en">→ The Slow War (method)</span></a></p>
+    </div>
+
+    <div class="land reveal">
+      <h3><span class="ja">世界中が植物性の食事になったら</span><span class="en">If the whole world ate plant-based</span></h3>
+      <p class="small" style="margin:0"><span class="ja">必要な農地（億 ha）。Poore &amp; Nemecek 2018 をもとにした Our World in Data の推計。</span><span class="en">Farmland needed (billion ha). Our World in Data, based on Poore &amp; Nemecek 2018.</span></p>
+      <div class="small" style="margin-top:12px"><span class="ja">いま</span><span class="en">Today</span> — <b class="num">41.3</b></div>
+      <div class="landbar"><span style="width:17%;background:var(--green2)"><span class="ja">食用の畑</span><span class="en">Food crops</span></span><span style="width:13%;background:var(--amber)"><span class="ja">飼料</span><span class="en">Feed</span></span><span style="width:70%;background:var(--red)"><span class="ja">牧草地</span><span class="en">Pasture</span></span></div>
+      <div class="small" style="margin-top:12px"><span class="ja">植物性の食事</span><span class="en">Plant-based</span> — <b class="num">10.0</b></div>
+      <div class="landbar" style="width:24.2%"><span style="width:100%;background:var(--green2)"></span></div>
+      <p style="margin-top:14px"><span class="ja">約<b class="num">31億 ha</b>、<b>日本の約82倍、アフリカ大陸ほど</b>の土地が森や草原に戻せます。戻った森はCO₂を吸い、失われた生き物の住みかになります。</span><span class="en">About <b class="num">3.1 billion ha</b> — <b>roughly the size of Africa</b> — could return to forest and grassland, drawing down CO₂ and giving wildlife back its home.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- PEOPLE -->
+<section id="people">
+  <div class="wrap">
+    <p class="eyebrow">3 · <span class="ja">人</span><span class="en">People</span></p>
+    <h2><span class="ja">肉をやめることは、自分を守ることでもある。</span><span class="en">Eating less meat also protects you.</span></h2>
+    <div class="stats">
+      <div class="reveal"><div class="v num" style="color:var(--red)">Group 1</div><div class="k"><span class="ja">加工肉（ハム・ベーコン・ソーセージ）は「ヒトに対して発がん性がある」</span><span class="en">Processed meat (ham, bacon, sausages) is “carcinogenic to humans”</span></div><div class="s"><span class="ja">WHO 国際がん研究機関（2015）。毎日50 gで大腸がんのリスクが約18%上がる（相対リスク）。赤身肉は「おそらく発がん性がある」（2A）</span><span class="en">WHO IARC (2015). Each daily 50 g raises colorectal-cancer risk by ~18% (relative). Red meat: “probably carcinogenic” (2A)</span></div></div>
+      <div class="reveal"><div class="v num" style="color:var(--amber)"><span class="ja">4つに3つ</span><span class="en">3 in 4</span></div><div class="k"><span class="ja">新しく現れる感染症のうち、動物から来るもの</span><span class="en">new or emerging human infections that come from animals</span></div><div class="s"><span class="ja">米国CDC。鳥インフルエンザのように、密集した飼育は病原体が変異・拡大する場になりえます</span><span class="en">US CDC. Crowded farming, as with bird flu, can let pathogens spread and mutate</span></div></div>
+      <div class="reveal"><div class="v num"><span class="ja">約10万 t</span><span class="en">~100,000 t</span></div><div class="k"><span class="ja">家畜に使われる抗菌薬（2020年、世界）</span><span class="en">antimicrobials used in food animals (2020, world)</span></div><div class="s"><span class="ja">2030年までにさらに8%増える見込み（Mulchandani ら 2023）。薬の効かない耐性菌を生む原因の一つ</span><span class="en">Projected to rise 8% by 2030 (Mulchandani et al. 2023) — one driver of drug-resistant infections</span></div></div>
+      <div class="reveal"><div class="v num" style="color:var(--green)"><span class="ja">年1,500万人</span><span class="en">15 m a year</span></div><div class="k"><span class="ja">植物中心の健康な食事への転換で防げる早すぎる死</span><span class="en">premature deaths that a shift to healthy, mostly-plant diets could prevent</span></div><div class="s"><span class="ja">EAT–Lancet 委員会（2025）。肉だけでなく食事全体の改善による効果です</span><span class="en">EAT–Lancet Commission (2025). From improving whole diets, not meat alone</span></div></div>
+    </div>
+    <p class="small narrow"><span class="ja">米国栄養士会（Academy of Nutrition and Dietetics）は、「適切に計画された」ヴィーガンの食事は、妊娠期・乳幼児期・高齢期を含むすべての年代で健康的で栄養的に十分だとしています。ただし<b>ビタミンB12はサプリメントか強化食品でとる必要があります</b>（下の「よくある疑問」）。</span><span class="en">The Academy of Nutrition and Dietetics states that “appropriately planned” vegan diets are healthful and nutritionally adequate for all stages of life, including pregnancy, infancy and older age. <b>Vitamin B12 must come from a supplement or fortified foods</b> (see the questions below).</span></p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calc" class="calc">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#807d75"><span class="ja">あなたのお皿</span><span class="en">Your plate</span></p>
+    <h2><span class="ja">あなたが替えると、何が変わる？</span><span class="en">What changes if you switch?</span></h2>
+    <p class="lead narrow"><span class="ja">1週間に肉や魚がメインの食事が何回あるかを選んでください。それを豆腐や豆に替えたときの違いを計算します（1食の主菜 肉・魚120 g、豆腐150 g）。</span><span class="en">How many meals a week have meat or fish as the main dish? We compare them with the same meals made with tofu or beans (120 g meat/fish vs 150 g tofu per meal).</span></p>
+    <div class="calc-grid">
+      <div class="panel" id="sliders"></div>
+      <div class="panel out">
+        <div class="small" style="margin-bottom:4px"><span class="ja">期間</span><span class="en">Period</span></div>
+        <div class="yrs" id="yrs"></div>
+        <div class="row"><span class="k"><span class="ja">救える動物</span><span class="en">Animals spared</span></span><span class="v num" id="oAnimals"></span></div>
+        <div class="animals" id="oDots" aria-hidden="true"></div>
+        <div class="row"><span class="k"><span class="ja">減らせる温室効果ガス</span><span class="en">Greenhouse gases avoided</span></span><span class="v num" id="oGhg"></span></div>
+        <div class="row"><span class="k"><span class="ja">空く土地</span><span class="en">Land freed</span></span><span class="v num" id="oLand"></span></div>
+        <div class="row"><span class="k"><span class="ja">節約できる水</span><span class="en">Fresh water saved</span></span><span class="v num" id="oWater"></span></div>
+      </div>
+    </div>
+    <p class="big-msg" id="oMsg"></p>
+    <p class="small"><span class="ja">食材ごとの値は Poore &amp; Nemecek 2018 の世界平均（Our World in Data）。動物の数は可食部（牛 約220 kg、豚 約80 kg、鶏 約1.3 kg）からの概算で、魚は数えていません。将来の死者は1,000トン・ルールの中央値（ありうる幅 約0.3〜3倍）。</span><span class="en">Food values: Poore &amp; Nemecek 2018 global averages (Our World in Data). Animal counts are estimated from edible meat per animal (beef ~220 kg, pork ~80 kg, chicken ~1.3 kg); fish are not counted. Future deaths use the 1,000-ton rule central value (likely range ~0.3–3×).</span><span class="est"><span class="ja">私たちの概算</span><span class="en">our estimate</span></span></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap narrow">
+    <p class="eyebrow"><span class="ja">よくある疑問</span><span class="en">Common questions</span></p>
+    <h2><span class="ja">気になるのは、当然です。</span><span class="en">Fair questions.</span></h2>
+
+    <details><summary><span class="ja">たんぱく質は足りるの？</span><span class="en">Will I get enough protein?</span></summary><div class="body">
+      <p><span class="ja">足ります。とくに日本は大豆の国です。可食部100 gあたりのたんぱく質（日本食品標準成分表 八訂）：</span><span class="en">Yes. Soy foods, beans, lentils, nuts and grains add up quickly. Protein per 100 g (Japan’s Standard Tables of Food Composition, 8th ed.):</span></p>
+      <table class="protein">
+        <tr><td><span class="ja">糸引き納豆</span><span class="en">Natto</span></td><td class="num">16.5 g</td></tr>
+        <tr><td><span class="ja">木綿豆腐</span><span class="en">Firm tofu</span></td><td class="num">7.0 g</td></tr>
+        <tr><td><span class="ja">スパゲッティ（ゆで）</span><span class="en">Spaghetti (boiled)</span></td><td class="num">5.8 g</td></tr>
+        <tr><td><span class="ja">中華めん（ゆで）</span><span class="en">Chinese noodles (boiled)</span></td><td class="num">4.9 g</td></tr>
+      </table>
+      <p><span class="ja">納豆1パック（45 g）＋木綿豆腐150 g＋ラーメン1玉（ゆで200 g）で約28 g。牛肉の主菜120 g（約24 g）より多くなります。</span><span class="en">One pack of natto (45 g) + 150 g firm tofu + one serving of noodles (200 g boiled) ≈ 28 g — more than a 120 g beef main (~24 g).</span><span class="est"><span class="ja">私たちの概算</span><span class="en">our estimate</span></span></p>
+    </div></details>
+
+    <details><summary><span class="ja">栄養で気をつけることは？</span><span class="en">What should I watch nutritionally?</span></summary><div class="body">
+      <p><span class="ja"><b>ビタミンB12</b>は植物からはほぼとれないので、サプリメントか強化食品（一部の豆乳・シリアルなど）でとってください。これは大切な注意点です。そのほか、カルシウム、ビタミンD、ヨウ素、オメガ3脂肪酸、鉄、亜鉛も意識すると安心です。持病がある方、妊娠中の方、お子さんの食事を変える場合は、医師や管理栄養士に相談してください。</span><span class="en"><b>Vitamin B12</b> is essentially absent from plants: take a supplement or fortified foods (some plant milks, cereals). This matters. Also keep an eye on calcium, vitamin D, iodine, omega-3s, iron and zinc. If you have a health condition, are pregnant, or are changing a child’s diet, talk to a doctor or dietitian.</span></p>
+    </div></details>
+
+    <details><summary><span class="ja">鶏肉や魚に替えればいいのでは？</span><span class="en">Isn’t chicken or fish good enough?</span></summary><div class="body">
+      <p><span class="ja">牛肉よりは温室効果ガスが減ります。でも、たんぱく質あたりで比べると、鶏肉は植物性（豆腐）の約3倍の温室効果ガスを出し、牛の約170倍の動物の命を使います。魚は、養殖のえさや海の乱獲、混獲の問題があり、数の上では最も多くの命が失われています。上の比較グラフで確かめてみてください。</span><span class="en">They cut emissions compared with beef. But per gram of protein, chicken still emits about 3× as much as tofu and uses ~170× as many animals as beef. Fish bring feed, overfishing and bycatch problems, and by number they are the largest loss of life of all. Check the comparison chart above.</span></p>
+    </div></details>
+
+    <details><summary><span class="ja">一人がやめても、何も変わらないのでは？</span><span class="en">Does one person really make a difference?</span></summary><div class="body">
+      <p><span class="ja">肉は「注文」に合わせて生産されます。一人の選択は一回ごとには小さく見えても、一生では数百の動物になります（上の計算）。そして、あなたの食卓を見た家族や友人も変わります。日本の1人あたりの肉の消費は1961年の約7 kgから2022年の約60 kgへ増えました。食べ方は、数十年で大きく変わるものです。逆向きにも変えられます。</span><span class="en">Meat is produced to meet demand. One choice looks small, but over a lifetime it adds up to hundreds of animals (see the calculator). And people around your table change too. Japan’s meat supply rose from about 7 kg per person in 1961 to about 60 kg in 2022 — diets change a lot within decades, and they can change back.</span></p>
+    </div></details>
+
+    <details><summary><span class="ja">肉をやめると、畜産で働く人はどうなるの？</span><span class="en">What about people who work in livestock farming?</span></summary><div class="body">
+      <p><span class="ja">大切な問いです。ここで言う「畜産をなくす」は、働く人を責めることではなく、時間をかけた公正な移行です。補助金を豆・野菜・植物性食品の生産へ移し、農家の転換を支える政策が必要です。食べる人が増えれば、新しい仕事もそこに生まれます。</span><span class="en">An important question. Ending animal farming here means a fair, gradual transition — not blaming farmers. Subsidies can shift toward beans, vegetables and plant-based foods, with support for farmers who switch. As demand grows, so do the jobs.</span></p>
+    </div></details>
+
+    <details><summary><span class="ja">昔から人は肉を食べてきたのでは？</span><span class="en">Haven’t humans always eaten meat?</span></summary><div class="body">
+      <p><span class="ja">食べてきました。でも、830億という規模も、狭い場所で大量に育てる工場式の畜産も、ごく最近のものです。世界の肉の生産は1975年の1.16億 tから2023年の3.67億 tへと、人口の伸び（約2倍）を大きく上回って増えました。日本でも、肉をほとんど食べない時代が長く続きました。</span><span class="en">We have. But the scale of 83 billion, and factory farming itself, are very recent. World meat production grew from 116 m t in 1975 to 367 m t in 2023 — far faster than population, which roughly doubled. Japan, too, ate very little meat for much of its history.</span></p>
+    </div></details>
+  </div>
+</section>
+
+<!-- START -->
+<section id="start" style="background:var(--bg2)">
+  <div class="wrap">
+    <p class="eyebrow"><span class="ja">今日から</span><span class="en">Starting today</span></p>
+    <h2><span class="ja">完璧でなくていい。次の一食から。</span><span class="en">It doesn’t have to be perfect. Start with your next meal.</span></h2>
+    <div class="steps">
+      <div><div class="n">STEP 1</div><h3><span class="ja">好きな植物性の料理を3つ決める</span><span class="en">Pick three plant-based dishes you already like</span></h3><p><span class="ja">麻婆豆腐（豆腐と大豆ミートで）、野菜カレー、納豆ごはんとみそ汁。日本の家庭料理には、すでに答えがたくさんあります。</span><span class="en">Bean chili, vegetable curry, pasta with lentil sauce, stir-fried tofu. You probably eat some already.</span></p></div>
+      <div><div class="n">STEP 2</div><h3><span class="ja">まず牛肉と加工肉から</span><span class="en">Start with beef and processed meat</span></h3><p><span class="ja">気候と健康への影響が最も大きいものから。ただし鶏肉に置き換えるのではなく、豆・大豆に置き換えるのがポイントです。</span><span class="en">They have the biggest climate and health impact. The key: replace them with beans and soy, not chicken.</span></p></div>
+      <div><div class="n">STEP 3</div><h3><span class="ja">3週間、続けてみる</span><span class="en">Try it for three weeks</span></h3><p><span class="ja">味覚と習慣は、数週間で慣れていきます。B12のサプリメントも、このときから。</span><span class="en">Tastes and habits adjust within weeks. Start B12 from day one.</span></p></div>
+      <div><div class="n">STEP 4</div><h3><span class="ja">一人で抱えない</span><span class="en">Don’t do it alone</span></h3><p><span class="ja">家族や友人と一緒に。学校・職場の食堂に植物性メニューを頼むことは、一人の食事よりずっと大きな変化を生みます。</span><span class="en">Bring family or friends. Asking your school or workplace canteen for plant-based options changes far more than one plate.</span></p></div>
+    </div>
+    <div class="pledge">
+      <h3><span class="ja">次の一食を、植物性に。</span><span class="en">Make your next meal plant-based.</span></h3>
+      <p><span class="ja">このページをだれか一人に送ることも、830億を減らす一歩です。</span><span class="en">Sending this page to one person is also a step toward fewer than 83 billion.</span></p>
+      <a class="btn w" id="shareX" target="_blank" rel="noopener"><span class="ja">X でシェア</span><span class="en">Share on X</span></a>
+      <button class="btn o" id="copyLink"><span class="ja">リンクをコピー</span><span class="en">Copy link</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- HONESTY -->
+<section class="honest">
+  <div class="wrap narrow">
+    <p class="eyebrow"><span class="ja">このページについて</span><span class="en">About this page</span></p>
+    <h2 style="font-size:24px"><span class="ja">誇張しないこと</span><span class="en">What we don’t overstate</span></h2>
+    <ul>
+      <li><span class="ja">「将来の死者」は1,000トン・ルール（Parncutt 2019、Pearce &amp; Parncutt 2023）による概算で、ありうる幅は中央値の約0.3〜3倍です。予言ではなく、規模をつかむための目安です。</span><span class="en">“Future deaths” are estimates from the 1,000-ton rule (Parncutt 2019; Pearce &amp; Parncutt 2023), likely range ~0.3–3× the central value — a sense of scale, not a prediction.</span></li>
+      <li><span class="ja">食材ごとの環境負荷は世界平均で、産地や育て方で大きく変わります。とくに牛肉は幅が広く、それでも最も負荷の低い牛肉が、豆類の平均を大きく上回ります（Poore &amp; Nemecek 2018）。</span><span class="en">Food footprints are global averages and vary by producer. Beef varies most — but even the lowest-impact beef far exceeds the average for pulses (Poore &amp; Nemecek 2018).</span></li>
+      <li><span class="ja">EAT–Lancet の「プラネタリー・ヘルス・ダイエット」はヴィーガンではなく、少量の動物性食品を含みます。このページは、動物の命を理由に、さらに一歩進むことを提案しています。</span><span class="en">The EAT–Lancet “planetary health diet” is not vegan; it includes small amounts of animal foods. This page proposes going one step further, for the animals’ sake.</span></li>
+      <li><span class="ja">健康への影響は量や食事全体で変わります。加工肉の「18%」は相対リスクで、個人の絶対的なリスクは小さいとIARCも述べています。</span><span class="en">Health effects depend on amounts and the whole diet. The 18% for processed meat is a relative risk; IARC notes the absolute risk for an individual is small.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section id="sources" class="srcs" style="padding-top:56px">
+  <div class="wrap narrow">
+    <p class="eyebrow"><span class="ja">出典</span><span class="en">Sources</span></p>
+    <ol>
+      <li><a href="https://ourworldindata.org/data-insights/billions-of-chickens-ducks-and-pigs-are-slaughtered-for-meat-every-year">Our World in Data (2024). Billions of chickens, ducks and pigs are slaughtered for meat every year</a> (FAO) <span class="use"><span class="ja">世界の陸の動物 830億（2022年）、大多数は鶏、オスのひよこなどを含まない</span><span class="en">83 bn land animals (2022), mostly chickens, excludes male chicks etc.</span></span></li>
+      <li><a href="https://doi.org/10.1017/awf.2024.7">Mood, A. &amp; Brooke, P. (2024). Estimating global numbers of fishes caught from the wild annually from 2000 to 2019. Animal Welfare 33: e6</a> <span class="use"><span class="ja">野生の魚 年1.1〜2.2兆匹（2000〜2019年の平均、FAOの漁獲量から推計。違法漁業・投棄は含まない）</span><span class="en">1.1–2.2 trillion wild fish a year (2000–2019 average, estimated from FAO catch; excludes illegal catch and discards)</span></span></li>
+      <li><a href="https://www.maff.go.jp/j/tokei/kouhyou/tikusan_ryutu/gaiyou/">農林水産省 畜産物流通調査 食鳥流通統計調査（令和6年）</a> <span class="use"><span class="ja">肉用若鶏 7億4,913万羽、廃鶏 7,775万羽、その他 117万羽。「肉用若鶏＝ふ化後3か月齢未満」</span><span class="en">Japan poultry slaughter 2024; “meat chicken” = under 3 months</span></span></li>
+      <li><a href="https://alic.go.jp/joho-c/joho05_003288.html">ALIC 畜産の情報（令和5年度 食肉流通統計）</a>・<a href="https://alic.go.jp/joho-c/joho05_003804.html">（令和6年度）</a> <span class="use"><span class="ja">牛 約109万頭（2023年度：和牛51.4万＋交雑26.1万＋乳牛31.3万）、豚 1,615万頭（2024年度）</span><span class="en">Japan cattle ~1.09 m (FY2023), pigs 16.15 m (FY2024)</span></span></li>
+      <li><a href="https://doi.org/10.1126/science.aaq0216">Poore, J. &amp; Nemecek, T. (2018). Reducing food’s environmental impacts through producers and consumers. Science 360: 987–992</a>; <a href="https://ourworldindata.org/environmental-impacts-of-food">Our World in Data: Environmental impacts of food</a> <span class="use"><span class="ja">食材別の温室効果ガス・土地・水・富栄養化、農地77%でカロリー18%・たんぱく質37%、食の排出の内訳（畜産・漁業31%＋家畜の土地利用16%＋飼料6%）、食べ方別の農地</span><span class="en">Per-food footprints; 77% of farmland for 18% of calories and 37% of protein; food-emission breakdown; land use by diet</span></span></li>
+      <li><a href="https://ourworldindata.org/grapher/deforestation-by-commodity">Pendrill, F. et al. (2019) via Our World in Data</a> <span class="use"><span class="ja">熱帯の森林破壊の41%が牛の牧草地</span><span class="en">41% of tropical deforestation from cattle pasture</span></span></li>
+      <li><a href="https://doi.org/10.3389/fpsyg.2019.02323">Parncutt, R. (2019). Frontiers in Psychology 10: 2323</a>; <a href="https://doi.org/10.3390/en16166074">Pearce, J.M. &amp; Parncutt, R. (2023). Energies 16: 6074</a> <span class="use"><span class="ja">1,000トン・ルール（炭素1,000 tで将来の死者1人、幅300〜3,000 t）</span><span class="en">The 1,000-ton rule (one future death per 1,000 t carbon; 300–3,000 t)</span></span></li>
+      <li><a href="https://www.iarc.who.int/wp-content/uploads/2018/07/pr240_E.pdf">IARC (2015). Monographs evaluate consumption of red meat and processed meat</a> <span class="use"><span class="ja">加工肉 Group 1、赤身肉 2A、50 g/日で大腸がん18%</span><span class="en">Processed meat Group 1, red meat 2A, 18% per 50 g/day</span></span></li>
+      <li><a href="https://www.cdc.gov/one-health/about/about-zoonotic-diseases.html">CDC. About Zoonotic Diseases</a> <span class="use"><span class="ja">新しい感染症の4つに3つは動物から</span><span class="en">3 in 4 new or emerging infectious diseases come from animals</span></span></li>
+      <li><a href="https://doi.org/10.1371/journal.pgph.0001305">Mulchandani, R. et al. (2023). Global trends in antimicrobial use in food-producing animals: 2020 to 2030. PLOS Global Public Health 3: e0001305</a> <span class="use"><span class="ja">2020年 99,502 t、2030年までに8.0%増</span><span class="en">99,502 t in 2020, +8.0% by 2030</span></span></li>
+      <li><a href="https://eatforum.org/update/eat-lancet-commission-warns-food-systems-breach-planetary-limits/">EAT (2025). EAT–Lancet Commission 2025</a> <span class="use"><span class="ja">食べ方の転換で年約1,500万人の早すぎる死を防げる</span><span class="en">~15 m premature deaths a year preventable</span></span></li>
+      <li><a href="https://doi.org/10.1016/j.jand.2016.09.025">Melina, V. et al. (2016). Position of the Academy of Nutrition and Dietetics: Vegetarian Diets. J Acad Nutr Diet 116: 1970–1980</a> <span class="use"><span class="ja">適切に計画されたヴィーガン食はすべての年代に適する</span><span class="en">Appropriately planned vegan diets suit all life stages</span></span></li>
+      <li><a href="https://fooddb.mext.go.jp/">文部科学省 日本食品標準成分表（八訂）</a> <span class="use"><span class="ja">納豆・豆腐・めんのたんぱく質</span><span class="en">Protein in natto, tofu, noodles</span></span></li>
+      <li><a href="https://ourworldindata.org/grapher/meat-supply-per-person">Our World in Data (FAO). Meat supply per person</a>; <a href="https://ourworldindata.org/grapher/global-meat-production">Global meat production</a> <span class="use"><span class="ja">日本 7→60 kg/人（1961→2022）、世界の肉生産 1.16→3.67億 t（1975→2023）</span><span class="en">Japan 7→60 kg/person; world meat 116→367 m t</span></span></li>
+    </ol>
+    <p class="small"><span class="ja">データの多くは、姉妹サイト<a href="https://tamorist.github.io/slow-war/">「静かな戦争」</a>で確認・使用しているものです。</span><span class="en">Much of the data is shared with the sister site <a href="https://tamorist.github.io/slow-war/">The Slow War</a>.</span></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="ja">830億の理由 / Tatsuya Mori（@ttmori）· コード <a href="https://github.com/tamorist/83-billion">MIT</a>、コンテンツ <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · このページは医療上の助言ではありません。</span>
+    <span class="en">83 Billion Reasons / Tatsuya Mori (@ttmori) · Code <a href="https://github.com/tamorist/83-billion">MIT</a>, content <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Not medical advice.</span>
+  </div>
+</footer>
+
+<script>
+// 食材別の環境負荷（Poore & Nemecek 2018 の平均値, Our World in Data 経由）／ 1 kg あたり — 静かな戦争 my-day.html と同じ値
+// ghg: kg CO₂e（土地利用変化を含む）, land: m²·年, water: 淡水取水量 L, eutro: 富栄養化 g PO₄eq, protein: たんぱく質の割合
+// animals: 食肉1 kgあたりの頭・羽数（可食部：牛 約220 kg, 豚 約80 kg, ブロイラー 約1.3 kg）
+const FOODS = {
+  beef:    { ghg: 99.48, land: 326.21, water: 1451.2, eutro: 301.41, protein: 0.20,  animals: 1 / 220 },
+  cheese:  { ghg: 23.88, land: 87.79,  water: 5605.2, eutro: 98.37,  protein: 0.22,  animals: null },
+  pork:    { ghg: 12.31, land: 17.36,  water: 1795.8, eutro: 76.38,  protein: 0.16,  animals: 1 / 80 },
+  fish:    { ghg: 13.63, land: 8.41,   water: 3691.3, eutro: 235.12, protein: 0.23,  animals: null },
+  chicken: { ghg: 9.87,  land: 12.22,  water: 660.0,  eutro: 48.7,   protein: 0.173, animals: 1 / 1.3 },
+  eggs:    { ghg: 4.67,  land: 5.7,    water: 577.7,  eutro: 21.76,  protein: 0.11,  animals: null },
+  tofu:    { ghg: 3.16,  land: 3.52,   water: 148.6,  eutro: 6.2,    protein: 0.16,  animals: null },
+  peas:    { ghg: 0.98,  land: 7.46,   water: 396.8,  eutro: 7.52,   protein: 0.22,  animals: null },
+};
+const NAMES = {
+  ja: { beef: '牛肉', cheese: 'チーズ', pork: '豚肉', fish: '魚（養殖）', chicken: '鶏肉', eggs: '卵', tofu: '豆腐', peas: 'えんどう豆' },
+  en: { beef: 'Beef', cheese: 'Cheese', pork: 'Pork', fish: 'Fish (farmed)', chicken: 'Chicken', eggs: 'Eggs', tofu: 'Tofu', peas: 'Peas' },
+};
+const PLANT = new Set(['tofu', 'peas']);
+const SITE_URL = 'https://tamorist.github.io/83-billion/';
+const CO2_PER_DEATH = 3664;          // t CO₂（炭素1,000 t）— 1,000トン・ルール
+const WORLD_PER_SEC = 83e9 / (365.25 * 86400);
+// 日本：肉用若鶏 749,130千羽 + 廃鶏 77,751千羽 + その他肉用鶏 1,171千羽（2024）+ 豚 16,153,083頭（FY2024）+ 牛 1,087,943頭（FY2023）
+const JAPAN_PER_YEAR = 749130e3 + 77751e3 + 1171e3 + 16153083 + 1087943;
+const JAPAN_PER_SEC = JAPAN_PER_YEAR / (365.25 * 86400);
+
+let lang = 'ja';
+try { const s = localStorage.getItem('83b-lang'); if (s === 'en' || s === 'ja') lang = s; else if (!navigator.language.startsWith('ja')) lang = 'en'; } catch (e) {}
+const $ = id => document.getElementById(id);
+const sig2 = n => { const p = Math.pow(10, Math.max(0, Math.floor(Math.log10(n)) - 1)); return Math.round(n / p) * p; };
+const fmt = (n, d = 0) => n.toLocaleString(lang === 'ja' ? 'ja-JP' : 'en-US', { maximumFractionDigits: d, minimumFractionDigits: d });
+
+// ---- live counters
+const t0 = performance.now();
+function tick() {
+  const s = (performance.now() - t0) / 1000;
+  $('cWorld').textContent = fmt(Math.floor(s * WORLD_PER_SEC));
+  $('cJapan').textContent = fmt(Math.floor(s * JAPAN_PER_SEC));
+  requestAnimationFrame(tick);
+}
+
+// ---- lifespans (rough; years)
+const LIFE = [
+  { ja: '肉用の鶏', en: 'Meat chicken', sja: '約7週 / 寿命 約8年', sen: '~7 weeks / lifespan ~8 yrs', a: 7 / 52, n: 8 },
+  { ja: '採卵の鶏', en: 'Laying hen', sja: '約1.5〜2年 / 約8年', sen: '~1.5–2 yrs / ~8 yrs', a: 1.75, n: 8 },
+  { ja: '豚', en: 'Pig', sja: '約6か月 / 約15年', sen: '~6 months / ~15 yrs', a: 0.5, n: 15 },
+  { ja: '肉牛（和牛）', en: 'Beef cattle (wagyu)', sja: '約2.5年 / 約20年', sen: '~2.5 yrs / ~20 yrs', a: 2.5, n: 20 },
+  { ja: '乳牛', en: 'Dairy cow', sja: '約5〜6年 / 約20年', sen: '~5–6 yrs / ~20 yrs', a: 5.5, n: 20 },
+];
+function renderLife() {
+  $('lifeRows').innerHTML = LIFE.map(r => `<div class="lrow"><div class="lab"><b>${r[lang]}</b><small>${lang === 'ja' ? r.sja : r.sen}</small></div>
+    <div class="lbar"><i style="width:${(r.a / 20 * 100).toFixed(2)}%"></i><span style="position:absolute;left:0;top:0;bottom:0;width:${r.n / 20 * 100}%;border-right:2px solid #b5ad9d"></span></div></div>`).join('');
+}
+
+// ---- comparison chart (per 100 g protein)
+const METRICS = {
+  ghg:     { ja: '温室効果ガス', en: 'Greenhouse gases', unit: 'kg CO₂e', f: x => x.ghg, d: 1 },
+  land:    { ja: '土地', en: 'Land', unit: 'm²', f: x => x.land, d: 1 },
+  water:   { ja: '水', en: 'Fresh water', unit: 'L', f: x => x.water, d: 0 },
+  eutro:   { ja: '水質汚染', en: 'Water pollution', unit: 'g PO₄eq', f: x => x.eutro, d: 0 },
+  animals: { ja: '動物の命', en: 'Animal lives', unit: '', f: x => x.animals, d: 2 },
+};
+let metric = 'ghg';
+function renderCmp() {
+  const m = METRICS[metric];
+  $('cmpTabs').innerHTML = Object.keys(METRICS).map(k => `<button aria-pressed="${k === metric}" data-m="${k}">${METRICS[k][lang]}</button>`).join('');
+  const rows = Object.entries(FOODS).map(([k, x]) => ({ k, v: m.f(x) == null ? null : m.f(x) / x.protein / 10 }))
+    .filter(r => r.v != null).sort((a, b) => b.v - a.v);
+  const max = rows[0].v;
+  $('cmpRows').innerHTML = rows.map(r => `<div class="crow"><span>${NAMES[lang][r.k]}</span>
+    <span class="bar"><i style="width:${Math.max(r.v / max * 100, .8)}%;background:${PLANT.has(r.k) ? 'var(--green2)' : 'var(--red)'}"></i></span>
+    <span class="val num">${fmt(r.v, r.v < 10 ? m.d : 0)} ${m.unit}</span></div>`).join('');
+  const notes = {
+    ghg: { ja: '森林破壊などの土地利用変化を含む（100年値）。牛肉は豆腐の約25倍、鶏肉でも約3倍。', en: 'Includes land-use change such as deforestation (100-yr). Beef ≈ 25× tofu; even chicken ≈ 3×.' },
+    land: { ja: '1年間に使う土地。牛肉は豆腐の約70倍。', en: 'Land used for a year. Beef ≈ 70× tofu.' },
+    water: { ja: '淡水の取水量。', en: 'Freshwater withdrawals.' },
+    eutro: { ja: '川や海に流れ出る窒素・リンによる富栄養化（赤潮・酸欠の原因）。', en: 'Nitrogen and phosphorus runoff that causes algal blooms and dead zones.' },
+    animals: { ja: 'たんぱく質100 gを得るために死ぬ動物の数（私たちの概算）。魚・卵・チーズは推計がないため除外。鶏肉は牛肉の約200倍。', en: 'Animals killed per 100 g of protein (our estimate). Fish, eggs and cheese excluded for lack of data. Chicken ≈ 200× beef.' },
+  };
+  $('cmpNote').textContent = notes[metric][lang];
+}
+
+// ---- calculator
+const MEALS = ['beef', 'pork', 'chicken', 'fish'];
+const meals = { beef: 1, pork: 3, chicken: 3, fish: 2 };
+const PORTION = 0.12, TOFU = 0.15;
+const YEARS = [1, 10, 50];
+let years = 10;
+const ICON = { beef: '🐄', pork: '🐖', chicken: '🐔' };
+function renderSliders() {
+  $('sliders').innerHTML = `<div class="small"><span>${lang === 'ja' ? '1週間に、主菜が次のものになる食事の回数' : 'Meals a week with this as the main dish'}</span></div>` +
+    MEALS.map(k => `<div class="srow"><label for="s-${k}">${NAMES[lang][k]}</label><output class="num" id="o-${k}">${meals[k]}${lang === 'ja' ? ' 回' : ''}</output>
+    <input type="range" id="s-${k}" min="0" max="14" step="1" value="${meals[k]}" data-k="${k}"></div>`).join('');
+  $('yrs').innerHTML = YEARS.map(y => `<button aria-pressed="${y === years}" data-y="${y}">${y}${lang === 'ja' ? ' 年' : (y === 1 ? ' year' : ' years')}</button>`).join('');
+}
+function calc() {
+  let ghg = 0, land = 0, water = 0, animals = 0, n = 0;
+  const per = {};
+  for (const k of MEALS) {
+    const kg = meals[k] * 52 * PORTION * years, f = FOODS[k];
+    ghg += kg * f.ghg; land += kg * f.land; water += kg * f.water; n += meals[k];
+    per[k] = f.animals ? kg * f.animals : 0; animals += per[k];
+  }
+  const tofuKg = n * 52 * TOFU * years, t = FOODS.tofu;
+  ghg -= tofuKg * t.ghg; land -= tofuKg * t.land; water -= tofuKg * t.water;
+  const ja = lang === 'ja';
+  $('oAnimals').innerHTML = `${fmt(animals)}<small>${ja ? '匹・頭（魚を除く）' : 'animals (fish not counted)'}</small>`;
+  const dots = [];
+  for (const k of ['beef', 'pork', 'chicken']) for (let i = 0; i < Math.round(per[k]) && dots.length < 400; i++) dots.push(ICON[k]);
+  $('oDots').textContent = dots.join('') + (animals > 400.5 ? ' …' : '');
+  $('oGhg').innerHTML = ghg >= 1000 ? `${fmt(ghg / 1000, 1)} t<small>CO₂e</small>` : `${fmt(ghg)} kg<small>CO₂e</small>`;
+  $('oLand').innerHTML = `${fmt(land)} m²<small>${ja ? `テニスコート約${fmt(land / 261, 1)}面分（1年間）` : `≈ ${fmt(land / 261, 1)} tennis courts (for a year)`}</small>`;
+  $('oWater').innerHTML = `${fmt(water / 1000, water < 10000 ? 1 : 0)} m³<small>${ja ? `浴槽 約${fmt(water / 200)}杯分` : `≈ ${fmt(water / 200)} bathtubs`}</small>`;
+  // 将来の死者 1人 = CO₂ 3,664 t → 何人が同じ選択をすると1人を救えるか
+  const deaths = ghg / 1000 / CO2_PER_DEATH;
+  const people = deaths > 0 ? sig2(1 / deaths) : 0, japan = sig2(124e6 * deaths);
+  $('oMsg').innerHTML = n === 0
+    ? (ja ? 'すでに植物性の食事ですね。あなたの食卓は、毎年たくさんの命を守っています。' : 'You already eat plant-based — your table spares many lives every year.')
+    : (ja
+      ? `${years}年で、<b>${fmt(animals)}の動物</b>が生きられます。そして<b>約${fmt(people)}人</b>があなたと同じ選択をすると、気候変動による将来の死を<b>1人</b>防げる計算です。日本の全員（約1.24億人）が同じ選択をすれば、<b>約${fmt(japan)}人</b>です。`
+      : `Over ${years} year${years > 1 ? 's' : ''}, <b>${fmt(animals)} animals</b> get to live. And if <b>about ${fmt(people)} people</b> made the same switch, that would prevent <b>one</b> future climate death. If everyone in Japan (124 million) did: <b>about ${fmt(japan)}</b>.`)
+    + `<span class="est">${ja ? '私たちの概算' : 'our estimate'}</span>`;
+  for (const k of MEALS) { const o = $('o-' + k); if (o) o.textContent = meals[k] + (ja ? ' 回' : ''); }
+}
+
+// ---- language
+function setLang(l) {
+  lang = l;
+  document.documentElement.lang = l;
+  document.documentElement.className = l;
+  try { localStorage.setItem('83b-lang', l); } catch (e) {}
+  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
+  document.title = l === 'ja' ? '830億の理由 — 動物・地球・人のために' : '83 Billion Reasons — for animals, the planet and people';
+  renderLife(); renderCmp(); renderSliders(); calc(); setShare();
+}
+function setShare() {
+  const text = lang === 'ja' ? '毎年、830億の動物が食べるために殺されている。次の一食を、植物性に。' : '83 billion land animals are killed for food every year. Make your next meal plant-based.';
+  $('shareX').href = 'https://x.com/intent/post?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(SITE_URL);
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.lang) setLang(b.dataset.lang);
+  else if (b.dataset.m) { metric = b.dataset.m; renderCmp(); }
+  else if (b.dataset.y) { years = +b.dataset.y; renderSliders(); calc(); }
+  else if (b.id === 'copyLink') {
+    navigator.clipboard?.writeText(SITE_URL).then(() => {
+      const s = b.innerHTML; b.textContent = lang === 'ja' ? 'コピーしました' : 'Copied'; setTimeout(() => (b.innerHTML = s), 1600);
+    });
+  }
+});
+document.addEventListener('input', e => {
+  if (e.target.dataset.k) { meals[e.target.dataset.k] = +e.target.value; calc(); }
+});
+const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+setLang(lang);
+tick();
+</script>
+</body>
+</html>
