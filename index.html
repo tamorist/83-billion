@@ -155,6 +155,56 @@
   .big-msg { font-size: clamp(18px, 2.8vw, 22px); line-height: 1.6; margin: 24px 0 0; }
   .big-msg b { color: #8fcfa9; }
 
+  /* eat: protein foods and day builder */
+  .eat-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 28px; align-items: start; }
+  @media (min-width: 900px) { .eat-grid { grid-template-columns: 1fr 360px; } .meter-box { position: sticky; top: 72px; } }
+  .fgroup { font-size: 13px; font-weight: 700; color: var(--muted); margin: 18px 0 8px; letter-spacing: .06em; }
+  .fgroup:first-child { margin-top: 0; }
+  .foods { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .food { background: var(--bg2); border: 1px solid var(--faint); border-radius: 12px; padding: 12px 12px 10px; display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; transition: border-color .15s, background .15s; }
+  .food.on { border-color: var(--green); background: #f1f7f2; }
+  .food .nm { font-weight: 700; font-size: 14.5px; line-height: 1.4; }
+  .food .sv { font-size: 12px; color: var(--muted); grid-column: 1; }
+  .food .pg { font-size: 22px; font-weight: 900; color: var(--green); text-align: right; grid-row: 1 / 3; grid-column: 2; line-height: 1.1; }
+  .food .pg small { display: block; font-size: 10.5px; font-weight: 400; color: var(--muted); }
+  .food .ctl { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+  .food .ctl button { font: inherit; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--faint); background: var(--bg); cursor: pointer; font-size: 17px; line-height: 1; color: var(--ink); }
+  .food .ctl button:hover { border-color: var(--green); }
+  .food .ctl .c { min-width: 1.5em; text-align: center; font-weight: 700; }
+  .food .ctl .per { margin-left: auto; font-size: 11px; color: var(--muted); }
+  .meter-box { background: var(--bg2); border: 1px solid var(--faint); border-radius: 16px; padding: 20px; }
+  .presets { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+  .presets button { font: inherit; font-size: 13px; background: var(--bg3); color: var(--ink); border: 1px solid var(--faint); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+  .presets button[aria-pressed="true"] { background: var(--green); color: #fff; border-color: var(--green); font-weight: 700; }
+  .total { font-size: 44px; font-weight: 900; line-height: 1.1; }
+  .total small { font-size: 16px; font-weight: 700; color: var(--muted); margin-left: 4px; }
+  .meter { position: relative; height: 18px; border-radius: 9px; background: var(--bg3); margin: 14px 0 30px; }
+  .meter > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 9px; background: var(--green2); transition: width .35s; max-width: 100%; }
+  .meter .mk { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--ink); }
+  .meter .mk > span { position: absolute; top: 24px; left: 50%; transform: translateX(-50%); font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .verdict { font-size: 14.5px; margin: 0 0 12px; }
+  .meals { font-size: 13.5px; color: #3c3e39; border-top: 1px solid var(--faint); padding-top: 10px; }
+  .meals div { padding: 4px 0; }
+  .meals b { display: inline-block; min-width: 2.6em; color: var(--green); }
+  .swaps { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 8px; margin-top: 16px; }
+  .swaps div { background: var(--bg2); border: 1px solid var(--faint); border-radius: 12px; padding: 12px 14px; font-size: 14px; }
+  .swaps s { color: var(--muted); text-decoration-color: var(--red); }
+  .swaps b { color: var(--green); }
+
+  /* amazon gauge */
+  .amz { margin-top: 36px; background: var(--bg); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; }
+  .agauge { position: relative; display: flex; height: 34px; border-radius: 8px; overflow: hidden; margin: 18px 0 6px; background: var(--green2); }
+  .agauge .lost { width: 17%; background: var(--red); }
+  .agauge .zone { position: absolute; left: 20%; width: 5%; top: 0; bottom: 0; background: repeating-linear-gradient(45deg, rgba(0,0,0,.35) 0 5px, rgba(0,0,0,.1) 5px 10px); border-left: 2px solid var(--ink); border-right: 2px solid var(--ink); }
+  .alegend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12.5px; color: var(--muted); margin-bottom: 14px; }
+  .alegend > span { display: inline-flex; align-items: center; gap: 6px; }
+  .alegend i { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+  .alegend i.z { background: repeating-linear-gradient(45deg, #555 0 3px, #bbb 3px 6px); }
+  .alegend b { color: var(--red); }
+  .amz .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 14px; }
+  .amz .facts div { font-size: 13.5px; }
+  .amz .facts b { display: block; font-size: 24px; font-weight: 900; }
+
   /* faq */
   details { background: var(--bg2); border: 1px solid var(--faint); border-radius: 12px; padding: 0 18px; margin: 10px 0; }
   details summary { cursor: pointer; padding: 16px 0; font-weight: 700; list-style: none; position: relative; padding-right: 28px; }
@@ -201,6 +251,7 @@
       <a href="#planet"><span class="ja">地球</span><span class="en">Planet</span></a>
       <a href="#people"><span class="ja">人</span><span class="en">People</span></a>
       <a href="#calc"><span class="ja">あなたのお皿</span><span class="en">Your plate</span></a>
+      <a href="#eat"><span class="ja">食べ方</span><span class="en">What to eat</span></a>
       <a href="#faq"><span class="ja">疑問</span><span class="en">Questions</span></a>
       <a href="#start"><span class="ja">始め方</span><span class="en">Start</span></a>
     </nav>
@@ -308,6 +359,24 @@
       <p style="margin:6px 0 0"><span class="ja">動物性食品の温室効果ガスが、毎年「確定」させている将来の死者の数。食べ物の温室効果ガス（年137億 t CO₂e）のうち、少なくとも53%が畜産・漁業、飼料、牧草地のための土地利用から来ています（約73億 t）。これを「1,000トン・ルール」（炭素1,000 t＝CO₂ 3,664 tで将来の死者1人）で換算しました。ありうる幅は約60万〜600万人で、死は今後1〜2世紀にわたって起こります。</span><span class="en">Future deaths locked in each year by the greenhouse gases from animal foods. Of food’s 13.7 bn t CO₂e a year, at least 53% comes from livestock and fisheries, feed crops and land use for livestock (~7.3 bn t). We converted this with the “1,000-ton rule” (1,000 t of carbon = 3,664 t CO₂ per future death). Likely range ~0.6–6 million; the deaths unfold over one to two centuries.</span><span class="est"><span class="ja">私たちの概算</span><span class="en">our estimate</span></span> <a href="https://tamorist.github.io/slow-war/"><span class="ja">→ 静かな戦争（計算方法）</span><span class="en">→ The Slow War (method)</span></a></p>
     </div>
 
+    <div class="amz reveal">
+      <h3><span class="ja">アマゾンは、まだ間に合う</span><span class="en">The Amazon can still be saved</span></h3>
+      <p style="margin:0"><span class="ja">アマゾンの森は、自分で雨を降らせています。森が一定以上失われると、温暖化や火災と重なって、東部・南部・中部の熱帯雨林がサバンナに変わりうると科学者は警告しています。</span><span class="en">The Amazon makes much of its own rain. Scientists warn that beyond a certain amount of loss — together with warming and fire — the east, south and centre could flip from rainforest to savanna.</span></p>
+      <div class="agauge" role="img" aria-label="もとの森の約17%が失われ、危険域は20〜25% / About 17% of the original forest lost; danger zone 20–25%"><span class="lost"></span><span class="zone"></span></div>
+      <div class="alegend">
+        <span><i style="background:var(--red)"></i><b><span class="ja">失われた 約17%</span><span class="en">Lost: ~17%</span></b></span>
+        <span><i class="z"></i><span class="ja">危険域 20〜25%</span><span class="en">Danger zone 20–25%</span></span>
+        <span><i style="background:var(--green2)"></i><span class="ja">残る森（帯全体＝もとの森100%）</span><span class="en">Still standing (whole bar = original forest)</span></span>
+      </div>
+      <p style="margin:0"><span class="ja">危険域まで、あと<b>3〜8ポイント</b>。そして、切り開かれた土地の使い道で最も多いのが<b>牛の牧草地</b>です。</span><span class="en">Only <b>3–8 percentage points</b> to the danger zone. And the biggest use of cleared land is <b>cattle pasture</b>.</span></p>
+      <div class="facts">
+        <div><b class="num" style="color:var(--red)">~63%</b><span class="ja">ブラジル法定アマゾンで切り開かれた土地のうち、牛の牧草地の割合（2014年）</span><span class="en">of cleared land in the Brazilian Legal Amazon used as cattle pasture (2014)</span></div>
+        <div><b class="num" style="color:var(--green)"><span class="ja">約5分の1に</span><span class="en">Down ~80%</span></b><span class="ja">ブラジル・アマゾンの年間の森林破壊。2004年の約2万8千 km²から、2025年は約5,800 km²（推計）へ</span><span class="en">Annual deforestation in the Brazilian Amazon: from ~27,800 km² in 2004 to ~5,800 km² in 2025 (estimate)</span></div>
+        <div><b class="num"><span class="ja">戻らない</span><span class="en">No way back</span></b><span class="ja">一度サバンナに変わった森は、排出を減らしただけでは元に戻りません</span><span class="en">Once it turns to savanna, cutting emissions alone won’t bring the forest back</span></div>
+      </div>
+      <p class="small" style="margin-bottom:0"><span class="ja">森林破壊は、政策と需要しだいで大きく減らせることがすでに示されています。牛肉と飼料の需要を減らすことは、森が限界を越えないための余裕を生みます。ブラジルは牛肉・大豆・鶏肉の世界有数の輸出国で、日本もブラジル産の鶏肉や大豆を輸入しています。約17%は流域全体の値（ブラジル側は20%近く）、危険域20〜25%は Lovejoy &amp; Nobre（2018）の見立てで、より新しい研究では値が異なることもあります。</span><span class="en">Deforestation has already been cut sharply when policy and demand change. Eating less beef and feed-fed meat buys the forest margin from its tipping point. Brazil is one of the world’s top exporters of beef, soy and chicken. The ~17% is for the whole basin (nearly 20% on the Brazilian side); the 20–25% danger zone is Lovejoy &amp; Nobre’s (2018) assessment, and newer studies may differ.</span></p>
+    </div>
+
     <div class="land reveal">
       <h3><span class="ja">世界中が植物性の食事になったら</span><span class="en">If the whole world ate plant-based</span></h3>
       <p class="small" style="margin:0"><span class="ja">必要な農地（億 ha）。Poore &amp; Nemecek 2018 をもとにした Our World in Data の推計。</span><span class="en">Farmland needed (billion ha). Our World in Data, based on Poore &amp; Nemecek 2018.</span></p>
@@ -358,6 +427,41 @@
   </div>
 </section>
 
+<!-- EAT -->
+<section id="eat">
+  <div class="wrap">
+    <p class="eyebrow"><span class="ja">これなら、できそう</span><span class="en">You can do this</span></p>
+    <h2><span class="ja">たんぱく質は、大豆と穀物で十分とれる。</span><span class="en">Soy, beans and grains cover your protein.</span></h2>
+    <p class="lead narrow"><span class="ja">下の食べ物の＋を押して、1日の食事を組み立ててみてください。まずは献立の例から。たんぱく質の合計を、国が示す1日の推奨量（18〜64歳：女性50 g、男性65 g）と比べます。</span><span class="en">Tap + on the foods below to build a day of meals — or start from an example. We compare the total protein with Japan’s recommended daily amount (ages 18–64: women 50 g, men 65 g).</span></p>
+
+    <div class="eat-grid">
+      <div id="foodList"></div>
+      <div class="meter-box">
+        <div class="small"><span class="ja">献立の例</span><span class="en">Example days</span></div>
+        <div class="presets" id="presets"></div>
+        <div class="small"><span class="ja">1日のたんぱく質</span><span class="en">Protein for the day</span></div>
+        <div class="total num" id="pTotal"></div>
+        <div class="meter"><i id="pBar"></i><span class="mk" style="left:62.5%"><span><span class="ja">女性 50 g</span><span class="en">Women 50 g</span></span></span><span class="mk" style="left:81.25%"><span><span class="ja">男性 65 g</span><span class="en">Men 65 g</span></span></span></div>
+        <p class="verdict" id="pVerdict"></p>
+        <div class="meals" id="pMeals"></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:44px"><span class="ja">いつもの料理を、そのまま植物性に</span><span class="en">Your usual dishes, made with plants</span></h3>
+    <div class="swaps">
+      <div><span class="ja"><s>ハンバーグ</s> → <b>豆腐と大豆ミートのハンバーグ</b></span><span class="en"><s>Hamburg steak</s> → <b>tofu &amp; soy-mince patties</b></span></div>
+      <div><span class="ja"><s>麻婆豆腐のひき肉</s> → <b>大豆ミート</b></span><span class="en"><s>Mince in mapo tofu</s> → <b>soy mince</b></span></div>
+      <div><span class="ja"><s>牛丼</s> → <b>大豆ミートか厚揚げの丼</b></span><span class="en"><s>Beef bowl</s> → <b>soy-mince or fried-tofu bowl</b></span></div>
+      <div><span class="ja"><s>唐揚げ</s> → <b>高野豆腐の唐揚げ</b></span><span class="en"><s>Fried chicken</s> → <b>fried koya tofu</b></span></div>
+      <div><span class="ja"><s>肉じゃが</s> → <b>厚揚げか大豆ミートで</b></span><span class="en"><s>Meat &amp; potato stew</s> → <b>with fried tofu or soy mince</b></span></div>
+      <div><span class="ja"><s>ミートソース</s> → <b>レンズ豆のボロネーゼ</b></span><span class="en"><s>Meat sauce</s> → <b>lentil bolognese</b></span></div>
+      <div><span class="ja"><s>チキンカレー</s> → <b>ひよこ豆と大豆ミートのカレー</b></span><span class="en"><s>Chicken curry</s> → <b>chickpea &amp; soy curry</b></span></div>
+      <div><span class="ja"><s>かつおだし</s> → <b>昆布・干ししいたけのだし</b></span><span class="en"><s>Bonito stock</s> → <b>kombu &amp; shiitake stock</b></span></div>
+    </div>
+    <p class="small"><span class="ja">たんぱく質は日本食品標準成分表（八訂 増補2023年）の可食部100 gあたりの値に、1回分の重さをかけた概算です（大豆ミートは乾燥、めん・豆はゆでた重さ）。料理による変化は考えていません。参考：鶏むね肉（皮なし）100 gで23.3 g、牛ひき肉100 gで17.1 g。</span><span class="en">Protein = Japan’s Standard Tables of Food Composition (8th ed., 2023 supplement) per 100 g × serving weight (soy mince dry; noodles and beans boiled). Cooking losses are ignored. For reference: 100 g skinless chicken breast 23.3 g, 100 g minced beef 17.1 g.</span><span class="est"><span class="ja">私たちの概算</span><span class="en">our estimate</span></span></p>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq">
   <div class="wrap narrow">
@@ -365,14 +469,7 @@
     <h2><span class="ja">気になるのは、当然です。</span><span class="en">Fair questions.</span></h2>
 
     <details><summary><span class="ja">たんぱく質は足りるの？</span><span class="en">Will I get enough protein?</span></summary><div class="body">
-      <p><span class="ja">足ります。とくに日本は大豆の国です。可食部100 gあたりのたんぱく質（日本食品標準成分表 八訂）：</span><span class="en">Yes. Soy foods, beans, lentils, nuts and grains add up quickly. Protein per 100 g (Japan’s Standard Tables of Food Composition, 8th ed.):</span></p>
-      <table class="protein">
-        <tr><td><span class="ja">糸引き納豆</span><span class="en">Natto</span></td><td class="num">16.5 g</td></tr>
-        <tr><td><span class="ja">木綿豆腐</span><span class="en">Firm tofu</span></td><td class="num">7.0 g</td></tr>
-        <tr><td><span class="ja">スパゲッティ（ゆで）</span><span class="en">Spaghetti (boiled)</span></td><td class="num">5.8 g</td></tr>
-        <tr><td><span class="ja">中華めん（ゆで）</span><span class="en">Chinese noodles (boiled)</span></td><td class="num">4.9 g</td></tr>
-      </table>
-      <p><span class="ja">納豆1パック（45 g）＋木綿豆腐150 g＋ラーメン1玉（ゆで200 g）で約28 g。牛肉の主菜120 g（約24 g）より多くなります。</span><span class="en">One pack of natto (45 g) + 150 g firm tofu + one serving of noodles (200 g boiled) ≈ 28 g — more than a 120 g beef main (~24 g).</span><span class="est"><span class="ja">私たちの概算</span><span class="en">our estimate</span></span></p>
+      <p><span class="ja">足ります。とくに日本は大豆の国です。納豆1パック（45 g）で約7 g、高野豆腐2枚で約17 g。<a href="#eat">上の「これなら、できそう」</a>で、1日の献立を組み立てて確かめられます。</span><span class="en">Yes. One pack of natto (45 g) has about 7 g; two pieces of koya tofu about 17 g. Try building a day in <a href="#eat">“You can do this”</a> above.</span></p>
     </div></details>
 
     <details><summary><span class="ja">栄養で気をつけることは？</span><span class="en">What should I watch nutritionally?</span></summary><div class="body">
@@ -403,7 +500,7 @@
     <p class="eyebrow"><span class="ja">今日から</span><span class="en">Starting today</span></p>
     <h2><span class="ja">完璧でなくていい。次の一食から。</span><span class="en">It doesn’t have to be perfect. Start with your next meal.</span></h2>
     <div class="steps">
-      <div><div class="n">STEP 1</div><h3><span class="ja">好きな植物性の料理を3つ決める</span><span class="en">Pick three plant-based dishes you already like</span></h3><p><span class="ja">麻婆豆腐（豆腐と大豆ミートで）、野菜カレー、納豆ごはんとみそ汁。日本の家庭料理には、すでに答えがたくさんあります。</span><span class="en">Bean chili, vegetable curry, pasta with lentil sauce, stir-fried tofu. You probably eat some already.</span></p></div>
+      <div><div class="n">STEP 1</div><h3><span class="ja">好きな植物性の料理を3つ決める</span><span class="en">Pick three plant-based dishes you already like</span></h3><p><span class="ja">麻婆豆腐（豆腐と大豆ミートで）、野菜カレー、納豆ごはんとみそ汁。日本の家庭料理には、すでに答えがたくさんあります。<a href="#eat">献立の例</a></span><span class="en">Bean chili, vegetable curry, pasta with lentil sauce, stir-fried tofu. You probably eat some already. <a href="#eat">Example days</a></span></p></div>
       <div><div class="n">STEP 2</div><h3><span class="ja">まず牛肉と加工肉から</span><span class="en">Start with beef and processed meat</span></h3><p><span class="ja">気候と健康への影響が最も大きいものから。ただし鶏肉に置き換えるのではなく、豆・大豆に置き換えるのがポイントです。</span><span class="en">They have the biggest climate and health impact. The key: replace them with beans and soy, not chicken.</span></p></div>
       <div><div class="n">STEP 3</div><h3><span class="ja">3週間、続けてみる</span><span class="en">Try it for three weeks</span></h3><p><span class="ja">味覚と習慣は、数週間で慣れていきます。B12のサプリメントも、このときから。</span><span class="en">Tastes and habits adjust within weeks. Start B12 from day one.</span></p></div>
       <div><div class="n">STEP 4</div><h3><span class="ja">一人で抱えない</span><span class="en">Don’t do it alone</span></h3><p><span class="ja">家族や友人と一緒に。学校・職場の食堂に植物性メニューを頼むことは、一人の食事よりずっと大きな変化を生みます。</span><span class="en">Bring family or friends. Asking your school or workplace canteen for plant-based options changes far more than one plate.</span></p></div>
@@ -448,7 +545,12 @@
       <li><a href="https://doi.org/10.1371/journal.pgph.0001305">Mulchandani, R. et al. (2023). Global trends in antimicrobial use in food-producing animals: 2020 to 2030. PLOS Global Public Health 3: e0001305</a> <span class="use"><span class="ja">2020年 99,502 t、2030年までに8.0%増</span><span class="en">99,502 t in 2020, +8.0% by 2030</span></span></li>
       <li><a href="https://eatforum.org/update/eat-lancet-commission-warns-food-systems-breach-planetary-limits/">EAT (2025). EAT–Lancet Commission 2025</a> <span class="use"><span class="ja">食べ方の転換で年約1,500万人の早すぎる死を防げる</span><span class="en">~15 m premature deaths a year preventable</span></span></li>
       <li><a href="https://doi.org/10.1016/j.jand.2016.09.025">Melina, V. et al. (2016). Position of the Academy of Nutrition and Dietetics: Vegetarian Diets. J Acad Nutr Diet 116: 1970–1980</a> <span class="use"><span class="ja">適切に計画されたヴィーガン食はすべての年代に適する</span><span class="en">Appropriately planned vegan diets suit all life stages</span></span></li>
-      <li><a href="https://fooddb.mext.go.jp/">文部科学省 日本食品標準成分表（八訂）</a> <span class="use"><span class="ja">納豆・豆腐・めんのたんぱく質</span><span class="en">Protein in natto, tofu, noodles</span></span></li>
+      <li><a href="https://fooddb.mext.go.jp/">文部科学省 日本食品標準成分表（八訂）増補2023年（食品成分データベース）</a> <span class="use"><span class="ja">「これなら、できそう」の食品のたんぱく質（納豆16.5、木綿豆腐7.0、生揚げ10.7、凍り豆腐 乾50.5、粒状大豆たんぱく46.3、テンペ15.8 g/100 gなど）</span><span class="en">Protein values for all foods in “You can do this” (e.g. natto 16.5, firm tofu 7.0, koya tofu dry 50.5, textured soy protein 46.3 g/100 g)</span></span></li>
+      <li><a href="https://www.mhlw.go.jp/stf/newpage_44138.html">厚生労働省「日本人の食事摂取基準（2025年版）」</a> <span class="use"><span class="ja">たんぱく質の推奨量（18〜64歳：男性65 g、女性50 g／日）</span><span class="en">Recommended protein (ages 18–64: men 65 g, women 50 g a day)</span></span></li>
+      <li><a href="https://doi.org/10.1126/sciadv.aat2340">Lovejoy, T.E. &amp; Nobre, C. (2018). Amazon Tipping Point. Science Advances 4: eaat2340</a>; <a href="https://doi.org/10.1126/sciadv.aba2949">(2019). Last chance for action. 5: eaba2949</a> <span class="use"><span class="ja">危険域20〜25%、流域全体で約17%が消失</span><span class="en">20–25% danger zone; ~17% of the basin lost</span></span></li>
+      <li><a href="https://www.gov.br/inpe/pt-br/area-conhecimento/unidade-amazonia/repositorio-de-arquivos/terraclass_2014_v3.pdf">INPE &amp; Embrapa (2016). TerraClass Amazônia 2014</a> <span class="use"><span class="ja">切り開かれた土地762,464 km²のうち牧草地479,760 km²（約63%）</span><span class="en">Pasture 479,760 of 762,464 km² cleared (~63%)</span></span></li>
+      <li><a href="https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias/20251015Nota_tcnica_EstimativaPRODES_2025.pdf">INPE (2025). Nota técnica: Estimativa PRODES 2025</a> <span class="use"><span class="ja">2024年8月〜2025年7月の森林破壊 5,796 km²（推計、前年比−11%）。2004年は約27,800 km²（PRODES）</span><span class="en">5,796 km² Aug 2024–Jul 2025 (estimate, −11%); ~27,800 km² in 2004 (PRODES)</span></span></li>
+      <li><a href="https://global-tipping-points.org/">Global Tipping Points Report 2025</a> <span class="use"><span class="ja">アマゾンの枯死は2℃未満でも起こりうる、元に戻らない</span><span class="en">Amazon dieback possible below 2 °C, and not readily reversible</span></span></li>
       <li><a href="https://ourworldindata.org/grapher/meat-supply-per-person">Our World in Data (FAO). Meat supply per person</a>; <a href="https://ourworldindata.org/grapher/global-meat-production">Global meat production</a> <span class="use"><span class="ja">日本 7→60 kg/人（1961→2022）、世界の肉生産 1.16→3.67億 t（1975→2023）</span><span class="en">Japan 7→60 kg/person; world meat 116→367 m t</span></span></li>
     </ol>
     <p class="small"><span class="ja">データの多くは、姉妹サイト<a href="https://tamorist.github.io/slow-war/">「静かな戦争」</a>で確認・使用しているものです。</span><span class="en">Much of the data is shared with the sister site <a href="https://tamorist.github.io/slow-war/">The Slow War</a>.</span></p>
@@ -587,6 +689,77 @@ function calc() {
   for (const k of MEALS) { const o = $('o-' + k); if (o) o.textContent = meals[k] + (ja ? ' 回' : ''); }
 }
 
+// ---- protein foods（日本食品標準成分表 八訂 増補2023年：可食部100 gあたりのたんぱく質 × 1回分の重さ）
+const PFOODS = [
+  { g: 'soy', k: 'natto',    p: 16.5, w: 45,  ja: '納豆',             en: 'Natto',                 sja: '1パック 45 g',          sen: '1 pack, 45 g' },
+  { g: 'soy', k: 'koya',     p: 50.5, w: 33,  ja: '高野豆腐',         en: 'Koya tofu (dried)',     sja: '2枚（乾 33 g）',        sen: '2 pieces, 33 g dry' },
+  { g: 'soy', k: 'tvp',      p: 46.3, w: 30,  ja: '大豆ミート（乾燥）', en: 'Soy mince (dry)',     sja: '30 g（戻すと約90 g）',  sen: '30 g (≈ 90 g rehydrated)' },
+  { g: 'soy', k: 'momen',    p: 7.0,  w: 150, ja: '木綿豆腐',         en: 'Firm tofu',             sja: '半丁 150 g',            sen: 'half block, 150 g' },
+  { g: 'soy', k: 'atsuage',  p: 10.7, w: 100, ja: '厚揚げ',           en: 'Thick fried tofu',      sja: '半枚 100 g',            sen: 'half piece, 100 g' },
+  { g: 'soy', k: 'tempeh',   p: 15.8, w: 100, ja: 'テンペ',           en: 'Tempeh',                sja: '100 g',                 sen: '100 g' },
+  { g: 'soy', k: 'daizu',    p: 12.9, w: 100, ja: '大豆の水煮',       en: 'Canned soybeans',       sja: '100 g',                 sen: '100 g' },
+  { g: 'soy', k: 'aburaage', p: 23.4, w: 30,  ja: '油揚げ',           en: 'Fried tofu pouch',      sja: '1枚 30 g',              sen: '1 sheet, 30 g' },
+  { g: 'soy', k: 'soymilk',  p: 3.6,  w: 200, ja: '豆乳（無調整）',   en: 'Soy milk (plain)',      sja: '1杯 200 g',             sen: '1 glass, 200 g' },
+  { g: 'soy', k: 'edamame',  p: 11.5, w: 60,  ja: '枝豆（ゆで）',     en: 'Edamame (boiled)',      sja: 'さやなし 60 g',         sen: '60 g shelled' },
+  { g: 'soy', k: 'miso',     p: null, pg: 4.9, ja: '豆腐のみそ汁',   en: 'Miso soup with tofu',   sja: '絹ごし50 g＋みそ18 g',  sen: '50 g silken tofu + 18 g miso' },
+  { g: 'bean', k: 'lentil',  p: 11.2, w: 100, ja: 'レンズ豆（ゆで）', en: 'Lentils (boiled)',      sja: '100 g',                 sen: '100 g' },
+  { g: 'bean', k: 'chickpea', p: 9.5, w: 50,  ja: 'ひよこ豆（ゆで）', en: 'Chickpeas (boiled)',    sja: '50 g',                  sen: '50 g' },
+  { g: 'bean', k: 'peanut',  p: 25.0, w: 20,  ja: 'ピーナッツ（いり）', en: 'Peanuts (roasted)',   sja: 'ひとつかみ 20 g',       sen: 'a handful, 20 g' },
+  { g: 'grain', k: 'rice',   p: 2.5,  w: 150, ja: 'ごはん',           en: 'Rice',                  sja: '茶碗1杯 150 g',         sen: '1 bowl, 150 g' },
+  { g: 'grain', k: 'bread',  p: 8.9,  w: 60,  ja: '食パン',           en: 'Bread',                 sja: '6枚切り1枚 60 g',       sen: '1 slice, 60 g' },
+  { g: 'grain', k: 'pasta',  p: 5.8,  w: 240, ja: 'スパゲッティ',     en: 'Spaghetti',             sja: '1人前 ゆで240 g',       sen: '1 serving, 240 g boiled' },
+  { g: 'grain', k: 'ramen',  p: 4.9,  w: 200, ja: '中華めん',         en: 'Ramen noodles',         sja: '1玉 ゆで200 g',         sen: '1 serving, 200 g boiled' },
+  { g: 'grain', k: 'soba',   p: 4.8,  w: 200, ja: 'そば',             en: 'Soba',                  sja: '1人前 ゆで200 g',       sen: '1 serving, 200 g boiled' },
+  { g: 'grain', k: 'udon',   p: 2.6,  w: 230, ja: 'うどん',           en: 'Udon',                  sja: '1玉 ゆで230 g',         sen: '1 serving, 230 g boiled' },
+  { g: 'grain', k: 'broc',   p: 3.9,  w: 80,  ja: 'ブロッコリー（ゆで）', en: 'Broccoli (boiled)', sja: '80 g',                  sen: '80 g' },
+];
+// みそ汁 = 絹ごし豆腐 5.3 × 0.5 + 淡色辛みそ 12.5 × 0.18 ≈ 4.9 g
+PFOODS.forEach(f => { f.pg = f.pg ?? f.p * f.w / 100; });
+const PGROUP = { soy: { ja: '大豆の食品', en: 'Soy foods' }, bean: { ja: '豆・ナッツ', en: 'Beans & nuts' }, grain: { ja: 'ごはん・パン・めん・野菜', en: 'Rice, bread, noodles, veg' } };
+const PRESETS = {
+  washoku: { ja: '和食の日', en: 'Japanese day',
+    c: { rice: 2, natto: 1, miso: 1, soba: 1, aburaage: 1, atsuage: 1, edamame: 1 },
+    m: { ja: [['朝', 'ごはん・納豆・豆腐のみそ汁'], ['昼', 'きつねそば（そば・油揚げ）'], ['夜', 'ごはん・厚揚げの煮物・枝豆']],
+         en: [['AM', 'Rice, natto, miso soup with tofu'], ['Noon', 'Kitsune soba (soba, fried tofu)'], ['PM', 'Rice, simmered fried tofu, edamame']] } },
+  busy: { ja: '忙しい日', en: 'Busy day',
+    c: { bread: 1, soymilk: 1, rice: 2, edamame: 1, peanut: 1, momen: 1, tvp: 1 },
+    m: { ja: [['朝', '食パン・豆乳'], ['昼', 'おにぎり・枝豆・ナッツ（コンビニで）'], ['夜', '大豆ミートの麻婆豆腐・ごはん']],
+         en: [['AM', 'Toast, soy milk'], ['Noon', 'Rice ball, edamame, nuts (convenience store)'], ['PM', 'Mapo tofu with soy mince, rice']] } },
+  swap: { ja: 'いつもの料理で', en: 'Usual dishes',
+    c: { bread: 1, peanut: 1, soymilk: 1, pasta: 1, lentil: 1, tvp: 1, chickpea: 1, rice: 1 },
+    m: { ja: [['朝', 'トースト・ピーナッツ・豆乳'], ['昼', 'レンズ豆のボロネーゼ'], ['夜', '大豆ミートとひよこ豆のカレーライス']],
+         en: [['AM', 'Toast, peanuts, soy milk'], ['Noon', 'Lentil bolognese'], ['PM', 'Soy-mince & chickpea curry with rice']] } },
+};
+let counts = {}, preset = 'washoku';
+function loadPreset(k) { preset = k; counts = k ? { ...PRESETS[k].c } : {}; }
+function renderFoods() {
+  const ja = lang === 'ja';
+  let html = '';
+  for (const g of Object.keys(PGROUP)) {
+    html += `<div class="fgroup">${PGROUP[g][lang]}</div><div class="foods">` + PFOODS.filter(f => f.g === g).map(f => {
+      const n = counts[f.k] || 0;
+      return `<div class="food${n ? ' on' : ''}"><span class="nm">${f[lang]}</span><span class="sv">${ja ? f.sja : f.sen}</span>
+        <span class="pg num">${fmt(f.pg, 1)} g<small>${f.p ? (ja ? `100 gあたり ${fmt(f.p, 1)} g` : `${fmt(f.p, 1)} g / 100 g`) : (ja ? '1杯あたり' : 'per bowl')}</small></span>
+        <span class="ctl"><button data-pf="${f.k}" data-d="-1" aria-label="${ja ? '減らす' : 'less'}">−</button><span class="c num">${n}</span><button data-pf="${f.k}" data-d="1" aria-label="${ja ? '増やす' : 'more'}">＋</button></span></div>`;
+    }).join('') + '</div>';
+  }
+  $('foodList').innerHTML = html;
+  $('presets').innerHTML = Object.keys(PRESETS).map(k => `<button data-ps="${k}" aria-pressed="${k === preset}">${PRESETS[k][lang]}</button>`).join('')
+    + `<button data-ps="" aria-pressed="${preset === ''}">${ja ? '自分で組み立てる' : 'Build my own'}</button>`;
+  renderMeter();
+}
+function renderMeter() {
+  const ja = lang === 'ja';
+  const tot = PFOODS.reduce((a, f) => a + (counts[f.k] || 0) * f.pg, 0);
+  $('pTotal').innerHTML = `${fmt(tot)}<small>g</small>`;
+  $('pBar').style.width = Math.min(tot / 80 * 100, 100) + '%';
+  $('pVerdict').innerHTML = tot === 0 ? (ja ? '食べ物の＋を押してみてください。' : 'Tap + on a food to start.')
+    : tot >= 65 ? (ja ? '<b>男性の推奨量も超えています。</b>肉なしで、ここまでとれます。' : '<b>Above the amount for men, too.</b> All without meat.')
+    : tot >= 50 ? (ja ? `<b>女性の推奨量を超えています。</b>男性の推奨量まではあと${fmt(65 - tot)} g（高野豆腐2枚で約17 g）。` : `<b>Above the amount for women.</b> ${fmt(65 - tot)} g more for men (two pieces of koya tofu ≈ 17 g).`)
+    : (ja ? `あと<b>${fmt(50 - tot)} g</b>で女性の推奨量。大豆の食品を足してみましょう。` : `<b>${fmt(50 - tot)} g</b> more to reach the amount for women. Try adding a soy food.`);
+  $('pMeals').innerHTML = preset ? PRESETS[preset].m[lang].map(([t, d]) => `<div><b>${t}</b>${d}</div>`).join('') : '';
+}
+
 // ---- language
 function setLang(l) {
   lang = l;
@@ -595,7 +768,7 @@ function setLang(l) {
   try { localStorage.setItem('83b-lang', l); } catch (e) {}
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
   document.title = l === 'ja' ? '830億の理由 — 動物・地球・人のために' : '83 Billion Reasons — for animals, the planet and people';
-  renderLife(); renderCmp(); renderSliders(); calc(); setShare();
+  renderLife(); renderCmp(); renderSliders(); calc(); renderFoods(); setShare();
 }
 function setShare() {
   const text = lang === 'ja' ? '毎年、830億の動物が食べるために殺されている。次の一食を、植物性に。' : '83 billion land animals are killed for food every year. Make your next meal plant-based.';
@@ -606,6 +779,12 @@ document.addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b) return;
   if (b.dataset.lang) setLang(b.dataset.lang);
   else if (b.dataset.m) { metric = b.dataset.m; renderCmp(); }
+  else if (b.dataset.pf) {
+    const k = b.dataset.pf; counts[k] = Math.max(0, Math.min(9, (counts[k] || 0) + +b.dataset.d));
+    if (preset) preset = '';
+    renderFoods();
+  }
+  else if (b.dataset.ps !== undefined) { loadPreset(b.dataset.ps); renderFoods(); }
   else if (b.dataset.y) { years = +b.dataset.y; renderSliders(); calc(); }
   else if (b.id === 'copyLink') {
     navigator.clipboard?.writeText(SITE_URL).then(() => {
@@ -619,6 +798,7 @@ document.addEventListener('input', e => {
 const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { threshold: .15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+loadPreset('washoku');
 setLang(lang);
 tick();
 </script>
