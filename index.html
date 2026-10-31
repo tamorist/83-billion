@@ -638,12 +638,26 @@
 
 <footer>
   <div class="wrap">
+    <p style="margin:0 0 8px"><span class="ja">プライバシー：閲覧数の計測に <a href="https://www.goatcounter.com/">GoatCounter</a> を使っています。Cookie を使わず、個人を特定しません。計算機や献立で選んだ内容は、どこにも送信されません。</span><span class="en">Privacy: page views are counted with <a href="https://www.goatcounter.com/">GoatCounter</a>, which uses no cookies and does not identify visitors. Nothing you choose in the calculators is sent anywhere.</span></p>
     <span class="ja">830億の理由 / Tatsuya Mori（@ttmori）· コード <a href="https://github.com/tamorist/83-billion">MIT</a>、コンテンツ <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · このページは医療上の助言ではありません。</span>
     <span class="en">83 Billion Reasons / Tatsuya Mori (@ttmori) · Code <a href="https://github.com/tamorist/83-billion">MIT</a>, content <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Not medical advice.</span>
   </div>
 </footer>
 
 <script>
+/* GoatCounter（アクセス数の計測）
+   goatcounter.com で登録したサイトコードをここに書く（'83billion' → https://83billion.goatcounter.com）。
+   Cookie を使わないため、同意バナーは不要。公開サイト（github.io）でのみ計測し、ローカル表示は数えない。 */
+const GOATCOUNTER_CODE = '83billion';
+(function () {
+  if (!GOATCOUNTER_CODE || !/\.github\.io$/.test(location.hostname)) return;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://gc.zgo.at/count.js';
+  s.dataset.goatcounter = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
+  document.head.appendChild(s);
+})();
+
 // 食材別の環境負荷（Poore & Nemecek 2018 の平均値, Our World in Data 経由）／ 1 kg あたり — 静かな戦争 my-day.html と同じ値
 // ghg: kg CO₂e（土地利用変化を含む）, land: m²·年, water: 淡水取水量 L, eutro: 富栄養化 g PO₄eq, protein: たんぱく質の割合
 // animals: 食肉1 kgあたりの頭・羽数（可食部：牛 約220 kg, 豚 約80 kg, ブロイラー 約1.3 kg）
