@@ -186,7 +186,7 @@
   .food .ctl button:hover { border-color: var(--green); }
   .food .ctl .c { min-width: 1.5em; text-align: center; font-weight: 700; }
   .food .ctl .per { margin-left: auto; font-size: 11px; color: var(--muted); }
-  .meter-box { background: var(--bg2); border: 1px solid var(--faint); border-radius: 16px; padding: 20px; }
+  .meter-box { scroll-margin-top: 64px; background: var(--bg2); border: 1px solid var(--faint); border-radius: 16px; padding: 20px; }
   .presets { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
   .presets button { font: inherit; font-size: 13px; background: var(--bg3); color: var(--ink); border: 1px solid var(--faint); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
   .presets button[aria-pressed="true"] { background: var(--green); color: #fff; border-color: var(--green); font-weight: 700; }
@@ -197,6 +197,25 @@
   .meter .mk { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--ink); }
   .meter .mk > span { position: absolute; top: 24px; left: 50%; transform: translateX(-50%); font-size: 11px; color: var(--muted); white-space: nowrap; }
   .verdict { font-size: 14.5px; margin: 0 0 12px; }
+  /* phone: summary docked at the bottom while choosing foods */
+  .pdock { display: none; }
+  @media (max-width: 899px) {
+    .pdock { display: block; position: fixed; left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom)); z-index: 20;
+      background: var(--dark); color: #efece4; border-radius: 14px; padding: 10px 14px 12px; box-shadow: 0 6px 24px rgba(0,0,0,.25);
+      transform: translateY(calc(100% + 24px)); transition: transform .25s; }
+    .pdock.show { transform: none; }
+    .pdock .r { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 13px; }
+    .pdock .r b { font-size: 22px; font-weight: 900; }
+    .pdock .r a { color: #8fcfa9; font-size: 12.5px; text-decoration: none; white-space: nowrap; }
+    .pdock .pb { position: relative; height: 10px; border-radius: 5px; background: #2c302b; margin: 6px 0 20px; }
+    .pdock .pb > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px; background: #8fcfa9; transition: width .3s; max-width: 100%; }
+    .pdock .pb .mk { position: absolute; top: -3px; bottom: -3px; width: 2px; background: #efece4; }
+    .pdock .pb .mk > span { position: absolute; top: 13px; left: 50%; transform: translateX(-50%); font-size: 10px; color: #9d9a91; white-space: nowrap; }
+    .pdock .iso-d { font-size: 12px; color: #bdbab1; }
+    .pdock .iso-d b { font-weight: 700; }
+    .pdock .iso-d.over b { color: #f08b7a; }
+    #eat { padding-bottom: 150px; }
+  }
   .ibar { position: relative; height: 8px; border-radius: 4px; background: var(--bg3); margin-top: 6px; }
   .ibar > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; transition: width .35s, background .35s; max-width: 100%; }
   .ibar .mk { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--ink); }
@@ -488,6 +507,12 @@
         </div>
         <div class="meals" id="pMeals"></div>
       </div>
+    </div>
+
+    <div class="pdock" id="pdock" aria-live="polite">
+      <div class="r"><span><span class="ja">1日のたんぱく質</span><span class="en">Protein today</span> <b class="num" id="dTotal"></b></span><a href="#" id="dJump"><span class="ja">内訳を見る ↓</span><span class="en">Details ↓</span></a></div>
+      <div class="pb"><i id="dBar"></i><span class="mk" style="left:62.5%"><span><span class="ja">女性50 g</span><span class="en">W 50 g</span></span></span><span class="mk" style="left:81.25%"><span><span class="ja">男性65 g</span><span class="en">M 65 g</span></span></span></div>
+      <div class="iso-d" id="dIso"></div>
     </div>
 
     <h3 style="margin-top:44px"><span class="ja">いつもの料理を、そのまま植物性に</span><span class="en">Your usual dishes, made with plants</span></h3>
@@ -836,6 +861,11 @@ function renderMeter() {
   $('isoNote').innerHTML = iso > 75
     ? (ja ? '長い期間の平均としては上限の目安を超えます。大豆の食品を1つ、ほかの豆や麩に替えてみましょう（すぐに害があるわけではありません）。' : 'Above the long-term guide. Swap one soy food for other beans or fu (it isn’t harmful straight away).')
     : iso > 0 ? (ja ? '上限の目安の範囲内です。' : 'Within the long-term guide.') : '';
+  $('dTotal').textContent = fmt(tot) + ' g';
+  $('dBar').style.width = Math.min(tot / 80 * 100, 100) + '%';
+  $('dIso').className = 'iso-d' + (iso > 75 ? ' over' : '');
+  $('dIso').innerHTML = ja ? `大豆イソフラボン <b>${fmt(iso)} mg</b>（目安 70〜75 mg）${iso > 75 ? ' — 大豆を1品減らしましょう' : ''}`
+    : `Soy isoflavones <b>${fmt(iso)} mg</b> (guide 70–75 mg)${iso > 75 ? ' — drop one soy food' : ''}`;
   $('pMeals').innerHTML = preset ? PRESETS[preset].m[lang].map(([t, d]) => `<div><b>${t}</b>${d}</div>`).join('') : '';
 }
 
@@ -875,6 +905,14 @@ document.addEventListener('click', e => {
 document.addEventListener('input', e => {
   if (e.target.dataset.k) { meals[e.target.dataset.k] = +e.target.value; calc(); }
 });
+const dockSeen = { foods: false, meter: false };
+const dockIo = new IntersectionObserver(es => {
+  es.forEach(x => { dockSeen[x.target.id === 'foodList' ? 'foods' : 'meter'] = x.isIntersecting; });
+  $('pdock').classList.toggle('show', dockSeen.foods && !dockSeen.meter);
+}, { threshold: 0 });
+dockIo.observe($('foodList'));
+dockIo.observe(document.querySelector('.meter-box'));
+$('dJump').addEventListener('click', e => { e.preventDefault(); document.querySelector('.meter-box').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { threshold: .15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
