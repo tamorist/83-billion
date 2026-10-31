@@ -105,6 +105,18 @@
   .lrow .lab small { display: block; color: var(--muted); font-size: 11.5px; line-height: 1.3; }
   @media (max-width: 520px) { .lrow { grid-template-columns: 1fr; gap: 4px; } }
 
+  /* biomass waffle */
+  .bio { margin-top: 32px; background: var(--bg2); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; }
+  .waffle { display: grid; grid-template-columns: repeat(20, 1fr); gap: 4px; margin: 18px 0 10px; max-width: 640px; }
+  @media (max-width: 520px) { .waffle { grid-template-columns: repeat(10, 1fr); gap: 3px; } }
+  .waffle i { aspect-ratio: 1; border-radius: 3px; }
+  .wlegend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13.5px; margin-bottom: 6px; }
+  .wlegend span { display: inline-flex; align-items: center; gap: 6px; }
+  .wlegend i { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+  .bio .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; }
+  .bio .facts b { display: block; font-size: 24px; font-weight: 900; line-height: 1.2; }
+  .bio .facts div { font-size: 13.5px; }
+
   /* compare chart */
   .cmp { background: var(--bg2); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; margin-top: 28px; }
   .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
@@ -322,6 +334,24 @@
       <div><div class="v num"><span class="ja">1兆匹超</span><span class="en">1 trillion+</span></div><div class="k"><span class="ja">1年にとられる野生の魚（推計）</span><span class="en">wild fish caught a year (estimate)</span></div><div class="s"><span class="ja">推計で1.1〜2.2兆匹。漁獲量（重さ）から数を推計したもの</span><span class="en">Estimated 1.1–2.2 trillion, from catch weight</span></div></div>
       <div><div class="v num"><span class="ja">約8.3億</span><span class="en">~830 m</span></div><div class="k"><span class="ja">日本で1年に処理される鶏</span><span class="en">chickens slaughtered a year in Japan</span></div><div class="s"><span class="ja">肉用若鶏7.49億羽＋卵を産み終えた鶏など約0.79億羽（2024年）</span><span class="en">749 m meat chickens + ~79 m spent hens and others (2024)</span></div></div>
       <div><div class="v num"><span class="ja">約1,700万</span><span class="en">~17 m</span></div><div class="k"><span class="ja">日本で1年に処理される豚と牛</span><span class="en">pigs and cattle slaughtered a year in Japan</span></div><div class="s"><span class="ja">豚 約1,615万頭（2024年度）、牛 約109万頭（2023年度）</span><span class="en">Pigs ~16.15 m (FY2024), cattle ~1.09 m (FY2023)</span></div></div>
+    </div>
+
+    <div class="bio reveal">
+      <h3><span class="ja">地球上の哺乳類を、重さで見ると</span><span class="en">All the mammals on Earth, by weight</span></h3>
+      <p class="small" style="margin:0"><span class="ja">1マス＝哺乳類全体の重さの1%。Greenspoon ら（2023）の推計。</span><span class="en">Each square = 1% of the total weight of mammals. Greenspoon et al. (2023).</span></p>
+      <div class="waffle" id="waffle" role="img" aria-label="家畜58%、人間36%、野生の海の哺乳類4%、野生の陸の哺乳類2% / Livestock 58%, humans 36%, wild marine mammals 4%, wild land mammals 2%"></div>
+      <div class="wlegend">
+        <span><i style="background:var(--red)"></i><b class="num">58%</b><span class="ja">家畜（約6.3億 t。うち牛 約4.2億 t）</span><span class="en">Livestock (~630 Mt; cattle ~420 Mt)</span></span>
+        <span><i style="background:#6b6a63"></i><b class="num">36%</b><span class="ja">人間（約3.9億 t）</span><span class="en">Humans (~390 Mt)</span></span>
+        <span><i style="background:#5b8fb9"></i><b class="num">4%</b><span class="ja">野生の海の哺乳類（約4,000万 t）</span><span class="en">Wild marine mammals (~40 Mt)</span></span>
+        <span><i style="background:var(--green2)"></i><b class="num">2%</b><span class="ja">野生の陸の哺乳類（約2,000万 t）</span><span class="en">Wild land mammals (~20 Mt)</span></span>
+      </div>
+      <div class="facts">
+        <div><b class="num" style="color:var(--red)"><span class="ja">約20倍</span><span class="en">~20×</span></b><span class="ja">牛だけで、野生の陸の哺乳類（ゾウ・シカ・イノシシ・ネズミなどすべて）の約20倍の重さ</span><span class="en">Cattle alone outweigh all wild land mammals — elephants, deer, boar, mice and the rest — about 20 to 1</span></div>
+        <div><b class="num" style="color:var(--green)"><span class="ja">1人あたり 約3 kg</span><span class="en">~3 kg per person</span></b><span class="ja">地球上の野生の陸の哺乳類を全部合わせて、人間1人あたりにするとこれだけ</span><span class="en">All the wild land mammals on Earth, shared out per human</span></div>
+        <div><b class="num"><span class="ja">鶏は野鳥の約3倍</span><span class="en">Poultry ≈ 3× wild birds</span></b><span class="ja">鳥でも同じ。飼われている鳥（ほとんどが鶏）の重さは、すべての野鳥の約3倍（Bar-On ら 2018）</span><span class="en">Birds too: farmed poultry, mostly chickens, weigh about three times all wild birds combined (Bar-On et al. 2018)</span></div>
+      </div>
+      <p class="small" style="margin-bottom:0"><span class="ja">よく引用される「人間と家畜で哺乳類の96%」は Bar-On ら（2018）の値（炭素の重さで家畜60%・人間36%・野生4%）。新しい推計（2023年）では家畜と人間で約94%です。野生の陸の哺乳類は推計の幅が大きく、約1,300万〜3,800万 tとされています。</span><span class="en">The often-quoted “humans and livestock are 96% of mammals” is from Bar-On et al. (2018), by carbon mass: livestock 60%, humans 36%, wild 4%. The newer estimate (2023) gives about 94%. Wild land mammal biomass is uncertain: roughly 13–38 Mt.</span></p>
     </div>
 
     <div class="life reveal">
@@ -558,6 +588,8 @@
       <li><a href="https://doi.org/10.1017/awf.2024.7">Mood, A. &amp; Brooke, P. (2024). Estimating global numbers of fishes caught from the wild annually from 2000 to 2019. Animal Welfare 33: e6</a> <span class="use"><span class="ja">野生の魚 年1.1〜2.2兆匹（2000〜2019年の平均、FAOの漁獲量から推計。違法漁業・投棄は含まない）</span><span class="en">1.1–2.2 trillion wild fish a year (2000–2019 average, estimated from FAO catch; excludes illegal catch and discards)</span></span></li>
       <li><a href="https://www.maff.go.jp/j/tokei/kouhyou/tikusan_ryutu/gaiyou/">農林水産省 畜産物流通調査 食鳥流通統計調査（令和6年）</a> <span class="use"><span class="ja">肉用若鶏 7億4,913万羽、廃鶏 7,775万羽、その他 117万羽。「肉用若鶏＝ふ化後3か月齢未満」</span><span class="en">Japan poultry slaughter 2024; “meat chicken” = under 3 months</span></span></li>
       <li><a href="https://alic.go.jp/joho-c/joho05_003288.html">ALIC 畜産の情報（令和5年度 食肉流通統計）</a>・<a href="https://alic.go.jp/joho-c/joho05_003804.html">（令和6年度）</a> <span class="use"><span class="ja">牛 約109万頭（2023年度：和牛51.4万＋交雑26.1万＋乳牛31.3万）、豚 1,615万頭（2024年度）</span><span class="en">Japan cattle ~1.09 m (FY2023), pigs 16.15 m (FY2024)</span></span></li>
+      <li><a href="https://doi.org/10.1073/pnas.2204892120">Greenspoon, L. et al. (2023). The global biomass of wild mammals. PNAS 120: e2204892120</a> <span class="use"><span class="ja">家畜 約630 Mt（うち牛 約420 Mt）、人間 約390 Mt、野生の陸の哺乳類 約20 Mt（95%区間13〜38 Mt、1人あたり約3 kg）、野生の海の哺乳類 約40 Mt</span><span class="en">Livestock ~630 Mt (cattle ~420), humans ~390, wild land mammals ~20 Mt (13–38; ~3 kg per person), wild marine mammals ~40 Mt</span></span></li>
+      <li><a href="https://doi.org/10.1073/pnas.1711842115">Bar-On, Y.M., Phillips, R. &amp; Milo, R. (2018). The biomass distribution on Earth. PNAS 115: 6506–6511</a> <span class="use"><span class="ja">家畜 0.1、人間 0.06、野生の哺乳類 0.007 Gt C（60%・36%・4%）。飼われている鳥 0.005、野鳥 0.002 Gt C</span><span class="en">Livestock 0.1, humans 0.06, wild mammals 0.007 Gt C (60/36/4%); poultry 0.005 vs wild birds 0.002 Gt C</span></span></li>
       <li><a href="https://doi.org/10.1126/science.aaq0216">Poore, J. &amp; Nemecek, T. (2018). Reducing food’s environmental impacts through producers and consumers. Science 360: 987–992</a>; <a href="https://ourworldindata.org/environmental-impacts-of-food">Our World in Data: Environmental impacts of food</a> <span class="use"><span class="ja">食材別の温室効果ガス・土地・水・富栄養化、農地77%でカロリー18%・たんぱく質37%、食の排出の内訳（畜産・漁業31%＋家畜の土地利用16%＋飼料6%）、食べ方別の農地</span><span class="en">Per-food footprints; 77% of farmland for 18% of calories and 37% of protein; food-emission breakdown; land use by diet</span></span></li>
       <li><a href="https://ourworldindata.org/grapher/deforestation-by-commodity">Pendrill, F. et al. (2019) via Our World in Data</a> <span class="use"><span class="ja">熱帯の森林破壊の41%が牛の牧草地</span><span class="en">41% of tropical deforestation from cattle pasture</span></span></li>
       <li><a href="https://doi.org/10.3389/fpsyg.2019.02323">Parncutt, R. (2019). Frontiers in Psychology 10: 2323</a>; <a href="https://doi.org/10.3390/en16166074">Pearce, J.M. &amp; Parncutt, R. (2023). Energies 16: 6074</a> <span class="use"><span class="ja">1,000トン・ルール（炭素1,000 tで将来の死者1人、幅300〜3,000 t）</span><span class="en">The 1,000-ton rule (one future death per 1,000 t carbon; 300–3,000 t)</span></span></li>
@@ -625,6 +657,12 @@ function tick() {
   $('cWorld').textContent = fmt(Math.floor(s * WORLD_PER_SEC));
   $('cJapan').textContent = fmt(Math.floor(s * JAPAN_PER_SEC));
   requestAnimationFrame(tick);
+}
+
+// ---- mammal biomass waffle（Greenspoon ら 2023：家畜 ≈630 Mt、人間 ≈390 Mt、野生の海 ≈40 Mt、野生の陸 ≈20 Mt → 100マスに丸め）
+function renderWaffle() {
+  const parts = [[58, 'var(--red)'], [36, '#6b6a63'], [4, '#5b8fb9'], [2, 'var(--green2)']];
+  $('waffle').innerHTML = parts.map(([n, c]) => `<i style="background:${c}"></i>`.repeat(n)).join('');
 }
 
 // ---- lifespans (rough; years)
@@ -809,7 +847,7 @@ function setLang(l) {
   try { localStorage.setItem('83b-lang', l); } catch (e) {}
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
   document.title = l === 'ja' ? '830億の理由 — 動物・地球・人のために' : '83 Billion Reasons — for animals, the planet and people';
-  renderLife(); renderCmp(); renderSliders(); calc(); renderFoods(); setShare();
+  renderWaffle(); renderLife(); renderCmp(); renderSliders(); calc(); renderFoods(); setShare();
 }
 function setShare() {
   const text = lang === 'ja' ? '毎年、830億の動物が食べるために殺されている。まず、肉を半分に。' : '83 billion land animals are killed for food every year. Start by eating half as much meat.';
