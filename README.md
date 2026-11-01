@@ -7,7 +7,7 @@ Every year about 83 billion land animals are killed for food. This single page b
 - `index.html` — the whole site (Japanese / English)
 - `og.png` — share image (1200×630)
 
-Much of the food data is shared with the sister site [The Slow War](https://tamorist.github.io/slow-war/). Our own estimates are labelled as such on the page, and every figure is listed in the Sources section.
+Much of the food data is shared with the sister site [The Slow War](https://tamorist.github.io/slow-war/). See also [Before the Tipping Point](https://tamorist.github.io/tipping-point/) for the whole climate picture. Our own estimates are labelled as such on the page, and every figure is listed in the Sources section.
 
 ## License
 
