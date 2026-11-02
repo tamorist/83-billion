@@ -84,12 +84,12 @@
   .hero .guide .gchar { flex-basis: 84px; width: 84px; height: 84px; }
   .hero .guide .bubble { font-size: 15px; }
   .guide .bubble b { color: #2f6b4f; }
-  .reveal { display: none; }
+  .cshow { display: none; }
   html.ja .cwrap:not(.open) .counter, html.ja .cwrap:not(.open) .src { display: none; }
-  html.ja .cwrap:not(.open) .reveal { display: inline-flex; align-items: center; gap: 8px; margin: 18px 0 6px; font: inherit; font-size: 14px; font-weight: 700; color: #efece4; background: transparent; border: 1px solid #4a4e48; border-radius: 999px; padding: 9px 18px; cursor: pointer; }
-  html.ja .cwrap:not(.open) .reveal:hover { border-color: #9d9a91; }
-  html.ja .cwrap:not(.open) .reveal { flex-direction: column; gap: 2px; text-align: center; }
-  .reveal small { font-weight: 400; color: #9d9a91; font-size: 12px; }
+  html.ja .cwrap:not(.open) .cshow { display: inline-flex; align-items: center; gap: 8px; margin: 18px 0 6px; font: inherit; font-size: 14px; font-weight: 700; color: #efece4; background: transparent; border: 1px solid #4a4e48; border-radius: 999px; padding: 9px 18px; cursor: pointer; }
+  html.ja .cwrap:not(.open) .cshow:hover { border-color: #9d9a91; }
+  html.ja .cwrap:not(.open) .cshow { flex-direction: column; gap: 2px; text-align: center; }
+  .cshow small { font-weight: 400; color: #9d9a91; font-size: 12px; }
   .counter { margin: 40px 0 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
   .counter > div { border: 1px solid #2c302b; border-radius: 16px; padding: 22px; background: #1b1e1a; }
   .counter .k { font-size: 13px; color: #9d9a91; }
@@ -382,7 +382,7 @@
     <p class="basis en"><b>A note for readers outside Japan:</b> this site was made in Japan. The world figures are global, but the Japan counter, the “average diet”, the car comparison, the calculators and the protein tables use Japanese data (MAFF statistics, IGES, Japan’s food composition tables). Your own country’s numbers will differ — in many high-income countries people eat more meat than in Japan, so cutting it can do even more.</p>
     <div class="guide ja hero-g"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="nm">ちきゅうさん</span>こんにちは。ここは、毎日の食事と、<b>動物・地球・からだ</b>のつながりを考えるサイトだよ。<b>だれかを責めるためのページじゃない</b>から、安心してね。少しつらい数字もあるから、見たいときに下のボタンからどうぞ。</p></div>
     <div class="cwrap" id="cwrap">
-    <button type="button" class="reveal" id="reveal">いまの数字を見る<small>食べるために命を落とす動物の数（世界・日本）</small></button>
+    <button type="button" class="cshow" id="reveal">いまの数字を見る<small>食べるために命を落とす動物の数（世界・日本）</small></button>
     <div class="counter">
       <div>
         <div class="k"><span class="ja">このページを開いてから、世界で殺された陸の動物</span><span class="en">Land animals killed for food worldwide since you opened this page</span></div>
