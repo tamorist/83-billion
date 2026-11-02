@@ -1,20 +1,22 @@
 <!doctype html>
-<html lang="ja" class="ja">
+<html lang="en" class="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>830億の理由 — 83 Billion Reasons</title>
+<title>83 Billion Reasons — 830億の理由</title>
 <meta name="author" content="Tatsuya Mori (@ttmori)">
 <meta name="description" content="毎年830億の動物が、食べるために殺されている。動物・地球・人の健康から、肉を減らす理由と、無理なく始める方法を一次資料とともに。83 billion land animals are killed for food every year — the evidence, and an easy way to eat half as much meat.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="830億の理由 — 83 Billion Reasons">
-<meta property="og:description" content="毎年830億の動物が、食べるために殺されている。あなたのお皿から、それを変えられる。">
+<meta property="og:title" content="83 Billion Reasons — 830億の理由">
+<meta property="og:description" content="83 billion land animals are killed for food every year. You can change that, starting with your plate.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
 <meta property="og:site_name" content="83 Billion Reasons">
 <meta property="og:url" content="https://tamorist.github.io/83-billion/">
-<meta property="og:image" content="https://tamorist.github.io/83-billion/og.png">
+<meta property="og:image" content="https://tamorist.github.io/83-billion/og-en.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="830億 — 毎年、食べるために殺される陸の動物 / 83 billion land animals killed for food every year">
+<meta property="og:image:alt" content="83 billion land animals killed for food every year — 83 Billion Reasons">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@ttmori">
 <link rel="canonical" href="https://tamorist.github.io/83-billion/">
@@ -70,6 +72,7 @@
   .hero .q .hl { color: #8fcfa9; }
   .hero p { color: #bdbab1; max-width: 640px; font-size: clamp(15px, 2.2vw, 18px); }
   .hero .goal { color: #efece4; margin-top: 18px; }
+  .hero .basis { font-size: 13.5px; color: #c9c5bb; border: 1px solid #3a3d38; border-radius: 10px; padding: 10px 14px; margin: 14px 0 0; max-width: 760px; line-height: 1.7; }
   .hero .goal b { color: #8fcfa9; }
   .counter { margin: 40px 0 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
   .counter > div { border: 1px solid #2c302b; border-radius: 16px; padding: 22px; background: #1b1e1a; }
@@ -360,6 +363,7 @@
       <span class="en">Every year about 83 billion land animals are killed for food — most of them chickens. This page is not here to blame you. It is here to help line up what most of us already value — kindness to animals, a liveable planet, our own health — with what we eat every day. Every number is sourced, and our own estimates are labelled as such.</span>
     </p>
     <p class="goal"><span class="ja">目指すのは、完璧なヴィーガンではありません。<b>まず肉を半分に。慣れたら7割減に。</b>多くの人がそこまで動けば、830億は大きく減ります。</span><span class="en">The goal isn’t perfect veganism. <b>First, eat half as much meat. Then 70% less.</b> If many of us get that far, 83 billion falls dramatically.</span></p>
+    <p class="basis en"><b>A note for readers outside Japan:</b> this site was made in Japan. The world figures are global, but the Japan counter, the “average diet”, the car comparison, the calculators and the protein tables use Japanese data (MAFF statistics, IGES, Japan’s food composition tables). Your own country’s numbers will differ — in many high-income countries people eat more meat than in Japan, so cutting it can do even more.</p>
     <div class="counter">
       <div>
         <div class="k"><span class="ja">このページを開いてから、世界で殺された陸の動物</span><span class="en">Land animals killed for food worldwide since you opened this page</span></div>
@@ -859,8 +863,10 @@ const WORLD_PER_SEC = 83e9 / (365.25 * 86400);
 const JAPAN_PER_YEAR = 749130e3 + 77751e3 + 1171e3 + 16153083 + 1087943;
 const JAPAN_PER_SEC = JAPAN_PER_YEAR / (365.25 * 86400);
 
-let lang = 'ja';
-try { const s = localStorage.getItem('83b-lang'); if (s === 'en' || s === 'ja') lang = s; else if (!navigator.language.startsWith('ja')) lang = 'en'; } catch (e) {}
+let lang = 'en';
+try { const s = localStorage.getItem('83b-lang'); if (s === 'en' || s === 'ja') lang = s; } catch (e) {}
+const qLang = new URLSearchParams(location.search).get('lang');
+if (qLang === 'en' || qLang === 'ja') lang = qLang;
 const $ = id => document.getElementById(id);
 const sig2 = n => { const p = Math.pow(10, Math.max(0, Math.floor(Math.log10(n)) - 1)); return Math.round(n / p) * p; };
 const fmt = (n, d = 0) => n.toLocaleString(lang === 'ja' ? 'ja-JP' : 'en-US', { maximumFractionDigits: d, minimumFractionDigits: d });
