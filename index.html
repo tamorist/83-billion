@@ -106,7 +106,7 @@
   .gpick:not(.first) { display: inline-block; padding: 6px 10px; border-radius: 999px; }
   .gpick:not(.first) .gp-q, .gpick:not(.first) button small { display: none; }
   .gpick:not(.first) button { padding: 3px 11px; border-radius: 999px; font-size: 12.5px; }
-  html.en .gpick, .gpick[hidden] { display: none !important; }
+  .gpick[hidden] { display: none !important; }
   html.noguide .guide, html.noguide .sw-guide { display: none !important; }
   .guide { display: flex; align-items: flex-end; gap: 10px; margin: 18px 0 22px; max-width: 680px; }
   .guide .gchar { flex: 0 0 64px; width: 64px; height: 64px; }
@@ -418,14 +418,14 @@
     </p>
     <p class="goal"><span class="ja">目指すのは、完璧なヴィーガンではありません。<b>まず肉を半分に。慣れたら7割減に。</b>多くの人がそこまで動けば、830億は大きく減ります。</span><span class="en">The goal isn’t perfect veganism. <b>First, eat half as much meat. Then 70% less.</b> If many of us get that far, 83 billion falls dramatically.</span></p>
     <p class="basis en"><b>A note for readers outside Japan:</b> this site was made in Japan. The world figures are global, but the Japan counter, the “average diet”, the car comparison, the calculators and the protein tables use Japanese data (MAFF statistics, IGES, Japan’s food composition tables). Your own country’s numbers will differ — in many high-income countries people eat more meat than in Japan, so cutting it can do even more.</p>
-    <div class="gpick first" id="guidePick" role="group" aria-label="ちきゅうさんの解説">
-      <p class="gp-q">はじめに、読み方を選べます</p>
-      <div class="gp-btns"><span class="gp-l">ちきゅうさんの解説</span>
-        <button data-guide-set="on">🌍 解説あり<small>ちきゅうさんと、やさしい言葉で読む</small></button>
-        <button data-guide-set="off">解説なし<small>データと本文だけで読む</small></button>
+    <div class="gpick first" id="guidePick" role="group" aria-label="Guide">
+      <p class="gp-q"><span class="ja">はじめに、読み方を選べます</span><span class="en">How would you like to read?</span></p>
+      <div class="gp-btns"><span class="gp-l"><span class="ja">ちきゅうさんの解説</span><span class="en">Little Earth’s guide</span></span>
+        <button data-guide-set="on">🌍 <span class="ja">解説あり</span><span class="en">Guide on</span><small><span class="ja">ちきゅうさんと、やさしい言葉で読む</span><span class="en">Read along with Little Earth, in plain words</span></small></button>
+        <button data-guide-set="off"><span class="ja">解説なし</span><span class="en">Guide off</span><small><span class="ja">データと本文だけで読む</span><span class="en">Just the data and the text</span></small></button>
       </div>
     </div>
-    <div class="guide ja hero-g"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="nm">ちきゅうさん</span>こんにちは。ここは、毎日の食事と、<b>動物・地球・からだ</b>のつながりを考えるサイトだよ。<b>だれかを責めるためのページじゃない</b>から、安心してね。少しつらい数字もあるから、見たいときに下のボタンからどうぞ。</p></div>
+    <div class="guide hero-g"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="nm"><span class="ja">ちきゅうさん</span><span class="en">Little Earth</span></span><span class="ja">こんにちは。ここは、毎日の食事と、<b>動物・地球・からだ</b>のつながりを考えるサイトだよ。<b>だれかを責めるためのページじゃない</b>から、安心してね。少しつらい数字もあるから、見たいときに下のボタンからどうぞ。</span><span class="en">Hello! This site looks at how our everyday meals connect with <b>animals, the planet and our bodies</b>. <b>It isn’t here to blame anyone</b>, so don’t worry. Some of the numbers are hard to take in, so go at your own pace.</span></p></div>
     <div class="cwrap" id="cwrap">
     <button type="button" class="cshow" id="reveal">いまの数字を見る<small>食べるために命を落とす動物の数（世界・日本）</small></button>
     <div class="counter">
@@ -451,7 +451,7 @@
   <div class="wrap">
     <p class="eyebrow"><span class="ja">なぜ、いま</span><span class="en">Why now</span></p>
     <h2><span class="ja">理由は、ひとつではありません。</span><span class="en">There isn’t just one reason.</span></h2>
-    <div class="guide ja"><span class="gchar" data-mood="smile"></span><p class="bubble">理由はひとつじゃなくていいんだ。<b>自分にしっくりくるもの</b>から考えてみてね。</p></div>
+    <div class="guide"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="ja">理由はひとつじゃなくていいんだ。<b>自分にしっくりくるもの</b>から考えてみてね。</span><span class="en">There doesn’t have to be just one reason. Start with <b>whatever feels right to you</b>.</span></p></div>
     <p class="lead narrow"><span class="ja">動物のため、地球のため、自分と家族のため。どの入り口からでも、行き着く答えは同じ「肉を減らし、植物を増やす」です。</span><span class="en">For animals, for the planet, for yourself and your family. Whichever door you come in by, the answer is the same: less meat, more plants.</span></p>
     <div class="reasons">
       <a href="#animals" style="--c:var(--red)"><span class="ic">🐔</span><b><span class="ja">動物</span><span class="en">Animals</span></b><p><span class="ja">年830億。日本の肉用の鶏は生まれて3か月たたずに。</span><span class="en">83 billion a year. Japan’s meat chickens are killed before they are three months old.</span></p></a>
@@ -466,7 +466,7 @@
   <div class="wrap">
     <p class="chapter" style="--c:var(--red)"><span class="cn num">1</span><span class="ja">動物</span><span class="en">Animals</span></p>
     <h2><span class="ja">数ではなく、一つひとつの命として。</span><span class="en">Not a number — each one a life.</span></h2>
-    <div class="guide ja"><span class="gchar" data-mood="worry"></span><p class="bubble">ここは少しつらいところ。でも、一つひとつの命を知ることが、<b>やさしさの第一歩</b>だよ。</p></div>
+    <div class="guide"><span class="gchar" data-mood="worry"></span><p class="bubble"><span class="ja">ここは少しつらいところ。でも、一つひとつの命を知ることが、<b>やさしさの第一歩</b>だよ。</span><span class="en">This part is a little hard. But knowing about each life is <b>the first step to kindness</b>.</span></p></div>
     <p class="lead narrow"><span class="ja">鶏も豚も牛も、痛みや恐怖を感じ、仲間を見分け、遊びます。私たちが犬や猫に感じる「かわいそう」と、同じ感覚を持つ動物です。</span><span class="en">Chickens, pigs and cattle feel pain and fear, recognise companions and play. They feel what we know our dogs and cats feel.</span></p>
 
     <div class="stats">
@@ -513,7 +513,7 @@
   <div class="wrap">
     <p class="chapter" style="--c:var(--green)"><span class="cn num">2</span><span class="ja">地球</span><span class="en">Planet</span></p>
     <h2><span class="ja">地球の使い方として、あまりに効率が悪い。</span><span class="en">A strikingly inefficient way to use a planet.</span></h2>
-    <div class="guide ja"><span class="gchar" data-mood="smile"></span><p class="bubble">わたし（地球）の土地や水の使い方の話。くらべてみると、びっくりするかも。</p></div>
+    <div class="guide"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="ja">わたし（地球）の土地や水の使い方の話。くらべてみると、びっくりするかも。</span><span class="en">This is about how my land and water — Earth’s — are used. The comparison may surprise you.</span></p></div>
     <p class="lead narrow"><span class="ja">動物に植物を食べさせて、その肉を食べる。この遠回りのせいで、畜産は土地・水・気候に大きな負担をかけています。</span><span class="en">We grow plants, feed them to animals, then eat the animals. That detour is why livestock weighs so heavily on land, water and climate.</span></p>
 
     <div class="shares reveal">
@@ -649,7 +649,7 @@
   <div class="wrap">
     <p class="chapter" style="--c:var(--amber)"><span class="cn num">3</span><span class="ja">人</span><span class="en">People</span></p>
     <h2><span class="ja">肉を減らすことは、自分を守ることでもある。</span><span class="en">Eating less meat also protects you.</span></h2>
-    <div class="guide ja"><span class="gchar" data-mood="smile"></span><p class="bubble">肉を減らすことは、<b>自分のからだを守ること</b>にもつながるんだ。</p></div>
+    <div class="guide"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="ja">肉を減らすことは、<b>自分のからだを守ること</b>にもつながるんだ。</span><span class="en">Eating less meat also helps <b>protect your own body</b>.</span></p></div>
     <div class="stats">
       <div class="reveal"><div class="v num" style="color:var(--red)">Group 1</div><div class="k"><span class="ja">加工肉（ハム・ベーコン・ソーセージ）は「ヒトに対して発がん性がある」</span><span class="en">Processed meat (ham, bacon, sausages) is “carcinogenic to humans”</span></div><div class="s"><span class="ja">WHO 国際がん研究機関（2015）。毎日50 gで大腸がんのリスクが約18%上がる（相対リスク）。赤身肉は「おそらく発がん性がある」（2A）</span><span class="en">WHO IARC (2015). Each daily 50 g raises colorectal-cancer risk by ~18% (relative). Red meat: “probably carcinogenic” (2A)</span></div></div>
       <div class="reveal"><div class="v num" style="color:var(--amber)"><span class="ja">4つに3つ</span><span class="en">3 in 4</span></div><div class="k"><span class="ja">新しく現れる感染症のうち、動物から来るもの</span><span class="en">new or emerging human infections that come from animals</span></div><div class="s"><span class="ja">米国CDC。鳥インフルエンザのように、密集した飼育は病原体が変異・拡大する場になりえます</span><span class="en">US CDC. Crowded farming, as with bird flu, can let pathogens spread and mutate</span></div></div>
@@ -665,7 +665,7 @@
   <div class="wrap">
     <p class="eyebrow" style="color:#807d75"><span class="ja">あなたのお皿</span><span class="en">Your plate</span></p>
     <h2><span class="ja">あなたが替えると、何が変わる？</span><span class="en">What changes if you switch?</span></h2>
-    <div class="guide ja"><span class="gchar" data-mood="happy"></span><p class="bubble">あなたの選びかえで、何が変わるか見てみよう。<b>小さな一歩も、積み重ねると大きい</b>よ。</p></div>
+    <div class="guide"><span class="gchar" data-mood="happy"></span><p class="bubble"><span class="ja">あなたの選びかえで、何が変わるか見てみよう。<b>小さな一歩も、積み重ねると大きい</b>よ。</span><span class="en">Let’s see what your changes can do. <b>Small steps add up</b>.</span></p></div>
     <p class="lead narrow"><span class="ja">1週間に肉や魚がメインの食事が何回あるかを選んでください。そのうち半分、または7割を豆腐や豆に替えたときの違いを計算します（1食の主菜 肉・魚120 g、豆腐150 g）。</span><span class="en">How many meals a week have meat or fish as the main dish? We work out what changes if half or 70% of them are made with tofu or beans instead (120 g meat/fish vs 150 g tofu per meal).</span></p>
     <div class="calc-grid">
       <div class="panel" id="sliders"></div>
@@ -691,7 +691,7 @@
   <div class="wrap">
     <p class="eyebrow"><span class="ja">これなら、できそう</span><span class="en">You can do this</span></p>
     <h2><span class="ja">たんぱく質は、豆と穀物で十分とれる。</span><span class="en">Beans and grains cover your protein.</span></h2>
-    <div class="guide ja"><span class="gchar" data-mood="happy"></span><p class="bubble">豆や穀物でも、たんぱく質はちゃんととれるよ。<b>おいしい組み合わせ</b>を探してみてね。</p></div>
+    <div class="guide"><span class="gchar" data-mood="happy"></span><p class="bubble"><span class="ja">豆や穀物でも、たんぱく質はちゃんととれるよ。<b>おいしい組み合わせ</b>を探してみてね。</span><span class="en">Beans and grains give you plenty of protein too. Try finding <b>tasty combinations</b>.</span></p></div>
     <p class="lead narrow"><span class="ja">肉を半分にするなら、週の3〜4日をこんな「植物性の日」にするイメージです。下の食べ物の＋を押して、1日の食事を組み立ててみてください。まずは献立の例から。たんぱく質の合計を、国が示す1日の推奨量（18〜64歳：女性50 g、男性65 g）と比べます。</span><span class="en">Halving meat means making three or four days a week “plant days” like these. Tap + on the foods below to build a day — or start from an example. We compare the total protein with Japan’s recommended daily amount (ages 18–64: women 50 g, men 65 g).</span></p>
 
     <div class="eat-grid">
@@ -738,7 +738,7 @@
   <div class="wrap narrow">
     <p class="eyebrow"><span class="ja">よくある疑問</span><span class="en">Common questions</span></p>
     <h2><span class="ja">気になるのは、当然です。</span><span class="en">Fair questions.</span></h2>
-    <div class="guide ja"><span class="gchar" data-mood="smile"></span><p class="bubble">気になることがあるのは当然だよ。よくある疑問に、ひとつずつ答えているよ。</p></div>
+    <div class="guide"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="ja">気になることがあるのは当然だよ。よくある疑問に、ひとつずつ答えているよ。</span><span class="en">It’s natural to have questions. Here are answers to the common ones, one by one.</span></p></div>
 
     <details><summary><span class="ja">たんぱく質は足りるの？</span><span class="en">Will I get enough protein?</span></summary><div class="body">
       <p><span class="ja">足ります。日本は大豆の国ですが、大豆だけに頼らず、ほかの豆や麩、穀物も組み合わせるのがおすすめです（大豆イソフラボンのとりすぎを避けるため）。納豆1パック（45 g）で約7 g、ゆでたレンズ豆100 gで約11 g。<a href="#eat">上の「これなら、できそう」</a>で、1日の献立を組み立てて確かめられます。</span><span class="en">Yes. Mix soy with other beans, wheat gluten (fu) and grains rather than relying on soy alone (to keep isoflavones moderate). One pack of natto (45 g) has about 7 g; 100 g of boiled lentils about 11 g. Try building a day in <a href="#eat">“You can do this”</a> above.</span></p>
@@ -790,7 +790,7 @@
   <div class="wrap">
     <p class="eyebrow"><span class="ja">今日から</span><span class="en">Starting today</span></p>
     <h2><span class="ja">完璧でなくていい。まず、半分から。</span><span class="en">It doesn’t have to be perfect. Start with half.</span></h2>
-    <div class="guide ja"><span class="gchar" data-mood="happy"></span><p class="bubble">完璧じゃなくていいんだ。<b>まずは半分から</b>、いっしょに始めよう！</p></div>
+    <div class="guide"><span class="gchar" data-mood="happy"></span><p class="bubble"><span class="ja">完璧じゃなくていいんだ。<b>まずは半分から</b>、いっしょに始めよう！</span><span class="en">It doesn’t have to be perfect. <b>Start with half</b> — let’s begin together!</span></p></div>
     <div class="steps">
       <div><div class="n">STEP 1</div><h3><span class="ja">好きな植物性の料理を3つ決める</span><span class="en">Pick three plant-based dishes you already like</span></h3><p><span class="ja">麻婆豆腐（豆腐と大豆ミートで）、野菜カレー、納豆ごはんとみそ汁。日本の家庭料理には、すでに答えがたくさんあります。<a href="#eat">献立の例</a></span><span class="en">Bean chili, vegetable curry, pasta with lentil sauce, stir-fried tofu. You probably eat some already. <a href="#eat">Example days</a></span></p></div>
       <div><div class="n">STEP 2</div><h3><span class="ja">肉を半分に</span><span class="en">Halve your meat</span></h3><p><span class="ja">週の半分を「植物性の日」に。牛肉と加工肉から減らすと、気候と健康への効果が大きくなります。鶏肉に置き換えるのではなく、豆・大豆・穀物で埋めるのがポイントです。</span><span class="en">Make half the week “plant days”. Cutting beef and processed meat first does the most for climate and health. Fill the gap with beans, soy and grains — not chicken.</span></p></div>
@@ -1250,6 +1250,7 @@ function setLang(l) {
   document.documentElement.lang = l;
   document.documentElement.className = l;
   try { localStorage.setItem('83b-lang', l); } catch (e) {}
+  if (window.cwmGuideApply) window.cwmGuideApply();
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === l));
   document.title = l === 'ja' ? '830億の理由 — 動物・地球・人のために' : '83 Billion Reasons — for animals, the planet and people';
   renderWaffle(); renderLife(); renderCmp(); renderPhd(); renderSliders(); calc(); renderFoods(); setShare();
@@ -1301,11 +1302,14 @@ tick();
   const KEY = 'cwm-guide';
   let g = null;
   try { const q = new URLSearchParams(location.search).get('guide'); if (q === 'on' || q === 'off') { g = q; localStorage.setItem(KEY, q); } else g = localStorage.getItem(KEY); } catch (e) {}
+  // 選ぶ前は、日本語では「解説あり」、英語では「解説なし」。選んだあとは、どちらの言語でもその選択に従う
+  const L = () => { const h = document.documentElement; return h.classList.contains('en') ? 'en' : h.classList.contains('ja') ? 'ja' : (h.lang === 'ja' ? 'ja' : 'en'); };
   const apply = () => {
-    document.documentElement.classList.toggle('noguide', g === 'off');
+    const chosen = g === 'on' || g === 'off', eff = chosen ? g : (L() === 'ja' ? 'on' : 'off');
+    document.documentElement.classList.toggle('noguide', eff === 'off');
     const box = document.getElementById('guidePick'); if (!box) return;
-    box.classList.toggle('first', g !== 'on' && g !== 'off');
-    box.querySelectorAll('[data-guide-set]').forEach(b => b.setAttribute('aria-pressed', b.dataset.guideSet === g));
+    box.classList.toggle('first', !chosen && L() === 'ja');
+    box.querySelectorAll('[data-guide-set]').forEach(b => b.setAttribute('aria-pressed', (chosen || L() === 'en') && b.dataset.guideSet === eff));
   };
   // 「解説なし」なら冒頭の数字をすぐ見せ、「解説あり」なら隠した初期状態に戻す
   const reveal = () => { const cw = document.getElementById('cwrap'); if (cw) cw.classList.toggle('open', g === 'off'); };
