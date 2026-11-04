@@ -93,6 +93,21 @@
   .hero .goal { color: #efece4; margin-top: 18px; }
   .hero .basis { font-size: 13.5px; color: #c9c5bb; border: 1px solid #3a3d38; border-radius: 10px; padding: 10px 14px; margin: 14px 0 0; max-width: 760px; line-height: 1.7; }
   .hero .goal b { color: #8fcfa9; }
+  /* ちきゅうさんの解説 あり／なし（姉妹サイト共通） */
+  .gpick { background: #fff; color: #1d1f1c; border: 1px solid rgba(0,0,0,.12); border-radius: 14px; padding: 12px 14px; margin: 18px 0 6px; max-width: 680px; font-size: 13px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
+  .gpick .gp-q { margin: 0 0 8px; font-weight: 700; font-size: 14px; color: #1d1f1c !important; }
+  .gpick .gp-btns { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .gpick .gp-l { color: #6b6e66; font-size: 12.5px; }
+  .gpick button { font: inherit; font-size: 13.5px; text-align: left; background: #f4f1ea; color: #1d1f1c; border: 1px solid rgba(0,0,0,.14); border-radius: 10px; padding: 8px 12px; cursor: pointer; line-height: 1.4; }
+  .gpick button small { display: block; font-size: 11.5px; color: #6b6e66; font-weight: 400; }
+  .gpick button[aria-pressed="true"] { background: #1d1f1c; color: #fff; border-color: #1d1f1c; font-weight: 700; }
+  .gpick button[aria-pressed="true"] small { color: rgba(255,255,255,.75); }
+  .gpick.first .gp-l { display: none; }
+  .gpick:not(.first) { display: inline-block; padding: 6px 10px; border-radius: 999px; }
+  .gpick:not(.first) .gp-q, .gpick:not(.first) button small { display: none; }
+  .gpick:not(.first) button { padding: 3px 11px; border-radius: 999px; font-size: 12.5px; }
+  html.en .gpick, .gpick[hidden] { display: none !important; }
+  html.noguide .guide, html.noguide .sw-guide { display: none !important; }
   .guide { display: flex; align-items: flex-end; gap: 10px; margin: 18px 0 22px; max-width: 680px; }
   .guide .gchar { flex: 0 0 64px; width: 64px; height: 64px; }
   .guide .gchar svg { width: 100%; height: 100%; display: block; }
@@ -403,6 +418,13 @@
     </p>
     <p class="goal"><span class="ja">目指すのは、完璧なヴィーガンではありません。<b>まず肉を半分に。慣れたら7割減に。</b>多くの人がそこまで動けば、830億は大きく減ります。</span><span class="en">The goal isn’t perfect veganism. <b>First, eat half as much meat. Then 70% less.</b> If many of us get that far, 83 billion falls dramatically.</span></p>
     <p class="basis en"><b>A note for readers outside Japan:</b> this site was made in Japan. The world figures are global, but the Japan counter, the “average diet”, the car comparison, the calculators and the protein tables use Japanese data (MAFF statistics, IGES, Japan’s food composition tables). Your own country’s numbers will differ — in many high-income countries people eat more meat than in Japan, so cutting it can do even more.</p>
+    <div class="gpick first" id="guidePick" role="group" aria-label="ちきゅうさんの解説">
+      <p class="gp-q">はじめに、読み方を選べます</p>
+      <div class="gp-btns"><span class="gp-l">ちきゅうさんの解説</span>
+        <button data-guide-set="on">🌍 解説あり<small>ちきゅうさんと、やさしい言葉で読む</small></button>
+        <button data-guide-set="off">解説なし<small>データと本文だけで読む</small></button>
+      </div>
+    </div>
     <div class="guide ja hero-g"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="nm">ちきゅうさん</span>こんにちは。ここは、毎日の食事と、<b>動物・地球・からだ</b>のつながりを考えるサイトだよ。<b>だれかを責めるためのページじゃない</b>から、安心してね。少しつらい数字もあるから、見たいときに下のボタンからどうぞ。</p></div>
     <div class="cwrap" id="cwrap">
     <button type="button" class="cshow" id="reveal">いまの数字を見る<small>食べるために命を落とす動物の数（世界・日本）</small></button>
@@ -1274,6 +1296,25 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 loadPreset('washoku');
 setLang(lang);
 tick();
+// ---- ちきゅうさんの解説 あり／なし（姉妹サイト共通の設定。同じドメインなので localStorage を共有。?guide=on|off でも指定できる）
+(function () {
+  const KEY = 'cwm-guide';
+  let g = null;
+  try { const q = new URLSearchParams(location.search).get('guide'); if (q === 'on' || q === 'off') { g = q; localStorage.setItem(KEY, q); } else g = localStorage.getItem(KEY); } catch (e) {}
+  const apply = () => {
+    document.documentElement.classList.toggle('noguide', g === 'off');
+    const box = document.getElementById('guidePick'); if (!box) return;
+    box.classList.toggle('first', g !== 'on' && g !== 'off');
+    box.querySelectorAll('[data-guide-set]').forEach(b => b.setAttribute('aria-pressed', b.dataset.guideSet === g));
+  };
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-guide-set]'); if (!b) return;
+    g = b.dataset.guideSet; try { localStorage.setItem(KEY, g); } catch (e) {}
+    apply();
+  });
+  window.cwmGuideApply = apply;
+  apply();
+})();
 </script>
 </body>
 </html>
