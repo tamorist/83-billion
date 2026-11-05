@@ -347,6 +347,36 @@
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 28px; }
   .steps > div { background: var(--bg2); border: 1px solid var(--faint); border-radius: 16px; padding: 22px; }
   .steps .n { font-size: 13px; font-weight: 900; color: var(--green); letter-spacing: .1em; }
+  /* together：一人の完璧より、ゆるい仲間を */
+  .together { background: var(--bg2); }
+  .ppl { display: grid; gap: 12px; margin: 26px 0 8px; }
+  .ppl .r { display: grid; grid-template-columns: 170px 1fr auto; gap: 12px; align-items: center; background: var(--bg); border: 1px solid var(--faint); border-radius: 14px; padding: 12px 16px; }
+  .ppl .r b { font-size: 15px; line-height: 1.4; }
+  .ppl .r small { display: block; font-size: 12px; color: var(--muted); font-weight: 400; }
+  .ppl .ic { display: flex; flex-wrap: wrap; gap: 5px; }
+  .ppl .ic i { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--green); background: var(--green2); }
+  .ppl .ic i.h { background: conic-gradient(var(--green2) 0 50%, transparent 0); }
+  .ppl .out { text-align: right; font-weight: 900; font-size: 20px; color: var(--green); white-space: nowrap; }
+  .ppl .out small { display: block; font-size: 11px; color: var(--muted); font-weight: 400; }
+  .ppl .r.big { border-color: var(--green2); box-shadow: 0 0 0 1px var(--green2) inset; }
+  @media (max-width: 560px) { .ppl .r { grid-template-columns: 1fr auto; } .ppl .ic { grid-column: 1 / -1; grid-row: 2; } }
+  .why4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 18px 0 0; }
+  .why4 > div { background: var(--bg); border: 1px solid var(--faint); border-radius: 14px; padding: 16px 18px; font-size: 14.5px; color: #3c3e39; }
+  .why4 h3 { font-size: 16px; color: var(--ink); }
+  .why4 .n { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--green); color: #fff; font-size: 13px; margin-right: 6px; vertical-align: 1px; }
+  .soso { margin-top: 34px; background: var(--dark); color: #efece4; border-radius: 18px; padding: 26px 22px; }
+  .soso h3 { font-size: clamp(21px, 4vw, 28px); line-height: 1.45; margin: 4px 0 12px; }
+  .soso .eyebrow { color: #9d9a91; margin: 0; }
+  .soso p { color: #cfcbc1; margin: 0 0 10px; }
+  .soso b { color: #8fcfa9; }
+  .soso .small { color: #9d9a91; }
+  .tip2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 16px 0 6px; }
+  .tip2 > div { border-left: 4px solid var(--green2); background: var(--bg); border-radius: 0 12px 12px 0; padding: 12px 16px; font-size: 14px; color: #3c3e39; }
+  .tip2 b.k { display: block; font-size: 22px; color: var(--green); line-height: 1.3; }
+  .tip2 .cav { display: block; margin-top: 6px; font-size: 12.5px; color: var(--muted); }
+  .together .goalline { margin-top: 30px; font-size: clamp(19px, 3.4vw, 25px); font-weight: 900; line-height: 1.5; text-align: center; }
+  .together .goalline b { color: var(--green); }
+  @media (max-width: 560px) { .together .goalline br { display: none; } }
   .steps p { margin: 6px 0 0; font-size: 14.5px; color: #3c3e39; }
   .pledge { margin-top: 36px; text-align: center; background: var(--green); color: #fff; border-radius: 20px; padding: 40px 20px; }
   .pledge h3 { font-size: clamp(22px, 3.6vw, 30px); margin-bottom: 10px; }
@@ -389,6 +419,7 @@
   <div class="wrap">
     <a class="brand" href="#"><span class="ja">830億の理由</span><span class="en">83 Billion Reasons</span></a>
     <nav class="nav">
+      <a href="#together"><span class="ja">考え方</span><span class="en">The idea</span></a>
       <a href="#animals"><span class="ja">動物</span><span class="en">Animals</span></a>
       <a href="#planet"><span class="ja">地球</span><span class="en">Planet</span></a>
       <a href="#people"><span class="ja">人</span><span class="en">People</span></a>
@@ -416,7 +447,7 @@
       <span class="ja">世界では毎年、約830億の陸の動物が食べるために殺されています。そのほとんどは鶏です。このページは、あなたを責めるためのものではありません。多くの人が大切にしている「動物にやさしく」「地球を守りたい」「健康でいたい」という気持ちと、毎日の食事をそろえるための材料です。数字にはすべて出典をつけ、私たちの概算にはそう書いています。</span>
       <span class="en">Every year about 83 billion land animals are killed for food — most of them chickens. This page is not here to blame you. It is here to help line up what most of us already value — kindness to animals, a liveable planet, our own health — with what we eat every day. Every number is sourced, and our own estimates are labelled as such.</span>
     </p>
-    <p class="goal"><span class="ja">目指すのは、完璧なヴィーガンではありません。<b>まず肉を半分に。慣れたら7割減に。</b>多くの人がそこまで動けば、830億は大きく減ります。</span><span class="en">The goal isn’t perfect veganism. <b>First, eat half as much meat. Then 70% less.</b> If many of us get that far, 83 billion falls dramatically.</span></p>
+    <p class="goal"><span class="ja">目指すのは、一人の完璧なヴィーガンではありません。<b>まず自分で肉を半分に。そして、同じように減らす仲間を増やすこと。</b>自分の食事は入り口で、ゴールは社会が変わることです。多くの人がそこまで動けば、830億は大きく減ります。</span><span class="en">The goal isn’t one perfect vegan. <b>Halve your own meat first — then bring others along.</b> Your plate is the starting point; the goal is a society that changes. If many of us get that far, 83 billion falls dramatically.</span></p>
     <p class="basis en"><b>A note for readers outside Japan:</b> this site was made in Japan. The world figures are global, but the Japan counter, the “average diet”, the car comparison, the calculators and the protein tables use Japanese data (MAFF statistics, IGES, Japan’s food composition tables). Your own country’s numbers will differ — in many high-income countries people eat more meat than in Japan, so cutting it can do even more.</p>
     <div class="gpick first" id="guidePick" role="group" aria-label="Guide">
       <p class="gp-q"><span class="ja">はじめに、読み方を選べます</span><span class="en">How would you like to read?</span></p>
@@ -442,9 +473,50 @@
     </div>
     <p class="src"><span class="ja">世界：FAO（Our World in Data、2022年 830億）。日本：農林水産省 食鳥流通統計（2024年）・食肉流通統計（牛2023年度、豚2024年度）。1年を秒で割った平均です。</span><span class="en">World: FAO via Our World in Data (83 billion in 2022). Japan: MAFF poultry (2024) and meat (cattle FY2023, pigs FY2024) statistics. Annual totals divided evenly over the year.</span> <a href="#sources">→ <span class="ja">出典</span><span class="en">Sources</span></a></p>
     </div>
-    <a class="scroll-cue" href="#why"><span class="ja">3つの理由を見る</span><span class="en">See the three reasons</span> ↓</a>
+    <a class="scroll-cue" href="#together"><span class="ja">まず、このサイトの考え方から</span><span class="en">Start with the idea</span> ↓</a>
   </div>
 </header>
+
+<!-- TOGETHER：このサイトの考え方 -->
+<section id="together" class="together">
+  <div class="wrap">
+    <p class="eyebrow"><span class="ja">このサイトの考え方</span><span class="en">The idea behind this site</span></p>
+    <h2><span class="ja">一人の完璧より、<br>ゆるく減らす仲間を。</span><span class="en">Not one perfect vegan —<br>many people eating less.</span></h2>
+    <div class="guide"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="ja">自分が完璧になることより、<b>いっしょに減らす人を増やす</b>ことのほうが、ずっと大きいんだ。</span><span class="en">Getting more people to <b>cut back with you</b> matters far more than becoming perfect yourself.</span></p></div>
+    <p class="lead narrow"><span class="ja">一人が肉を減らしても、地球全体から見ればごくわずかです。肉を減らす本当の目的は、社会の「ふつう」を変えること。自分の食事は、そのための入り口です。</span><span class="en">One person eating less meat is a tiny share of the world’s total. The real point of cutting back is to shift what society sees as normal. Your own plate is where that starts.</span></p>
+
+    <div class="ppl reveal" aria-label="1人の完全な菜食と、肉を半分にする人の比較">
+      <div class="r"><b><span class="ja">完全にやめる人</span><span class="en">One person who quits</span><small><span class="ja">1人</span><span class="en">entirely</span></small></b><span class="ic"><i></i></span><span class="out">1<span class="ja">人分</span><small><span class="ja">減る肉</span><span class="en">person’s worth</span></small></span></div>
+      <div class="r"><b><span class="ja">半分にする人</span><span class="en">People who halve</span><small><span class="ja">2人</span><span class="en">two of them</span></small></b><span class="ic"><i class="h"></i><i class="h"></i></span><span class="out">1<span class="ja">人分</span><small><span class="ja">減る肉</span><span class="en">person’s worth</span></small></span></div>
+      <div class="r big"><b><span class="ja">半分にする人</span><span class="en">People who halve</span><small><span class="ja">10人</span><span class="en">ten of them</span></small></b><span class="ic"><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i></span><span class="out">5<span class="ja">人分</span><small><span class="ja">減る肉</span><span class="en">people’s worth</span></small></span></div>
+    </div>
+    <p class="narrow"><span class="ja">減る量は、1人が完全にやめても、2人が半分にしても同じです。でも、肉をすべてやめる人を1人つくるより、半分にする人を2人つくるほうが、たぶんずっと簡単です。半分なら始めやすく、続けやすく、人にもすすめやすいからです。</span><span class="en">One person quitting meat and two people halving it cut the same amount. But persuading two people to halve is probably far easier than persuading one to quit — half is easier to start, easier to keep up, and easier to recommend.</span></p>
+    <p class="small narrow"><span class="ja">アメリカの調査では、菜食を経験した人のうち、今も続けている人は約6人に1人でした（現在2%、過去に経験 10%）。やめた人には、急に切り替えた人や、ほかの菜食の人とのつながりがなかった人が多くいました（Faunalytics 2014）。</span><span class="en">In a US survey, only about 1 in 6 people who had tried a vegetarian or vegan diet were still on it (2% current, 10% former). Many who lapsed had switched abruptly or had no contact with other vegetarians (Faunalytics 2014).</span><span class="est"><span class="ja">割合は私たちの計算</span><span class="en">ratio is our calculation</span></span></p>
+
+    <h3 style="margin-top:40px;font-size:clamp(20px,3.4vw,26px)"><span class="ja">それでも、まず自分でやってみる理由</span><span class="en">So why start with yourself?</span></h3>
+    <div class="why4">
+      <div><h3><span class="n">1</span><span class="ja">やってみないと、分からない</span><span class="en">You only learn by doing</span></h3><span class="ja">何を作ればおいしいか、どこで買えるか、外食でどう頼むか。自分の実践が、人に渡せる知恵になります。</span><span class="en">What tastes good, where to buy it, how to order when eating out. Your own practice becomes know-how you can pass on.</span></div>
+      <div><h3><span class="n">2</span><span class="ja">やっている人の言葉は、届く</span><span class="en">People listen to people who do it</span></h3><span class="ja">説得ではなく、「これ、おいしいよ」と食卓で見せられます。押しつけずに誘えるのは、自分が楽しんでいる人です。</span><span class="en">Not arguments, but “try this, it’s good” at the table. The people who can invite without pushing are the ones enjoying it themselves.</span></div>
+      <div><h3><span class="n">3</span><span class="ja">買う人が変われば、売る側も変わる</span><span class="en">When buyers change, sellers follow</span></h3><span class="ja">選ぶ人が増えると、品ぞろえが増え、量産で安くなり、さらに選ぶ人が増える。こうした「よい循環」が、食の移行を加速させうると指摘されています（Global Tipping Points Report）。</span><span class="en">More buyers bring more choice and lower prices through scale, which bring more buyers. Researchers point to these reinforcing loops as what could speed up a shift in diets (Global Tipping Points Report).</span></div>
+      <div><h3><span class="n">4</span><span class="ja">声を上げる土台になる</span><span class="en">It gives your voice weight</span></h3><span class="ja">給食や社員食堂、お店、自治体、政治への要望も、自分で実践している人の言葉には説得力があります。</span><span class="en">Asking schools, canteens, shops, local government or politicians for change carries more weight when you live it yourself.</span></div>
+    </div>
+
+    <div class="soso reveal">
+      <p class="eyebrow"><span class="ja">だから</span><span class="en">So</span></p>
+      <h3><span class="ja">自分の削減は、あえて「そこそこ」でいい。</span><span class="en">It’s fine to keep your own cut “good enough”.</span></h3>
+      <p><span class="ja">自分の削減は、最終ゴールではありません。完璧を目指して疲れてしまったり、人を責めて浮いてしまったりすれば、仲間は増えません。<b>まず半分で十分。</b>余った力は、<b>一人に伝える</b>ことに使ってください。</span><span class="en">Your own cut isn’t the finish line. Burning out chasing perfection, or alienating people by judging them, won’t bring anyone along. <b>Half is plenty to start.</b> Put the energy you have left into <b>bringing one more person along</b>.</span></p>
+      <p class="small" style="margin:0"><span class="ja">もちろん、その先に進みたい人は歓迎です。ただ、それを人に求める必要はありません。</span><span class="en">Of course, anyone who wants to go further is welcome to. There’s just no need to ask it of others.</span></p>
+    </div>
+
+    <h3 style="margin-top:40px;font-size:clamp(20px,3.4vw,26px)"><span class="ja">少数でも、社会の「ふつう」は変わりうる</span><span class="en">A minority can shift what’s normal</span></h3>
+    <div class="tip2">
+      <div><b class="k num"><span class="ja">約25%</span><span class="en">~25%</span></b><span class="ja">実験で、新しい決まりを推す人が集団の約25%に達すると、集団全体の決まりが入れ替わりました。21%では起きませんでした（Centola ら 2018）。</span><span class="en">In an experiment, once people pushing a new convention reached about 25% of a group, the whole group switched; at 21% it didn’t (Centola et al. 2018).</span><span class="cav"><span class="ja">単純な課題での実験で、現実の境目は場面によって違います（50%を超える例も報告されています）。</span><span class="en">It was a simple lab task; real-world thresholds vary, and some studies report over 50%.</span></span></div>
+      <div><b class="k num"><span class="ja">約2倍</span><span class="en">~2×</span></b><span class="ja">「肉を減らす人が増えている」という掲示を見たカフェの客は、肉なしの昼食を選ぶ割合が約2倍になりました（Sparkman &amp; Walton 2017）。</span><span class="en">Café customers shown that “more and more people are cutting back on meat” were about twice as likely to order a meatless lunch (Sparkman &amp; Walton 2017).</span><span class="cav"><span class="ja">同じ効果が出なかった研究もあり、確かとは言えません。それでも、「増えている」と見えることには意味がありそうです。</span><span class="en">Other studies didn’t find the same effect, so it’s not settled — but being seen as a growing trend probably helps.</span></span></div>
+      <div><b class="k num"><span class="ja">約8倍</span><span class="en">~8×</span></b><span class="ja">日本の1人あたりの肉は、1961年の約7 kgから2022年の約60 kgへ。食べ方は、数十年でここまで変わります。逆向きにも変えられます。</span><span class="en">Japan’s meat supply per person rose from about 7 kg in 1961 to about 60 kg in 2022. Diets can change this much in decades — and they can change back.</span><span class="cav"><span class="ja">FAO（Our World in Data）の供給量で、実際に食べた量より多めです。</span><span class="en">FAO supply data (Our World in Data); higher than what’s actually eaten.</span></span></div>
+    </div>
+    <p class="goalline"><span class="ja">「肉を半分に」は、自分だけのゴールではなく、<br><b>社会を動かすための最初の一歩です。</b></span><span class="en">Halving your meat isn’t a personal finish line.<br><b>It’s the first step in moving society.</b></span></p>
+  </div>
+</section>
 
 <!-- WHY -->
 <section id="why">
@@ -666,7 +738,7 @@
     <p class="eyebrow" style="color:#807d75"><span class="ja">あなたのお皿</span><span class="en">Your plate</span></p>
     <h2><span class="ja">あなたが替えると、何が変わる？</span><span class="en">What changes if you switch?</span></h2>
     <div class="guide"><span class="gchar" data-mood="happy"></span><p class="bubble"><span class="ja">あなたの選びかえで、何が変わるか見てみよう。<b>小さな一歩も、積み重ねると大きい</b>よ。</span><span class="en">Let’s see what your changes can do. <b>Small steps add up</b>.</span></p></div>
-    <p class="lead narrow"><span class="ja">1週間に肉や魚がメインの食事が何回あるかを選んでください。そのうち半分、または7割を豆腐や豆に替えたときの違いを計算します（1食の主菜 肉・魚120 g、豆腐150 g）。</span><span class="en">How many meals a week have meat or fish as the main dish? We work out what changes if half or 70% of them are made with tofu or beans instead (120 g meat/fish vs 150 g tofu per meal).</span></p>
+    <p class="lead narrow"><span class="ja">1週間に肉や魚がメインの食事が何回あるかを選んでください。そのうち半分、または7割を豆腐や豆に替えたときの違いを計算します（1食の主菜 肉・魚120 g、豆腐150 g）。一緒に同じことをする人の数も選べます。</span><span class="en">How many meals a week have meat or fish as the main dish? We work out what changes if half or 70% of them are made with tofu or beans instead (120 g meat/fish vs 150 g tofu per meal). You can also add people who do the same with you.</span></p>
     <div class="calc-grid">
       <div class="panel" id="sliders"></div>
       <div class="panel out">
@@ -674,6 +746,8 @@
         <div class="yrs" id="cuts"></div>
         <div class="small" style="margin-bottom:4px"><span class="ja">期間</span><span class="en">Period</span></div>
         <div class="yrs" id="yrs"></div>
+        <div class="small" style="margin-bottom:4px"><span class="ja">あなたと一緒に同じことをする人</span><span class="en">People doing the same with you</span></div>
+        <div class="yrs" id="frs"></div>
         <div class="row"><span class="k"><span class="ja">救える動物</span><span class="en">Animals spared</span></span><span class="v num" id="oAnimals"></span></div>
         <div class="animals" id="oDots" aria-hidden="true"></div>
         <div class="row"><span class="k"><span class="ja">減らせる温室効果ガス</span><span class="en">Greenhouse gases avoided</span></span><span class="v num" id="oGhg"></span></div>
@@ -761,7 +835,7 @@
     </div></details>
 
     <details><summary><span class="ja">一人が減らしても、何も変わらないのでは？</span><span class="en">Does one person really make a difference?</span></summary><div class="body">
-      <p><span class="ja">肉は「注文」に合わせて生産されます。一人の選択は一回ごとには小さく見えても、一生では数百の動物になります（上の計算）。そして、あなたの食卓を見た家族や友人も変わります。日本の1人あたりの肉の消費は1961年の約7 kgから2022年の約60 kgへ増えました。食べ方は、数十年で大きく変わるものです。逆向きにも変えられます。</span><span class="en">Meat is produced to meet demand. One choice looks small, but over a lifetime it adds up to hundreds of animals (see the calculator). And people around your table change too. Japan’s meat supply rose from about 7 kg per person in 1961 to about 60 kg in 2022 — diets change a lot within decades, and they can change back.</span></p>
+      <p><span class="ja">肉は「注文」に合わせて生産されます。一人の選択は一回ごとには小さく見えても、一生では数百の動物になります（上の計算）。それでも、一人の削減だけでは世界は変わりません。だからこそ大事なのは、あなたの食卓を見た家族や友人が変わり、お店や社会の「ふつう」が変わっていくことです。自分の削減は、そのための入り口です（<a href="#together">このサイトの考え方</a>）。</span><span class="en">Meat is produced to meet demand. One choice looks small, but over a lifetime it adds up to hundreds of animals (see the calculator). Still, one person’s cut alone won’t change the world. What matters is that the people at your table change too, and then shops and what society treats as normal. Your own cut is where that starts (<a href="#together">the idea behind this site</a>).</span></p>
     </div></details>
 
     <details><summary><span class="ja">そんなに大きいなら、なぜあまり言われないの？</span><span class="en">If it matters this much, why don’t we hear about it?</span></summary><div class="body">
@@ -789,17 +863,17 @@
 <section id="start" style="background:var(--bg2)">
   <div class="wrap">
     <p class="eyebrow"><span class="ja">今日から</span><span class="en">Starting today</span></p>
-    <h2><span class="ja">完璧でなくていい。まず、半分から。</span><span class="en">It doesn’t have to be perfect. Start with half.</span></h2>
-    <div class="guide"><span class="gchar" data-mood="happy"></span><p class="bubble"><span class="ja">完璧じゃなくていいんだ。<b>まずは半分から</b>、いっしょに始めよう！</span><span class="en">It doesn’t have to be perfect. <b>Start with half</b> — let’s begin together!</span></p></div>
+    <h2><span class="ja">まず自分で、半分に。<br>それから、仲間を。</span><span class="en">Halve it yourself first.<br>Then bring others along.</span></h2>
+    <div class="guide"><span class="gchar" data-mood="happy"></span><p class="bubble"><span class="ja">完璧じゃなくていいんだ。<b>まずは半分から</b>。慣れたら、<b>だれか一人</b>を誘ってみてね！</span><span class="en">It doesn’t have to be perfect. <b>Start with half</b> — and once it feels easy, <b>invite one more person</b>!</span></p></div>
     <div class="steps">
-      <div><div class="n">STEP 1</div><h3><span class="ja">好きな植物性の料理を3つ決める</span><span class="en">Pick three plant-based dishes you already like</span></h3><p><span class="ja">麻婆豆腐（豆腐と大豆ミートで）、野菜カレー、納豆ごはんとみそ汁。日本の家庭料理には、すでに答えがたくさんあります。<a href="#eat">献立の例</a></span><span class="en">Bean chili, vegetable curry, pasta with lentil sauce, stir-fried tofu. You probably eat some already. <a href="#eat">Example days</a></span></p></div>
-      <div><div class="n">STEP 2</div><h3><span class="ja">肉を半分に</span><span class="en">Halve your meat</span></h3><p><span class="ja">週の半分を「植物性の日」に。牛肉と加工肉から減らすと、気候と健康への効果が大きくなります。鶏肉に置き換えるのではなく、豆・大豆・穀物で埋めるのがポイントです。</span><span class="en">Make half the week “plant days”. Cutting beef and processed meat first does the most for climate and health. Fill the gap with beans, soy and grains — not chicken.</span></p></div>
-      <div><div class="n">STEP 3</div><h3><span class="ja">慣れたら、7割減に</span><span class="en">Once it feels normal, 70% less</span></h3><p><span class="ja">味覚と習慣は、数週間から数か月で慣れていきます。肉は「主役」から「ときどきの楽しみ」へ。植物性の日が多くなったら、ビタミンB12も意識しましょう。</span><span class="en">Tastes and habits adjust within weeks to months. Meat moves from the centre of the plate to an occasional treat. As plant days add up, keep an eye on vitamin B12.</span></p></div>
-      <div><div class="n">STEP 4</div><h3><span class="ja">一人で抱えない</span><span class="en">Don’t carry it alone</span></h3><p><span class="ja">その先は、社会が追いつくのを待ちながらでいい。家族や友人と一緒に。食堂やお店に植物性メニューを頼むこと、選挙や声で政策を後押しすることは、一人の食事よりずっと大きな変化を生みます。</span><span class="en">Beyond that, let society catch up. Bring family and friends. Asking canteens and shops for plant-based options, and backing better policy with your voice and vote, changes far more than one plate.</span></p></div>
+      <div><div class="n">STEP 1</div><h3><span class="ja">自分で試す：好きな植物性の料理を3つ決める</span><span class="en">Try it: pick three plant-based dishes you like</span></h3><p><span class="ja">麻婆豆腐（豆腐と大豆ミートで）、野菜カレー、納豆ごはんとみそ汁。日本の家庭料理には、すでに答えがたくさんあります。<a href="#eat">献立の例</a></span><span class="en">Bean chili, vegetable curry, pasta with lentil sauce, stir-fried tofu. You probably eat some already. <a href="#eat">Example days</a></span></p></div>
+      <div><div class="n">STEP 2</div><h3><span class="ja">肉を半分に（慣れたら7割減に）</span><span class="en">Halve your meat (then 70% less)</span></h3><p><span class="ja">週の半分を「植物性の日」に。牛肉と加工肉から減らすと、気候と健康への効果が大きくなります。鶏肉に置き換えるのではなく、豆・大豆・穀物で埋めるのがポイントです。味覚と習慣は数週間から数か月で慣れます。植物性の日が多くなったら、ビタミンB12も意識しましょう。</span><span class="en">Make half the week “plant days”. Cutting beef and processed meat first does the most for climate and health. Fill the gap with beans, soy and grains — not chicken. Tastes adjust within weeks to months. As plant days add up, keep an eye on vitamin B12.</span></p></div>
+      <div><div class="n">STEP 3</div><h3><span class="ja">一人に伝える</span><span class="en">Bring one person along</span></h3><p><span class="ja">説得するより、一緒に食べる。おいしかった料理やお店、レシピを教える。「全部やめて」ではなく「半分にしてみない？」と誘う。責めず、押しつけず、楽しそうに。</span><span class="en">Eat together rather than argue. Share a dish, a restaurant, a recipe. Don’t ask people to quit — ask “want to try halving it?” No blame, no pressure; let them see you enjoy it.</span></p></div>
+      <div><div class="n">STEP 4</div><h3><span class="ja">お店・職場・社会へ</span><span class="en">Shops, workplaces, society</span></h3><p><span class="ja">食堂やお店に植物性メニューを頼む。給食や社員食堂の選択肢を増やしてもらう。選挙や声で、政策を後押しする。一人の食事より、ずっと大きな変化を生みます。</span><span class="en">Ask canteens and shops for plant-based options. Push for more choice in school and workplace meals. Back better policy with your voice and vote. These change far more than one plate.</span></p></div>
     </div>
     <div class="pledge">
-      <h3><span class="ja">まず、肉を半分に。</span><span class="en">First, eat half as much meat.</span></h3>
-      <p><span class="ja">このページをだれか一人に送ることも、830億を減らす一歩です。</span><span class="en">Sending this page to one person is also a step toward fewer than 83 billion.</span></p>
+      <h3><span class="ja">まず、肉を半分に。そして、一人に伝える。</span><span class="en">Halve your meat. Then tell one person.</span></h3>
+      <p><span class="ja">このページをだれか一人に送ることが、いちばん大きな一歩かもしれません。</span><span class="en">Sending this page to one person may be the biggest step you take.</span></p>
       <a class="btn w" id="shareX" target="_blank" rel="noopener"><span class="ja">X でシェア</span><span class="en">Share on X</span></a>
       <button class="btn o" id="copyLink"><span class="ja">リンクをコピー</span><span class="en">Copy link</span></button>
     </div>
@@ -815,6 +889,7 @@
       <li><span class="ja">「将来の死者」は1,000トン・ルール（Parncutt 2019、Pearce &amp; Parncutt 2023）による概算で、ありうる幅は中央値の約0.3〜3倍です。予言ではなく、規模をつかむための目安です。</span><span class="en">“Future deaths” are estimates from the 1,000-ton rule (Parncutt 2019; Pearce &amp; Parncutt 2023), likely range ~0.3–3× the central value — a sense of scale, not a prediction.</span></li>
       <li><span class="ja">食材ごとの環境負荷は世界平均で、産地や育て方で大きく変わります。とくに牛肉は幅が広く、それでも最も負荷の低い牛肉が、豆類の平均を大きく上回ります（Poore &amp; Nemecek 2018）。</span><span class="en">Food footprints are global averages and vary by producer. Beef varies most — but even the lowest-impact beef far exceeds the average for pulses (Poore &amp; Nemecek 2018).</span></li>
       <li><span class="ja">EAT–Lancet の「プラネタリー・ヘルス・ダイエット」はヴィーガンではなく、少量の動物性食品を含みます。このページの目安（まず半分、次に7割減）も完全な菜食を求めるものではありません。動物の命を考えて、その先に進む人がいれば歓迎します。</span><span class="en">The EAT–Lancet “planetary health diet” is not vegan; it includes small amounts of animal foods. This page’s targets (half first, then 70% less) don’t require going fully plant-based either — though anyone who goes further for the animals is welcome.</span></li>
+      <li><span class="ja">「肉をすべてやめる人を1人つくるより、半分にする人を2人つくるほうが簡単」は、直接比べた研究が見つからず、私たちの考えです。社会の「ふつう」が変わる割合（約25%など）は実験室での値で、食習慣にそのまま当てはまるとは限りません。</span><span class="en">“Getting two people to halve is easier than getting one to quit” is our judgement; we found no study comparing the two directly. Thresholds for social change (such as ~25%) come from lab experiments and may not carry over to diets.</span></li>
       <li><span class="ja">健康への影響は量や食事全体で変わります。加工肉の「18%」は相対リスクで、個人の絶対的なリスクは小さいとIARCも述べています。</span><span class="en">Health effects depend on amounts and the whole diet. The 18% for processed meat is a relative risk; IARC notes the absolute risk for an individual is small.</span></li>
     </ul>
   </div>
@@ -848,6 +923,10 @@
       <li><a href="https://doi.org/10.1038/s41558-022-01545-9">Wunderling, N. et al. (2023). Global warming overshoots increase risks of climate tipping cascades in a network model. Nature Climate Change 13: 75–82</a> <span class="use"><span class="ja">一時的なオーバーシュートで、ティッピングのリスクが最大72%上昇（単純化したモデル）</span><span class="en">Temporary overshoots raise tipping risk by up to 72% (stylised model)</span></span></li>
       <li><a href="https://doi.org/10.1088/1748-9326/aa7541">Wynes, S. &amp; Nicholas, K.A. (2017). The climate mitigation gap: education and government recommendations miss the most effective individual actions. Environmental Research Letters 12: 074024</a> <span class="use"><span class="ja">政府資料・教科書は効果の小さい行動を中心に勧めている</span><span class="en">Government resources and textbooks focus on low-impact actions</span></span></li>
       <li><a href="https://doi.org/10.1007/s10584-021-03047-7">Lazarus, O., McDermid, S. &amp; Jacquet, J. (2021). The climate responsibilities of industrial meat and dairy producers. Climatic Change 165: 30</a> <span class="use"><span class="ja">大手35社のうち2050年ネットゼロを明確に約束したのは4社、米国大手のロビー活動と資金提供</span><span class="en">4 of 35 firms committed to net zero by 2050; US lobbying and funding</span></span></li>
+      <li><a href="https://doi.org/10.1126/science.aas8827">Centola, D., Becker, J., Brackbill, D. &amp; Baronchelli, A. (2018). Experimental evidence for tipping points in social convention. Science 360: 1116–1119</a> <span class="use"><span class="ja">新しい決まりを推す少数派が約25%に達すると集団の決まりが入れ替わった（21%では起きず）。単純な課題での実験</span><span class="en">Committed minority of ~25% flipped the group convention (not at 21%); simple lab task</span></span></li>
+      <li><a href="https://doi.org/10.1177/0956797617719950">Sparkman, G. &amp; Walton, G.M. (2017). Dynamic norms promote sustainable behavior, even if it is counternormative. Psychological Science 28: 1663–1674</a>; <a href="https://doi.org/10.3390/su12062453">Sparkman, G. et al. (2020). Sustainability 12: 2453</a> <span class="use"><span class="ja">「肉を減らす人が増えている」の掲示で肉なしの昼食が約2倍。2020年の追試では効果が出ない・逆になる場合もあった</span><span class="en">“More people are cutting back” message ~doubled meatless lunch orders; 2020 follow-ups found null or reversed effects in some settings</span></span></li>
+      <li><a href="https://faunalytics.org/a-summary-of-faunalytics-study-of-current-and-former-vegetarians-and-vegans/">Faunalytics (2014). Study of Current and Former Vegetarians and Vegans</a> <span class="use"><span class="ja">米国の成人で、現在の菜食 2%、過去に経験 10%。やめた人には、急な切り替えや、菜食の人とのつながりがなかった人が多い</span><span class="en">US adults: 2% current, 10% former vegetarians/vegans; lapsers often switched abruptly or lacked social ties to other vegetarians</span></span></li>
+      <li><a href="https://report-2023.global-tipping-points.org/section4/4-0-positive-tipping-points-in-technology-economy-and-society/4-3-positive-tipping-points-in-energy-transport-and-food-systems/4-3-3-food-systems/4-3-3-3-shifting-towards-more-plant-based-diets/">Global Tipping Points Report 2023, 4.3.3.3 Shifting towards more plant-based diets</a> <span class="use"><span class="ja">社会的なフィードバック（規範の広がり）と、普及による改善・量産効果が、食の移行を後押ししうる</span><span class="en">Social feedbacks on norms and increasing returns to adoption can drive dietary shifts</span></span></li>
       <li><a href="https://www.iges.or.jp/jp/pub/15-degrees-lifestyles-2019/en">IGES, Aalto University &amp; D-mat (2019). 1.5-Degree Lifestyles: Targets and options for reducing lifestyle carbon footprints</a>; <a href="https://isap.iges.or.jp/2021/pdf/TT8_1_ISAP%202021%20TT8%20Watabe.pdf">ISAP 2021 資料</a> <span class="use"><span class="ja">日本の1人あたり：自動車を使わない私用の移動（公共交通）で最大約720 kg、菜食で最大約340 kg CO₂e/年の削減</span><span class="en">Japan per person: up to ~720 kg from switching private car trips to transit, up to ~340 kg from a vegetarian diet (CO₂e/yr)</span></span></li>
       <li><a href="https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/">IPCC AR6 WG1 第7章</a>; <a href="https://doi.org/10.5194/acp-13-2793-2013">Joos, F. et al. (2013). Atmos. Chem. Phys. 13: 2793–2825</a> <span class="use"><span class="ja">メタンの寿命11.8年、20年の温暖化係数 約80〜83；CO₂の残留曲線</span><span class="en">Methane lifetime 11.8 yr, GWP20 ~80–83; CO₂ impulse response</span></span></li>
       <li><a href="https://alic.go.jp/joho-c/joho05_003980.html">ALIC 畜産の情報（令和6年度 食料需給表 概算）</a> <span class="use"><span class="ja">1人1年あたり供給純食料：牛肉5.9 kg、豚肉13.2 kg、鶏肉14.9 kg（2024年度、農林水産省）</span><span class="en">Japan per-person net supply FY2024: beef 5.9, pork 13.2, chicken 14.9 kg/yr (MAFF)</span></span></li>
@@ -1052,6 +1131,8 @@ const YEARS = [1, 10, 50];
 let years = 10;
 const CUTS = [0.5, 0.7, 1];
 let cut = 0.5;
+const FRIENDS = [0, 2, 5, 10];
+let friends = 0;
 const ICON = { beef: '🐄', pork: '🐖', chicken: '🐔' };
 function renderSliders() {
   $('sliders').innerHTML = `<div class="small"><span>${lang === 'ja' ? '1週間に、主菜が次のものになる食事の回数' : 'Meals a week with this as the main dish'}</span></div>` +
@@ -1059,16 +1140,17 @@ function renderSliders() {
     <input type="range" id="s-${k}" min="0" max="14" step="1" value="${meals[k]}" data-k="${k}"></div>`).join('');
   $('cuts').innerHTML = CUTS.map(c => `<button aria-pressed="${c === cut}" data-cut="${c}">${lang === 'ja' ? (c === 1 ? 'すべて' : c === 0.5 ? '半分' : '7割') : (c === 1 ? 'All' : c === 0.5 ? 'Half' : '70%')}</button>`).join('');
   $('yrs').innerHTML = YEARS.map(y => `<button aria-pressed="${y === years}" data-y="${y}">${y}${lang === 'ja' ? ' 年' : (y === 1 ? ' year' : ' years')}</button>`).join('');
+  $('frs').innerHTML = FRIENDS.map(f => `<button aria-pressed="${f === friends}" data-fr="${f}">${f === 0 ? (lang === 'ja' ? 'あなただけ' : 'Just you') : (lang === 'ja' ? `＋${f}人` : `+${f}`)}</button>`).join('');
 }
 function calc() {
   let ghg = 0, land = 0, water = 0, animals = 0, n = 0;
-  const per = {};
+  const per = {}, ppl = 1 + friends;
   for (const k of MEALS) {
-    const kg = meals[k] * 52 * PORTION * years * cut, f = FOODS[k];
+    const kg = meals[k] * 52 * PORTION * years * cut * ppl, f = FOODS[k];
     ghg += kg * f.ghg; land += kg * f.land; water += kg * f.water; n += meals[k];
     per[k] = f.animals ? kg * f.animals : 0; animals += per[k];
   }
-  const tofuKg = n * 52 * TOFU * years * cut, t = FOODS.tofu;
+  const tofuKg = n * 52 * TOFU * years * cut * ppl, t = FOODS.tofu;
   ghg -= tofuKg * t.ghg; land -= tofuKg * t.land; water -= tofuKg * t.water;
   const ja = lang === 'ja';
   $('oAnimals').innerHTML = `${fmt(animals)}<small>${ja ? '匹・頭（魚を除く）' : 'animals (fish not counted)'}</small>`;
@@ -1079,13 +1161,20 @@ function calc() {
   $('oLand').innerHTML = `${fmt(land)} m²<small>${ja ? `テニスコート約${fmt(land / 261, 1)}面分（1年間）` : `≈ ${fmt(land / 261, 1)} tennis courts (for a year)`}</small>`;
   $('oWater').innerHTML = `${fmt(water / 1000, water < 10000 ? 1 : 0)} m³<small>${ja ? `浴槽 約${fmt(water / 200)}杯分` : `≈ ${fmt(water / 200)} bathtubs`}</small>`;
   // 将来の死者 1人 = CO₂ 3,664 t → 何人が同じ選択をすると1人を救えるか
-  const deaths = ghg / 1000 / CO2_PER_DEATH;
+  // 1人あたりで計算（仲間の人数で割り戻す）
+  const deaths = ghg / ppl / 1000 / CO2_PER_DEATH;
   const people = deaths > 0 ? sig2(1 / deaths) : 0, japan = sig2(124e6 * deaths);
+  const cutJa = cut === 1 ? 'すべて' : cut === 0.5 ? '半分' : '7割', cutEn = cut === 1 ? 'all' : cut === 0.5 ? 'half' : '70%';
+  // 「あなた一人がすべて替える」と比べて何倍か
+  const vsAll = ppl * cut;
+  const team = friends === 0
+    ? (cut < 1 ? (ja ? '上の「一緒に同じことをする人」を増やすと、仲間が増えたときの効果も見られます。' : ' Add people above to see what happens when others join you.') : '')
+    : (ja ? `これは、あなた一人がすべてを植物性に替えたときの<b>${fmt(vsAll, vsAll % 1 ? 1 : 0)}倍</b>です。` : ` That’s <b>${fmt(vsAll, vsAll % 1 ? 1 : 0)}×</b> what you’d achieve alone by going fully plant-based.`);
   $('oMsg').innerHTML = n === 0
     ? (ja ? 'すでに植物性の食事ですね。あなたの食卓は、毎年たくさんの命を守っています。' : 'You already eat plant-based — your table spares many lives every year.')
     : (ja
-      ? `肉と魚の${cut === 1 ? 'すべて' : cut === 0.5 ? '半分' : '7割'}を植物性に替えると、${years}年で<b>${fmt(animals)}の動物</b>が生きられます。そして<b>約${fmt(people)}人</b>があなたと同じ選択をすると、気候変動による将来の死を<b>1人</b>防げる計算です。日本の全員（約1.24億人）が同じ選択をすれば、<b>約${fmt(japan)}人</b>です。`
-      : `Replace ${cut === 1 ? 'all' : cut === 0.5 ? 'half' : '70%'} of your meat and fish with plants, and over ${years} year${years > 1 ? 's' : ''} <b>${fmt(animals)} animals</b> get to live. And if <b>about ${fmt(people)} people</b> made the same switch, that would prevent <b>one</b> future climate death. If everyone in Japan (124 million) did: <b>about ${fmt(japan)}</b>.`)
+      ? `${friends ? `あなたと${friends}人が、` : ''}肉と魚の${cutJa}を植物性に替えると、${years}年で<b>${fmt(animals)}の動物</b>が生きられます。${team}そして<b>約${fmt(people)}人</b>が同じ選択をすると、気候変動による将来の死を<b>1人</b>防げる計算です。日本の全員（約1.24億人）が同じ選択をすれば、<b>約${fmt(japan)}人</b>です。`
+      : `${friends ? `If you and ${friends} others replace` : 'Replace'} ${cutEn} of your meat and fish with plants, ${friends ? 'then' : 'and'} over ${years} year${years > 1 ? 's' : ''} <b>${fmt(animals)} animals</b> get to live.${team} And if <b>about ${fmt(people)} people</b> made the same switch, that would prevent <b>one</b> future climate death. If everyone in Japan (124 million) did: <b>about ${fmt(japan)}</b>.`)
     + `<span class="est">${ja ? '私たちの概算' : 'our estimate'}</span>`;
   for (const k of MEALS) { const o = $('o-' + k); if (o) o.textContent = meals[k] + (ja ? ' 回' : ''); }
 }
@@ -1256,7 +1345,7 @@ function setLang(l) {
   renderWaffle(); renderLife(); renderCmp(); renderPhd(); renderSliders(); calc(); renderFoods(); setShare();
 }
 function setShare() {
-  const text = lang === 'ja' ? '毎年、830億の動物が食べるために殺されている。まず、肉を半分に。' : '83 billion land animals are killed for food every year. Start by eating half as much meat.';
+  const text = lang === 'ja' ? '毎年、830億の動物が食べるために殺されている。一人の完璧なヴィーガンより、肉を半分にする仲間を。' : '83 billion land animals are killed for food every year. Not one perfect vegan — many people eating half as much meat.';
   $('shareX').href = 'https://x.com/intent/post?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(SITE_URL);
 }
 
@@ -1274,6 +1363,7 @@ document.addEventListener('click', e => {
   else if (b.dataset.ps !== undefined) { loadPreset(b.dataset.ps); renderFoods(); }
   else if (b.dataset.cut) { cut = +b.dataset.cut; renderSliders(); calc(); }
   else if (b.dataset.y) { years = +b.dataset.y; renderSliders(); calc(); }
+  else if (b.dataset.fr) { friends = +b.dataset.fr; renderSliders(); calc(); }
   else if (b.id === 'copyLink') {
     navigator.clipboard?.writeText(SITE_URL).then(() => {
       const s = b.innerHTML; b.textContent = lang === 'ja' ? 'コピーしました' : 'Copied'; setTimeout(() => (b.innerHTML = s), 1600);
