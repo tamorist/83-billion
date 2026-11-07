@@ -377,6 +377,43 @@
   .together .goalline { margin-top: 30px; font-size: clamp(19px, 3.4vw, 25px); font-weight: 900; line-height: 1.5; text-align: center; }
   .together .goalline b { color: var(--green); }
   @media (max-width: 560px) { .together .goalline br { display: none; } }
+  /* system：個人の実践は、ルールを動かす後押し */
+  .system { background: var(--dark); color: #efece4; }
+  .system .eyebrow { color: #9d9a91; }
+  .system .lead { color: #cfcbc1; }
+  .system h3 { color: #efece4; }
+  .system .small { color: #9d9a91; }
+  .system a { color: #8fcfa9; }
+  .loop { list-style: none; padding: 0; margin: 26px 0 8px; display: flex; flex-wrap: wrap; gap: 8px 6px; align-items: center; counter-reset: lp; }
+  .loop li { counter-increment: lp; background: #1f231f; border: 1px solid #2c312b; border-radius: 12px; padding: 10px 14px; font-size: 14.5px; font-weight: 700; line-height: 1.45; }
+  .loop li::before { content: counter(lp); display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #4f9a74; color: #fff; font-size: 12px; margin-right: 8px; vertical-align: 1px; }
+  .loop li small { display: block; font-weight: 400; font-size: 12.5px; color: #9d9a91; margin-left: 30px; }
+  .loop li.ar, .loop li.back { counter-increment: none; background: none; border: 0; padding: 0 2px; }
+  .loop li.ar::before, .loop li.back::before { content: none; }
+  .loop li.ar { color: #6f6d66; font-weight: 900; }
+  .loop li.back { color: #8fcfa9; font-size: 13px; font-weight: 700; padding-left: 6px; }
+  @media (max-width: 560px) { .loop { flex-direction: column; align-items: stretch; } .loop .ar { text-align: center; transform: rotate(90deg); line-height: 1; } }
+  .sysnow { margin: 30px 0 0; border-left: 4px solid var(--red); background: #1f231f; border-radius: 0 12px 12px 0; padding: 14px 18px; }
+  .sysnow b.k { display: block; font-size: clamp(24px, 4.6vw, 34px); color: #e08a78; line-height: 1.25; }
+  .sysnow p { margin: 6px 0 0; color: #cfcbc1; font-size: 14.5px; }
+  .levers { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin: 18px 0 0; }
+  .levers > div { background: #1f231f; border: 1px solid #2c312b; border-top: 4px solid #4f9a74; border-radius: 12px; padding: 16px 18px; font-size: 14.5px; color: #cfcbc1; }
+  .levers h3 { font-size: 16px; margin-bottom: 6px; }
+  .levers .eg { display: block; margin-top: 8px; font-size: 12.5px; color: #9d9a91; }
+  .wheels { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: stretch; margin: 34px 0 0; }
+  .wheels > div:not(.x) { background: #efece4; color: #1d1f1c; border-radius: 16px; padding: 18px 20px; font-size: 14.5px; }
+  .wheels b { display: block; font-size: 18px; margin-bottom: 4px; color: var(--green); }
+  .wheels .x { display: grid; place-items: center; font-size: 26px; color: #8fcfa9; font-weight: 900; }
+  @media (max-width: 560px) { .wheels { grid-template-columns: 1fr; } .wheels .x { transform: rotate(90deg); } }
+  .system .both { margin: 22px 0 0; font-size: clamp(18px, 3.2vw, 23px); font-weight: 900; line-height: 1.55; text-align: center; }
+  .system .both b { color: #8fcfa9; }
+  @media (max-width: 560px) { .system .both br { display: none; } }
+  .rwcard { display: block; margin-top: 30px; text-decoration: none; color: #efece4 !important; background: #1f6f78; border-radius: 18px; padding: 22px 24px; }
+  .rwcard:hover { background: #1a5f67; }
+  .rwcard small { display: block; font-size: 12px; letter-spacing: .18em; color: #cfe6e8; font-weight: 700; }
+  .rwcard b { display: block; font-size: clamp(19px, 3.4vw, 24px); line-height: 1.45; margin: 4px 0 6px; }
+  .rwcard span.d { display: block; font-size: 14px; color: #dcecee; }
+  .rwcard .go { display: inline-block; margin-top: 12px; background: #efece4; color: #1f6f78; font-weight: 800; border-radius: 999px; padding: 8px 16px; font-size: 14px; }
   .steps p { margin: 6px 0 0; font-size: 14.5px; color: #3c3e39; }
   .pledge { margin-top: 36px; text-align: center; background: var(--green); color: #fff; border-radius: 20px; padding: 40px 20px; }
   .pledge h3 { font-size: clamp(22px, 3.6vw, 30px); margin-bottom: 10px; }
@@ -427,6 +464,7 @@
       <a href="#eat"><span class="ja">食べ方</span><span class="en">What to eat</span></a>
       <a href="#faq"><span class="ja">疑問</span><span class="en">Questions</span></a>
       <a href="#start"><span class="ja">始め方</span><span class="en">Start</span></a>
+      <a href="#system"><span class="ja">社会のルール</span><span class="en">The rules</span></a>
     </nav>
     <a class="hub" href="https://tamorist.github.io/"><i aria-hidden="true"></i><span class="ja">すべてのサイト</span><span class="en">All sites</span></a>
     <div class="lang" role="group" aria-label="Language">
@@ -869,7 +907,7 @@
       <div><div class="n">STEP 1</div><h3><span class="ja">自分で試す：好きな植物性の料理を3つ決める</span><span class="en">Try it: pick three plant-based dishes you like</span></h3><p><span class="ja">麻婆豆腐（豆腐と大豆ミートで）、野菜カレー、納豆ごはんとみそ汁。日本の家庭料理には、すでに答えがたくさんあります。<a href="#eat">献立の例</a></span><span class="en">Bean chili, vegetable curry, pasta with lentil sauce, stir-fried tofu. You probably eat some already. <a href="#eat">Example days</a></span></p></div>
       <div><div class="n">STEP 2</div><h3><span class="ja">肉を半分に（慣れたら7割減に）</span><span class="en">Halve your meat (then 70% less)</span></h3><p><span class="ja">週の半分を「植物性の日」に。牛肉と加工肉から減らすと、気候と健康への効果が大きくなります。鶏肉に置き換えるのではなく、豆・大豆・穀物で埋めるのがポイントです。味覚と習慣は数週間から数か月で慣れます。植物性の日が多くなったら、ビタミンB12も意識しましょう。</span><span class="en">Make half the week “plant days”. Cutting beef and processed meat first does the most for climate and health. Fill the gap with beans, soy and grains — not chicken. Tastes adjust within weeks to months. As plant days add up, keep an eye on vitamin B12.</span></p></div>
       <div><div class="n">STEP 3</div><h3><span class="ja">一人に伝える</span><span class="en">Bring one person along</span></h3><p><span class="ja">説得するより、一緒に食べる。おいしかった料理やお店、レシピを教える。「全部やめて」ではなく「半分にしてみない？」と誘う。責めず、押しつけず、楽しそうに。</span><span class="en">Eat together rather than argue. Share a dish, a restaurant, a recipe. Don’t ask people to quit — ask “want to try halving it?” No blame, no pressure; let them see you enjoy it.</span></p></div>
-      <div><div class="n">STEP 4</div><h3><span class="ja">お店・職場・社会へ</span><span class="en">Shops, workplaces, society</span></h3><p><span class="ja">食堂やお店に植物性メニューを頼む。給食や社員食堂の選択肢を増やしてもらう。選挙や声で、政策を後押しする。一人の食事より、ずっと大きな変化を生みます。</span><span class="en">Ask canteens and shops for plant-based options. Push for more choice in school and workplace meals. Back better policy with your voice and vote. These change far more than one plate.</span></p></div>
+      <div><div class="n">STEP 4</div><h3><span class="ja">お店・職場・社会へ</span><span class="en">Shops, workplaces, society</span></h3><p><span class="ja">食堂やお店に植物性メニューを頼む。給食や社員食堂の選択肢を増やしてもらう。選挙や声で、政策を後押しする。一人の食事より、ずっと大きな変化を生みます（<a href="#system">社会のルール</a>）。</span><span class="en">Ask canteens and shops for plant-based options. Push for more choice in school and workplace meals. Back better policy with your voice and vote. These change far more than one plate (<a href="#system">the rules</a>).</span></p></div>
     </div>
     <div class="pledge">
       <h3><span class="ja">まず、肉を半分に。そして、一人に伝える。</span><span class="en">Halve your meat. Then tell one person.</span></h3>
@@ -877,6 +915,54 @@
       <a class="btn w" id="shareX" target="_blank" rel="noopener"><span class="ja">X でシェア</span><span class="en">Share on X</span></a>
       <button class="btn o" id="copyLink"><span class="ja">リンクをコピー</span><span class="en">Copy link</span></button>
     </div>
+  </div>
+</section>
+
+<!-- SYSTEM：個人の実践は、ルールを動かす後押し -->
+<section id="system" class="system">
+  <div class="wrap">
+    <p class="eyebrow"><span class="ja">個人から、社会のルールへ</span><span class="en">From people to the rules</span></p>
+    <h2><span class="ja">一人ひとりの実践は、<br>ルールを動かす「後押し」。</span><span class="en">Individual change is the push<br>that moves the rules.</span></h2>
+    <div class="guide"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="ja">食べ方を変えるのは、ゴールじゃなくて<b>後押し</b>なんだ。最後に変わらなきゃいけないのは、<b>社会のルール</b>だよ。</span><span class="en">Changing how you eat isn’t the goal — it’s a <b>push</b>. What finally has to change is <b>the rules</b>.</span></p></div>
+    <p class="lead narrow"><span class="ja">個人の食の変化は、最終ゴールではありません。生産のしかたを本当に変えるには、価格や補助金、公共の調達といった社会のルール（システム）の変化が欠かせません。ただ、ルールは勝手には変わりません。実践する人が増えるほど声は大きくなり、移行を求める圧力になります。</span><span class="en">Changing what you eat isn’t the end goal. Truly changing how food is produced takes changes to the rules — prices, subsidies, public purchasing. But rules don’t change by themselves. The more people live the change, the louder their voice, and the stronger the pressure to shift.</span></p>
+
+    <ol class="loop reveal" aria-label="個人の実践からルールの変化への循環">
+      <li><span class="ja">実践する人が増える</span><span class="en">More people live it</span><small><span class="ja">半分に減らす仲間</span><span class="en">people halving their meat</span></small></li><li class="ar" aria-hidden="true">→</li>
+      <li><span class="ja">声と需要が大きくなる</span><span class="en">Demand and voices grow</span><small><span class="ja">お店・食堂・選挙で</span><span class="en">in shops, canteens and elections</span></small></li><li class="ar" aria-hidden="true">→</li>
+      <li><span class="ja">ルールが変わる</span><span class="en">The rules change</span><small><span class="ja">価格・補助金・調達</span><span class="en">prices, subsidies, purchasing</span></small></li><li class="ar" aria-hidden="true">→</li>
+      <li><span class="ja">生産者が変わる</span><span class="en">Producers change</span><small><span class="ja">移行の支援を受けながら</span><span class="en">with support to make the shift</span></small></li><li class="ar" aria-hidden="true">→</li>
+      <li><span class="ja">植物性が、選びやすく安くなる</span><span class="en">Plant-based gets easier and cheaper</span><small><span class="ja">さらに実践する人が増える</span><span class="en">so even more people join</span></small></li>
+      <li class="back"><span class="ja">↺ 1へ戻って、輪が回り続ける</span><span class="en">↺ back to 1 — and the loop keeps turning</span></li>
+    </ol>
+
+    <div class="sysnow reveal">
+      <b class="k num"><span class="ja">年5,400億ドル</span><span class="en">$540 billion a year</span></b>
+      <p><span class="ja">世界の農業生産者への公的な支援（2013〜2018年平均）。その87%は、価格をゆがめるか、自然や健康に害のあるものだとされています（FAO・UNDP・UNEP 2021）。今のルールのもとでは、肉を減らすことは「流れに逆らって泳ぐ」ことでもあります。</span><span class="en">Public support to the world’s farmers each year (2013–2018 average). 87% of it is judged price-distorting or harmful to nature and health (FAO, UNDP &amp; UNEP 2021). Under today’s rules, eating less meat means swimming against the current.</span></p>
+    </div>
+
+    <h3 style="margin-top:40px;font-size:clamp(20px,3.4vw,26px)"><span class="ja">解決の方向性：減らすほど、得になるルールへ</span><span class="en">The direction: rules where cutting back pays</span></h3>
+    <p class="narrow" style="color:#cfcbc1"><span class="ja">必要なのは、「減らすこと・持続可能であること」が、個人にも企業にも合理的な（得な）選択になるような、国境を越えたルールの書き換えです。</span><span class="en">What’s needed is to rewrite the rules — across borders — so that cutting back and staying within limits becomes the rational, rewarding choice for people and businesses alike.</span></p>
+    <div class="levers">
+      <div><h3><span class="ja">上流で、排出に値段と上限を</span><span class="en">Price and cap emissions upstream</span></h3><span class="ja">炭素の価格づけや、化石燃料・資源の上限（キャップ）を、生産の入り口で決める。</span><span class="en">Carbon pricing, and caps on fossil fuels and resources, set where they enter the economy.</span><span class="eg"><span class="ja">食の例：デンマークは2030年から、家畜の排出に課税することを決めました（実質1トンあたり120クローネ、2035年に300クローネ）。</span><span class="en">Food example: Denmark will tax livestock emissions from 2030 (effectively DKK 120 per tonne, rising to DKK 300 in 2035).</span></span></div>
+      <div><h3><span class="ja">お金の流れを付け替える</span><span class="en">Redirect the money</span></h3><span class="ja">排出の大きい生産を後押しする補助金を、豆・野菜・研究・環境を守る農業へ。</span><span class="en">Shift subsidies away from high-emission production toward beans, vegetables, research and farming that protects nature.</span><span class="eg"><span class="ja">FAO などの報告は、害のある支援を段階的に減らし、公共の利益に付け替えることを求めています。</span><span class="en">The FAO-led report calls for phasing out harmful support and repurposing it for public goods.</span></span></div>
+      <div><h3><span class="ja">減らす人に還元する</span><span class="en">Return the money to people</span></h3><span class="ja">排出への課金の収入を市民に返せば、負担の小さい暮らしをする人ほど得をします。</span><span class="en">Give revenue from emission charges back to citizens, and those who live lighter come out ahead.</span><span class="eg"><span class="ja">姉妹サイト「ルールを書き換える」で、収入の9割を市民に返す案を紹介しています。</span><span class="en">The sister site Rewrite the Rules explains a proposal to return 90% to citizens.</span></span></div>
+      <div><h3><span class="ja">公正な移行を支える</span><span class="en">Support a fair transition</span></h3><span class="ja">畜産農家や働く人が、ほかの作物や仕事へ移れるよう、時間とお金で支える。給食や公共の食堂でも、植物性を「ふつう」の選択肢に。</span><span class="en">Give livestock farmers and workers time and money to move to other crops and jobs. Make plant-based a normal option in school and public canteens.</span><span class="eg"><span class="ja">デンマークの家畜税の収入も、当初は畜産の移行支援に回されます。</span><span class="en">Denmark’s livestock-tax revenue will initially go back to the sector to fund its transition.</span></span></div>
+    </div>
+
+    <div class="wheels reveal">
+      <div><b><span class="ja">個人の実践</span><span class="en">People</span></b><span class="ja">自分で半分に減らし、仲間を増やし、声を上げる（ボトムアップ）。</span><span class="en">Halve your own meat, bring others along, speak up (bottom-up).</span></div>
+      <div class="x" aria-hidden="true">⇄</div>
+      <div><b><span class="ja">ルールの設計</span><span class="en">Rules</span></b><span class="ja">減らすほど得をする価格・補助金・調達の仕組み（トップダウン）。</span><span class="en">Prices, subsidies and purchasing that reward cutting back (top-down).</span></div>
+    </div>
+    <p class="both"><span class="ja">個人の実践と、それを押し上げるルールの設計。<br><b>この両輪がそろって、はじめて移行が進みます。</b></span><span class="en">People who live the change, and rules that lift them up.<br><b>Only with both wheels turning does the shift happen.</b></span></p>
+
+    <a class="rwcard" href="https://tamorist.github.io/rewrite/" data-rw target="_blank" rel="noopener">
+      <small><span class="ja">姉妹サイト</span><span class="en">Sister site</span></small>
+      <b><span class="ja">ルールを書き換える ― 減らすほど、得をする世界へ</span><span class="en">Rewrite the Rules — so that cutting back pays</span></b>
+      <span class="d"><span class="ja">一方向の上限、収入の9割を市民に返す還元、入る価値のあるクラブ。グローバルな制度設計の提案「Steering Within Limits」を、やさしく紹介しています。</span><span class="en">A one-way cap, a dividend returning 90% to citizens, and a club worth joining: an accessible introduction to the global proposal “Steering Within Limits”.</span></span>
+      <span class="go"><span class="ja">解決の設計図を見る ↗</span><span class="en">See the blueprint ↗</span></span>
+    </a>
+    <p class="small" style="margin-top:14px"><span class="ja">支援額：FAO・UNDP・UNEP（2021）「A multi-billion-dollar opportunity」。デンマーク：気候・エネルギー・公益事業省（2024）。税率は基礎控除60%を差し引いた実質値です。</span><span class="en">Support: FAO, UNDP &amp; UNEP (2021), “A multi-billion-dollar opportunity”. Denmark: Ministry of Climate, Energy and Utilities (2024); rates are effective rates after the 60% basic deduction.</span></p>
   </div>
 </section>
 
@@ -923,6 +1009,8 @@
       <li><a href="https://doi.org/10.1038/s41558-022-01545-9">Wunderling, N. et al. (2023). Global warming overshoots increase risks of climate tipping cascades in a network model. Nature Climate Change 13: 75–82</a> <span class="use"><span class="ja">一時的なオーバーシュートで、ティッピングのリスクが最大72%上昇（単純化したモデル）</span><span class="en">Temporary overshoots raise tipping risk by up to 72% (stylised model)</span></span></li>
       <li><a href="https://doi.org/10.1088/1748-9326/aa7541">Wynes, S. &amp; Nicholas, K.A. (2017). The climate mitigation gap: education and government recommendations miss the most effective individual actions. Environmental Research Letters 12: 074024</a> <span class="use"><span class="ja">政府資料・教科書は効果の小さい行動を中心に勧めている</span><span class="en">Government resources and textbooks focus on low-impact actions</span></span></li>
       <li><a href="https://doi.org/10.1007/s10584-021-03047-7">Lazarus, O., McDermid, S. &amp; Jacquet, J. (2021). The climate responsibilities of industrial meat and dairy producers. Climatic Change 165: 30</a> <span class="use"><span class="ja">大手35社のうち2050年ネットゼロを明確に約束したのは4社、米国大手のロビー活動と資金提供</span><span class="en">4 of 35 firms committed to net zero by 2050; US lobbying and funding</span></span></li>
+      <li><a href="https://www.undp.org/publications/multi-billion-dollar-opportunity-repurposing-agricultural-support-transform-food-systems">FAO, UNDP &amp; UNEP (2021). A multi-billion-dollar opportunity: Repurposing agricultural support to transform food systems</a> <span class="use"><span class="ja">農業生産者への支援 年約5,400億ドル、その87%（約4,700億ドル）が価格をゆがめるか自然・健康に有害</span><span class="en">~$540 bn/yr support to farmers; 87% (~$470 bn) price-distorting or harmful to nature and health</span></span></li>
+      <li><a href="https://www.en.kefm.dk/news/news-archive/2024/jul/the-danish-government-and-parties-in-%E2%80%9Cgreen-tripartite%E2%80%9D-agree-on-a-ground-breaking-model-for-a-carbon-tax-on-food-and-agriculture-production">Danish Ministry of Climate, Energy and Utilities (2024). Green tripartite: carbon tax on food and agriculture production</a> <span class="use"><span class="ja">家畜の排出に2030年から課税（1トン300クローネ、2035年750、基礎控除60%で実質120→300）。当初の収入は畜産の移行支援へ</span><span class="en">Livestock emissions taxed from 2030 (DKK 300/t, 750 by 2035; effective 120→300 after a 60% deduction); early revenue funds the sector’s transition</span></span></li>
       <li><a href="https://doi.org/10.1126/science.aas8827">Centola, D., Becker, J., Brackbill, D. &amp; Baronchelli, A. (2018). Experimental evidence for tipping points in social convention. Science 360: 1116–1119</a> <span class="use"><span class="ja">新しい決まりを推す少数派が約25%に達すると集団の決まりが入れ替わった（21%では起きず）。単純な課題での実験</span><span class="en">Committed minority of ~25% flipped the group convention (not at 21%); simple lab task</span></span></li>
       <li><a href="https://doi.org/10.1177/0956797617719950">Sparkman, G. &amp; Walton, G.M. (2017). Dynamic norms promote sustainable behavior, even if it is counternormative. Psychological Science 28: 1663–1674</a>; <a href="https://doi.org/10.3390/su12062453">Sparkman, G. et al. (2020). Sustainability 12: 2453</a> <span class="use"><span class="ja">「肉を減らす人が増えている」の掲示で肉なしの昼食が約2倍。2020年の追試では効果が出ない・逆になる場合もあった</span><span class="en">“More people are cutting back” message ~doubled meatless lunch orders; 2020 follow-ups found null or reversed effects in some settings</span></span></li>
       <li><a href="https://faunalytics.org/a-summary-of-faunalytics-study-of-current-and-former-vegetarians-and-vegans/">Faunalytics (2014). Study of Current and Former Vegetarians and Vegans</a> <span class="use"><span class="ja">米国の成人で、現在の菜食 2%、過去に経験 10%。やめた人には、急な切り替えや、菜食の人とのつながりがなかった人が多い</span><span class="en">US adults: 2% current, 10% former vegetarians/vegans; lapsers often switched abruptly or lacked social ties to other vegetarians</span></span></li>
@@ -1356,6 +1444,7 @@ function setLang(l) {
 }
 function setShare() {
   const text = lang === 'ja' ? '毎年、830億の動物が食べるために殺されている。一人の完璧なヴィーガンより、肉を半分にする仲間を。' : '83 billion land animals are killed for food every year. Not one perfect vegan — many people eating half as much meat.';
+  document.querySelectorAll('[data-rw]').forEach(a => (a.href = 'https://tamorist.github.io/rewrite/' + (lang === 'ja' ? '?lang=ja' : '')));
   $('shareX').href = 'https://x.com/intent/post?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(SITE_URL);
 }
 
