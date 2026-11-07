@@ -759,7 +759,7 @@
       <div class="mkey" style="color:var(--muted)"><span><span class="ja">薄い部分＝幅</span><span class="en">Pale part = range</span></span><span class="est"><span class="ja">肉は私たちの概算</span><span class="en">meat: our estimate</span></span></div>
       <p style="margin:14px 0 0"><span class="ja">肉を食べることの排出は、<b>自家用車とほぼ同じ規模</b>です。しかもこの数字には、<b>①のメタンの速さも、②の土地の回復も入っていません</b>。そして車の削減は車を使う人にしか当てはまりませんが、食事は<b>誰もが毎日3回</b>、今日から選べます。動物の命と自分の健康にも、同時に効きます。個人ができることの中で、最も大きく、最も広く効く行動の一つです。</span><span class="en">Eating meat emits <b>about as much as private car use</b>. And these numbers <b>leave out ①’s speed and ②’s land recovery</b>. Cutting car use only applies to people who drive, but <b>everyone chooses food three times a day</b>, starting today. It helps animals and your own health at the same time. Of everything one person can do, it is among the biggest and most far-reaching.</span></p>
       <p class="small" style="margin:12px 0 0"><span class="ja">自家用車は、IGES「1.5℃ライフスタイル」（2019、日本）の「自動車を使わない私用の移動（公共交通）」による1人あたりの最大削減量です。肉は、農林水産省の1人あたり供給量（牛肉5.9 kg、豚肉13.2 kg、鶏肉14.9 kg、2024年度）に、Poore &amp; Nemecek の世界平均の排出係数（豚12.3、鶏9.9 kg CO₂e/kg、牛は乳牛由来33〜肉牛99）を掛けた概算で、幅の大部分は牛肉の係数によるものです。肉を減らすと、代わりに食べる植物性食品の分（大豆なら肉の数分の1〜数十分の1）が加わります。日本の係数を使う IGES 自身は、菜食による削減を最大約0.34 tとしており、私たちの概算より小さめです。いずれも100年でならした温暖化係数による値です。グラフは、1回の排出が大気に残る割合（CO₂：IPCC 第5次報告書のベルン炭素循環モデル、メタン：寿命11.8年、IPCC 第6次報告書）。メタンの「約80倍」は20年での温暖化係数（IPCC 第6次報告書）。</span><span class="en">Car figure: IGES “1.5-Degree Lifestyles” (2019, Japan), maximum per-person saving from switching private car trips to public transport. Meat: MAFF per-person supply (beef 5.9, pork 13.2, chicken 14.9 kg, FY2024) × Poore &amp; Nemecek global-average factors (pork 12.3, chicken 9.9 kg CO₂e/kg; beef 33 from dairy herds to 99 from beef herds) — most of the range comes from beef. Cutting meat adds the plant foods that replace it (for soy, a small fraction of the meat’s footprint). IGES itself, using Japanese factors, puts the maximum saving from a vegetarian diet at ~0.34 t, lower than our estimate. All use 100-year warming potentials. Chart: share of a single emission left in the air (CO₂: Bern model as used in IPCC AR5; methane: 11.8-year lifetime, IPCC AR6). “About 80×” is methane’s 20-year warming potential (IPCC AR6).</span></p>
-      <h3 style="margin-top:34px"><span class="ja">世界のみんなで半分にしたら、どれくらい大きい？</span><span class="en">And if the whole world halved it?</span></h3>
+      <h3 id="world-half" style="margin-top:34px;scroll-margin-top:70px"><span class="ja">世界のみんなで半分にしたら、どれくらい大きい？</span><span class="en">And if the whole world halved it?</span></h3>
       <p class="small" style="margin:0"><span class="ja">世界の豚肉・鶏肉・牛肉・牛乳の半分を植物性の代替品に置き換えた場合の、年間の削減（2050年、t CO₂e）。</span><span class="en">Yearly cut if half of the world’s pork, chicken, beef and milk were replaced with plant-based alternatives (2050, Gt CO₂e).</span></p>
       <div class="guide"><span class="gchar" data-mood="happy"></span><p class="bubble"><span class="ja">一人では小さくても、みんなで半分にすると、<b>日本1国分の排出の何倍も</b>減るんだ。空いた土地を森に戻せば、わたしも元気になれるよ。</span><span class="en">Small for one person — but if everyone halves it, the cut is <b>several times Japan’s entire emissions</b>. And if the freed land turns back into forest, I get healthier too.</span></p></div>
       <div class="cmpbars" role="img" aria-label="日本の年間排出：約10.7億 t。世界で半分に：約21億 t（世界の約4%）。空いた土地を森に戻すと：約63億 t（世界の約11%） / Japan’s yearly emissions: ~1.07 Gt. Halved worldwide: ~2.1 Gt (~4% of global). With freed land returned to forest: ~6.3 Gt (~11% of global)">
@@ -1533,6 +1533,12 @@ tick();
   apply();
   if (g === 'off') { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reveal); else reveal(); }
 })();
+// 他のサイトから #見出し つきで来たとき、グラフなどの描画が終わってから、もう一度その見出しへ
+window.addEventListener('load', () => {
+  const id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+  const el = document.getElementById(id); if (!el) return;
+  setTimeout(() => el.scrollIntoView({ block: 'start' }), 150);
+});
 </script>
 </body>
 </html>
