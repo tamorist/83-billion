@@ -1173,6 +1173,8 @@ const NAMES = {
 };
 const PLANT = new Set(['tofu', 'peas']);
 const SITE_URL = 'https://tamorist.github.io/83-billion/';
+// 共有・コピーするリンク：日本語表示中は ?lang=ja を付けて、開いた人にも日本語で表示する
+const shareUrl = () => SITE_URL + (lang === 'ja' ? '?lang=ja' : '');
 const CO2_PER_DEATH = 3664;          // t CO₂（炭素1,000 t）— 1,000トン・ルール
 const WORLD_PER_SEC = 83e9 / (365.25 * 86400);
 // 日本：肉用若鶏 749,130千羽 + 廃鶏 77,751千羽 + その他肉用鶏 1,171千羽（2024）+ 豚 16,153,083頭（FY2024）+ 牛 1,087,943頭（FY2023）
@@ -1467,7 +1469,7 @@ function setLang(l) {
 function setShare() {
   const text = lang === 'ja' ? '毎年、830億の動物が食べるために殺されている。一人の完璧なヴィーガンより、肉を半分にする仲間を。' : '83 billion land animals are killed for food every year. Not one perfect vegan — many people eating half as much meat.';
   document.querySelectorAll('[data-rw]').forEach(a => (a.href = 'https://tamorist.github.io/rewrite/' + (lang === 'ja' ? '?lang=ja' : '')));
-  $('shareX').href = 'https://x.com/intent/post?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(SITE_URL);
+  $('shareX').href = 'https://x.com/intent/post?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(shareUrl());
 }
 
 document.addEventListener('click', e => {
@@ -1486,7 +1488,7 @@ document.addEventListener('click', e => {
   else if (b.dataset.y) { years = +b.dataset.y; renderSliders(); calc(); }
   else if (b.dataset.fr) { friends = +b.dataset.fr; renderSliders(); calc(); }
   else if (b.id === 'copyLink') {
-    navigator.clipboard?.writeText(SITE_URL).then(() => {
+    navigator.clipboard?.writeText(shareUrl()).then(() => {
       const s = b.innerHTML; b.textContent = lang === 'ja' ? 'コピーしました' : 'Copied'; setTimeout(() => (b.innerHTML = s), 1600);
     });
   }
