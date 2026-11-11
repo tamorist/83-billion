@@ -266,12 +266,8 @@
     .pdock .pb .mk > span { position: absolute; top: 13px; left: 50%; transform: translateX(-50%); font-size: 10px; color: #9d9a91; white-space: nowrap; }
     .pdock .iso-d { font-size: 12px; color: #bdbab1; }
     .pdock .iso-d b { font-weight: 700; }
-    .pdock .iso-d.over b { color: #f08b7a; }
     #eat { padding-bottom: 150px; }
   }
-  .ibar { position: relative; height: 8px; border-radius: 4px; background: var(--bg3); margin-top: 6px; }
-  .ibar > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; transition: width .35s, background .35s; max-width: 100%; }
-  .ibar .mk { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--ink); }
   .meals { font-size: 13.5px; color: #3c3e39; border-top: 1px solid var(--faint); padding-top: 10px; }
   .meals div { padding: 4px 0; }
   .meals b { display: inline-block; min-width: 2.6em; color: var(--green); }
@@ -835,8 +831,7 @@
         <div class="meter"><i id="pBar"></i><span class="mk" style="left:62.5%"><span><span class="ja">女性 50 g</span><span class="en">Women 50 g</span></span></span><span class="mk" style="left:81.25%"><span><span class="ja">男性 65 g</span><span class="en">Men 65 g</span></span></span></div>
         <p class="verdict" id="pVerdict"></p>
         <div class="iso">
-          <div class="small"><span class="ja">大豆イソフラボン</span><span class="en">Soy isoflavones</span> <b class="num" id="isoVal"></b> mg <span class="ja">／ 上限の目安 70〜75 mg（長期間の平均）</span><span class="en">/ guide 70–75 mg (long-term average)</span></div>
-          <div class="ibar"><i id="isoBar"></i><span class="mk" style="left:70%"></span><span class="mk" style="left:75%"></span></div>
+          <div class="small"><span class="ja">参考：大豆イソフラボン</span><span class="en">For reference: soy isoflavones</span> <b class="num" id="isoVal"></b> mg</div>
           <p class="small" id="isoNote" style="margin:4px 0 12px"></p>
         </div>
         <div class="meals" id="pMeals"></div>
@@ -860,7 +855,7 @@
       <div><span class="ja"><s>チキンカレー</s> → <b>ひよこ豆と大豆ミートのカレー</b></span><span class="en"><s>Chicken curry</s> → <b>chickpea &amp; soy curry</b></span></div>
       <div><span class="ja"><s>かつおだし</s> → <b>昆布・干ししいたけのだし</b></span><span class="en"><s>Bonito stock</s> → <b>kombu &amp; shiitake stock</b></span></div>
     </div>
-    <p class="small"><span class="ja">たんぱく質は日本食品標準成分表（八訂 増補2023年）の可食部100 gあたりの値に、1回分の重さをかけた概算です（大豆ミートは乾燥、めん・豆はゆでた重さ）。料理による変化は考えていません。参考：鶏むね肉（皮なし）100 gで23.3 g、牛ひき肉100 gで17.1 g。大豆イソフラボン（アグリコン換算）は厚生労働省のQ&A（2006年）の平均値で、厚揚げ・大豆ミート・テンペ・大豆の水煮・枝豆は公表値がないため近い食品の値で概算しています。上限の目安70〜75 mg/日は食品安全委員会によるもので、毎日長期間とり続けた場合の平均の上限です。大豆食品からこれを超えても、ただちに健康被害に結びつくものではないとされています。</span><span class="en">Protein = Japan’s Standard Tables of Food Composition (8th ed., 2023 supplement) per 100 g × serving weight (soy mince dry; noodles and beans boiled). Cooking losses are ignored. For reference: 100 g skinless chicken breast 23.3 g, 100 g minced beef 17.1 g. Soy isoflavones (aglycone) use averages from Japan’s health ministry Q&A (2006); fried tofu, soy mince, tempeh, canned soybeans and edamame use values for similar foods. The 70–75 mg/day guide is from Japan’s Food Safety Commission: an upper limit for the long-term daily average, not a level at which harm starts.</span><span class="est"><span class="ja">私たちの概算</span><span class="en">our estimate</span></span></p>
+    <p class="small"><span class="ja">たんぱく質は日本食品標準成分表（八訂 増補2023年）の可食部100 gあたりの値に、1回分の重さをかけた概算です（大豆ミートは乾燥、めん・豆はゆでた重さ）。料理による変化は考えていません。参考：鶏むね肉（皮なし）100 gで23.3 g、牛ひき肉100 gで17.1 g。大豆イソフラボン（アグリコン換算）は厚生労働省のQ&A（2006年）の平均値で、厚揚げ・大豆ミート・テンペ・大豆の水煮・枝豆は公表値がないため近い食品の値で概算しています。食品安全委員会の「一日摂取目安量の上限 70〜75 mg」は、特定保健用食品などで大豆イソフラボンを通常の食事に<b>上乗せ</b>する場合の安全性を評価するために示されたものです。豆腐・納豆・煮豆・みそなどの伝統的な大豆食品については、長い食経験があり「心配する必要はありません」とされています（厚生労働省 Q&amp;A 問8）。</span><span class="en">Protein = Japan’s Standard Tables of Food Composition (8th ed., 2023 supplement) per 100 g × serving weight (soy mince dry; noodles and beans boiled). Cooking losses are ignored. For reference: 100 g skinless chicken breast 23.3 g, 100 g minced beef 17.1 g. Soy isoflavones (aglycone) use averages from Japan’s health ministry Q&A (2006); fried tofu, soy mince, tempeh, canned soybeans and edamame use values for similar foods. Japan’s Food Safety Commission set its 70–75 mg/day guide while assessing products that <b>add</b> isoflavones on top of a normal diet (such as supplements). For traditional soy foods like tofu, natto and miso, the health ministry says there is “no need to worry”, given long experience of eating them.</span><span class="est"><span class="ja">私たちの概算</span><span class="en">our estimate</span></span></p>
   </div>
 </section>
 
@@ -872,7 +867,7 @@
     <div class="guide"><span class="gchar" data-mood="smile"></span><p class="bubble"><span class="ja">気になることがあるのは当然だよ。よくある疑問に、ひとつずつ答えているよ。</span><span class="en">It’s natural to have questions. Here are answers to the common ones, one by one.</span></p></div>
 
     <details><summary><span class="ja">たんぱく質は足りるの？</span><span class="en">Will I get enough protein?</span></summary><div class="body">
-      <p><span class="ja">足ります。日本は大豆の国ですが、大豆だけに頼らず、ほかの豆や麩、穀物も組み合わせるのがおすすめです（大豆イソフラボンのとりすぎを避けるため）。納豆1パック（45 g）で約7 g、ゆでたレンズ豆100 gで約11 g。<a href="#eat">上の「これなら、できそう」</a>で、1日の献立を組み立てて確かめられます。</span><span class="en">Yes. Mix soy with other beans, wheat gluten (fu) and grains rather than relying on soy alone (to keep isoflavones moderate). One pack of natto (45 g) has about 7 g; 100 g of boiled lentils about 11 g. Try building a day in <a href="#eat">“You can do this”</a> above.</span></p>
+      <p><span class="ja">足ります。日本は大豆の国ですが、ほかの豆や麩、穀物も組み合わせると、いろいろな栄養をバランスよくとれて、献立の幅も広がります。納豆1パック（45 g）で約7 g、ゆでたレンズ豆100 gで約11 g。<a href="#eat">上の「これなら、できそう」</a>で、1日の献立を組み立てて確かめられます。</span><span class="en">Yes. Mixing soy with other beans, wheat gluten (fu) and grains gives a wider range of nutrients and more variety. One pack of natto (45 g) has about 7 g; 100 g of boiled lentils about 11 g. Try building a day in <a href="#eat">“You can do this”</a> above.</span></p>
     </div></details>
 
     <details><summary><span class="ja">栄養で気をつけることは？</span><span class="en">What should I watch nutritionally?</span></summary><div class="body">
@@ -1042,7 +1037,7 @@
       <li><a href="https://alic.go.jp/joho-c/joho05_003980.html">ALIC 畜産の情報（令和6年度 食料需給表 概算）</a> <span class="use"><span class="ja">1人1年あたり供給純食料：牛肉5.9 kg、豚肉13.2 kg、鶏肉14.9 kg（2024年度、農林水産省）</span><span class="en">Japan per-person net supply FY2024: beef 5.9, pork 13.2, chicken 14.9 kg/yr (MAFF)</span></span></li>
       <li><a href="https://doi.org/10.1016/j.jand.2016.09.025">Melina, V. et al. (2016). Position of the Academy of Nutrition and Dietetics: Vegetarian Diets. J Acad Nutr Diet 116: 1970–1980</a> <span class="use"><span class="ja">適切に計画されたヴィーガン食はすべての年代に適する</span><span class="en">Appropriately planned vegan diets suit all life stages</span></span></li>
       <li><a href="https://fooddb.mext.go.jp/">文部科学省 日本食品標準成分表（八訂）増補2023年（食品成分データベース）</a> <span class="use"><span class="ja">「これなら、できそう」の食品のたんぱく質（納豆16.5、木綿豆腐7.0、生揚げ10.7、凍り豆腐 乾50.5、粒状大豆たんぱく46.3、テンペ15.8 g/100 gなど）</span><span class="en">Protein values for all foods in “You can do this” (e.g. natto 16.5, firm tofu 7.0, koya tofu dry 50.5, textured soy protein 46.3 g/100 g)</span></span></li>
-      <li><a href="https://www.mhlw.go.jp/houdou/2006/02/h0202-1a.html">厚生労働省（2006）「大豆及び大豆イソフラボンに関するQ&amp;A」</a>; <a href="https://www.maff.go.jp/j/syouan/nouan/kome/k_daizu_qa/index.html">農林水産省 同Q&amp;A</a> <span class="use"><span class="ja">食品中の大豆イソフラボン（アグリコン）：納豆73.5、豆腐20.3、凍り豆腐88.5、油揚げ類39.2、みそ49.7、豆乳24.8、煮大豆72.1 mg/100 g。上限の目安70〜75 mg/日は長期間の平均で、超えても直ちに健康被害に結びつくものではない（食品安全委員会）</span><span class="en">Isoflavone contents (aglycone, mg/100 g) and the 70–75 mg/day long-term guide, which “does not immediately lead to harm” if exceeded by soy foods</span></span></li>
+      <li><a href="https://www.mhlw.go.jp/houdou/2006/02/h0202-1a.html">厚生労働省（2006）「大豆及び大豆イソフラボンに関するQ&amp;A」</a>; <a href="https://www.maff.go.jp/j/syouan/nouan/kome/k_daizu_qa/index.html">農林水産省 同Q&amp;A</a> <span class="use"><span class="ja">食品中の大豆イソフラボン（アグリコン）：納豆73.5、豆腐20.3、凍り豆腐88.5、油揚げ類39.2、みそ49.7、豆乳24.8、煮大豆72.1 mg/100 g。食品安全委員会の評価は特定保健用食品などで上乗せする場合が対象（上限の目安70〜75 mg/日、上乗せ30 mg/日）。伝統的な大豆食品は「心配する必要はありません」（問8）</span><span class="en">Isoflavone contents (aglycone, mg/100 g). The 70–75 mg/day guide comes from assessing supplements added on top of the diet; traditional soy foods are “nothing to worry about” (Q8)</span></span></li>
       <li><a href="https://www.mhlw.go.jp/stf/newpage_44138.html">厚生労働省「日本人の食事摂取基準（2025年版）」</a> <span class="use"><span class="ja">たんぱく質の推奨量（18〜64歳：男性65 g、女性50 g／日）</span><span class="en">Recommended protein (ages 18–64: men 65 g, women 50 g a day)</span></span></li>
       <li><a href="https://doi.org/10.1126/sciadv.aat2340">Lovejoy, T.E. &amp; Nobre, C. (2018). Amazon Tipping Point. Science Advances 4: eaat2340</a>; <a href="https://doi.org/10.1126/sciadv.aba2949">(2019). Last chance for action. 5: eaba2949</a> <span class="use"><span class="ja">危険域20〜25%、流域全体で約17%が消失</span><span class="en">20–25% danger zone; ~17% of the basin lost</span></span></li>
       <li><a href="https://www.gov.br/inpe/pt-br/area-conhecimento/unidade-amazonia/repositorio-de-arquivos/terraclass_2014_v3.pdf">INPE &amp; Embrapa (2016). TerraClass Amazônia 2014</a> <span class="use"><span class="ja">切り開かれた土地762,464 km²のうち牧草地479,760 km²（約63%）</span><span class="en">Pasture 479,760 of 762,464 km² cleared (~63%)</span></span></li>
@@ -1335,7 +1330,6 @@ const PFOODS = [
 ];
 // みそ汁 = たんぱく質：絹ごし豆腐 5.3 × 0.5 + 淡色辛みそ 12.5 × 0.18 ≈ 4.9 g ／ イソフラボン：豆腐 20.3 × 0.5 + みそ 49.7 × 0.18 ≈ 19.1 mg
 PFOODS.forEach(f => { f.pg = f.pg ?? f.p * f.w / 100; f.isog = f.isog ?? (f.iso ? f.iso * f.w / 100 : 0); });
-const ISO_MAX = 70;   // 食品安全委員会：大豆イソフラボン（アグリコン）安全な一日摂取目安量の上限 70〜75 mg/日（長期間の平均）
 const PGROUP = { soy: { ja: '大豆の食品（1日1〜2品が目安）', en: 'Soy foods (one or two a day)' }, bean: { ja: '豆・ナッツ・ごま', en: 'Beans, nuts & seeds' }, grain: { ja: '麩・ごはん・パン・めん・野菜', en: 'Gluten, rice, bread, noodles, veg' } };
 const PRESETS = {
   washoku: { ja: '和食の日', en: 'Japanese day',
@@ -1380,16 +1374,14 @@ function renderMeter() {
     : (ja ? `あと<b>${fmt(50 - tot)} g</b>で女性の推奨量。大豆の食品を足してみましょう。` : `<b>${fmt(50 - tot)} g</b> more to reach the amount for women. Try adding a soy food.`);
   const iso = PFOODS.reduce((a, f) => a + (counts[f.k] || 0) * f.isog, 0);
   $('isoVal').textContent = fmt(iso);
-  $('isoBar').style.width = Math.min(iso / 100 * 100, 100) + '%';
-  $('isoBar').style.background = iso > 75 ? 'var(--red)' : 'var(--amber)';
-  $('isoNote').innerHTML = iso > 75
-    ? (ja ? '長い期間の平均としては上限の目安を超えます。大豆の食品を1つ、ほかの豆や麩に替えてみましょう（すぐに害があるわけではありません）。' : 'Above the long-term guide. Swap one soy food for other beans or fu (it isn’t harmful straight away).')
-    : iso > 0 ? (ja ? '上限の目安の範囲内です。' : 'Within the long-term guide.') : '';
+  $('isoNote').innerHTML = iso > 0
+    ? (ja ? '豆腐・納豆・みそなど、ふだんの大豆食品は、ほかの食品とバランスよく食べていれば心配する必要はありません。気をつけたいのは、サプリメントなどで<b>上乗せ</b>してとる場合です（厚生労働省）。'
+          : 'Everyday soy foods such as tofu, natto and miso are nothing to worry about, eaten as part of a varied diet. The caution applies to <b>adding extra</b> through supplements (Japan’s health ministry).')
+    : '';
   $('dTotal').textContent = fmt(tot) + ' g';
   $('dBar').style.width = Math.min(tot / 80 * 100, 100) + '%';
-  $('dIso').className = 'iso-d' + (iso > 75 ? ' over' : '');
-  $('dIso').innerHTML = ja ? `大豆イソフラボン <b>${fmt(iso)} mg</b>（目安 70〜75 mg）${iso > 75 ? ' — 大豆を1品減らしましょう' : ''}`
-    : `Soy isoflavones <b>${fmt(iso)} mg</b> (guide 70–75 mg)${iso > 75 ? ' — drop one soy food' : ''}`;
+  $('dIso').className = 'iso-d';
+  $('dIso').innerHTML = ja ? `大豆イソフラボン <b>${fmt(iso)} mg</b>（参考）` : `Soy isoflavones <b>${fmt(iso)} mg</b> (for reference)`;
   $('pMeals').innerHTML = preset ? PRESETS[preset].m[lang].map(([t, d]) => `<div><b>${t}</b>${d}</div>`).join('') : '';
 }
 
